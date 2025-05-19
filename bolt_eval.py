@@ -22,7 +22,7 @@ from bolt_env import BoltEnv
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-e", "--exp_name", type=str, default="bolt-walking")
-    parser.add_argument("--ckpt", type=int, default=1496)
+    parser.add_argument("--ckpt", type=int, default=4000)
     parser.add_argument("-v", "--vel", type=float, default=0.5, help="Target forward velocity")
     parser.add_argument("-y", "--yvel", type=float, default=0.0, help="Target side velocity")
     parser.add_argument("-r", "--rot", type=float, default=0.0, help="Target rotation velocity")

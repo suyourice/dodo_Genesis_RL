@@ -14,6 +14,20 @@ from rsl_rl.runners import OnPolicyRunner
 
 from dodo_env import DodoEnv
 
+import wandb
+import os
+
+
+from dataclasses import dataclass
+
+@dataclass
+class EnvWrapper:
+    env_cfg:    dict
+    obs_cfg:    dict
+    reward_cfg: dict
+    command_cfg: dict
+
+
 
 # 全局列表，记录各个指标随迭代的变化
 iters = []
@@ -31,10 +45,28 @@ rew_sim_def = []
 rew_ori_stab = []
 rew_survive = []
 
+
+def wandb_log(step, stats):
+    wandb.log({
+        "value_loss":                stats["value_loss"],
+        "surrogate_loss":            stats["surrogate_loss"],
+        "action_noise_std":          stats["action_noise_std"],
+        "episode_reward_mean":       stats["episode_reward_mean"],
+        "episode_length_mean":       stats["episode_length_mean"],
+        "rew_tracking_lin_vel":      stats["rew_tracking_lin_vel"],
+        "rew_tracking_ang_vel":      stats["rew_tracking_ang_vel"],
+        "rew_lin_vel_z":             stats["rew_lin_vel_z"],
+        "rew_base_height":           stats["rew_base_height"],
+        "rew_action_rate":           stats["rew_action_rate"],
+        "rew_similar_to_default":    stats["rew_similar_to_default"],
+        "rew_orientation_stability": stats["rew_orientation_stability"],
+        "rew_survive":               stats["rew_survive"],
+    }, step=step)
+
+
 def log_and_plot(log_dir, it, stats):
-    """Append 各指标，并每 100 iters 保存一次图（同名覆盖）"""
     iters.append(it)
-    # 从 stats dict 中提取
+    wandb_log(it, stats)
     val_loss.append(stats["value_loss"])
     surrogate_loss.append(stats["surrogate_loss"])
     noise_std.append(stats["action_noise_std"])
@@ -99,9 +131,11 @@ def get_train_cfg(exp_name, max_iterations):
             "schedule": "adaptive",
             "use_clipped_value_loss": True,
             "value_loss_coef": 1.0,
+            
         },
         "init_member_classes": {},
         "policy": {
+            #"activation": "mish",
             "activation": "elu",
             "actor_hidden_dims": [512, 256, 128],
             "critic_hidden_dims": [512, 256, 128],
@@ -124,6 +158,9 @@ def get_train_cfg(exp_name, max_iterations):
         "save_interval": 50,
         "empirical_normalization": None,
         "seed": 1,
+        "logger": "tensorboard",
+        "tensorboard_subdir": "tb",
+
     }
     return train_cfg_dict
 
@@ -167,14 +204,19 @@ def get_cfgs():
         "tracking_sigma": 0.25,
         "base_height_target": 0.5,
         "reward_scales": {
-            "tracking_lin_vel": 7.0,
-            "tracking_ang_vel": 0.5,
-            "lin_vel_z": -2.0,
-            "base_height": -70.0,
-            "action_rate": -0.002,
-            "similar_to_default": -0.02,
-            "orientation_stability": -0.8,
-            "survive": +0.07,
+            "tracking_lin_vel": 15.0,
+            "tracking_ang_vel": 0.7,
+            "lin_vel_z": -12.0,
+            "base_height": -80.0,
+            "action_rate": -0.01,
+            "similar_to_default": -0.08,
+            "orientation_stability": -5.8,
+            "survive": +0.15,
+            "penalize_hip_aa"      : -0.5,
+            "penalize_hip_fe"    : -0.02,
+            "penalize_hip_fe_diff"   : -0.3,
+            "penalize_knee_fe"   : -0.01,
+            "penalize_ankle_height": -0.05,
         },
     }
     # Command config
@@ -196,6 +238,7 @@ def main():
 
     gs.init(logging_level="warning")
 
+    
     log_dir = f"logs/{args.exp_name}"
     env_cfg, obs_cfg, reward_cfg, command_cfg = get_cfgs()
     train_cfg = get_train_cfg(args.exp_name, args.max_iterations)
@@ -217,10 +260,12 @@ def main():
         reward_cfg=reward_cfg,
         command_cfg=command_cfg,
     )
+    env.cfg = EnvWrapper(env_cfg, obs_cfg, reward_cfg, command_cfg)
+
     runner = OnPolicyRunner(env, train_cfg, log_dir, device=gs.device)
 
     # Curriculum stages
-    stages = [0.1, 0.2, 0.25, 0.3]
+    stages = [0.1, 0.3, 0.4, 0.5]
     total_it = 0
     for i, v in enumerate(stages, start=1):
         iters = int(args.max_iterations * (0.2 if i < 4 else 1 - sum(stages[:3])))

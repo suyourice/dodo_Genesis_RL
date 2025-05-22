@@ -78,6 +78,26 @@ class DodoEnv:
             self.robot.get_joint(name).dof_start
             for name in env_cfg["joint_names"]
         ]
+        self.hip_aa_indices = [
+            env_cfg["joint_names"].index("Left_HIP_AA"),
+            env_cfg["joint_names"].index("Right_HIP_AA"),
+        ]
+        self.hip_fe_indices = [
+            env_cfg["joint_names"].index("Left_THIGH_FE"),
+            env_cfg["joint_names"].index("Right_THIGH_FE"),
+        ]
+        self.knee_fe_indices = [
+            env_cfg["joint_names"].index("Left_KNEE_FE"),
+            env_cfg["joint_names"].index("Right_SHIN_FE"),
+        ]
+        #peanlize the to big movement from "Left_THIGH_FE","Right_THIGH_FE"
+        # … 在加载完 self.robot、scene.build(...) 之后 …
+        self.ankle_links = [
+            self.robot.get_link("Right_FOOT_FE"),
+            self.robot.get_link("Left_FOOT_FE"),
+        ]
+
+
 
         # PD gains
         kp = [env_cfg["kp"]] * self.num_actions
@@ -193,8 +213,15 @@ class DodoEnv:
         # Position target
         target_pos = exec_actions * self.env_cfg["action_scale"] + self.default_dof_pos
         self.robot.control_dofs_position(target_pos, self.motors_dof_idx)
+        
         # Step sim
         self.scene.step()
+        heights = []
+        for link in self.ankle_links:
+            pos = link.get_pos()        # shape: (num_envs, 3)
+            heights.append(pos[:, 2])  
+        self.current_ankle_heights = torch.stack(heights, dim=1)
+
 
         # Time and pose updates
         self.episode_length_buf += 1
@@ -290,3 +317,23 @@ class DodoEnv:
 
     def _reward_survive(self):
         return torch.ones(self.num_envs, device=self.device)
+    
+    def _reward_penalize_hip_aa(self):
+        # self.dof_pos 的 shape 是 [num_envs, num_actions]
+
+        return torch.sum(torch.abs(self.dof_pos[:, self.hip_aa_indices]), dim=1)
+    def _reward_penalize_hip_fe(self):
+        # self.dof_pos 的 shape 是 [num_envs, num_actions]
+
+        return torch.sum(torch.abs(self.dof_pos[:, self.hip_fe_indices]), dim=1)
+    def _reward_penalize_hip_fe_diff(self):
+        # peanlize the difference between left and right hip fe absolute value
+        return torch.abs(self.dof_pos[:, self.hip_fe_indices[0]] - self.dof_pos[:, self.hip_fe_indices[1]])
+    def _reward_penalize_knee_fe(self):
+        # self.dof_pos 的 shape 是 [num_envs, num_actions]
+
+        return torch.sum(torch.abs(self.dof_pos[:, self.knee_fe_indices]), dim=1)
+    def _reward_penalize_ankle_height(self):
+        return torch.mean(self.current_ankle_heights, dim=1)
+
+

@@ -90,13 +90,12 @@ class DodoEnv:
             env_cfg["joint_names"].index("Left_KNEE_FE"),
             env_cfg["joint_names"].index("Right_SHIN_FE"),
         ]
-        #peanlize the to big movement from "Left_THIGH_FE","Right_THIGH_FE"
-        # … 在加载完 self.robot、scene.build(...) 之后 …
         self.ankle_links = [
             self.robot.get_link("Right_FOOT_FE"),
             self.robot.get_link("Left_FOOT_FE"),
         ]
-
+        self.hip_angle_history = torch.zeros((self.num_envs, 2, 10), device=self.device)
+        self.history_idx = 0
 
 
         # PD gains
@@ -217,11 +216,15 @@ class DodoEnv:
         # Step sim
         self.scene.step()
         heights = []
+        foot_orientations = []
         for link in self.ankle_links:
             pos = link.get_pos()        # shape: (num_envs, 3)
-            heights.append(pos[:, 2])  
+            heights.append(pos[:, 2])
+            foot_quat = link.get_quat()  # shape: (num_envs, 4)
+            foot_orientations.append(foot_quat)
+        
         self.current_ankle_heights = torch.stack(heights, dim=1)
-
+        self.current_foot_orientations = torch.stack(foot_orientations, dim=1)  # shape: (num_envs, 2, 4)
 
         # Time and pose updates
         self.episode_length_buf += 1
@@ -237,6 +240,14 @@ class DodoEnv:
         self.projected_gravity[:]= transform_by_quat(self.global_gravity, inv_q)
         self.dof_pos[:] = self.robot.get_dofs_position(self.motors_dof_idx)
         self.dof_vel[:] = self.robot.get_dofs_velocity(self.motors_dof_idx)
+
+        current_hip_angles = torch.stack([
+            self.dof_pos[:, self.hip_fe_indices[0]],
+            self.dof_pos[:, self.hip_fe_indices[1]]
+        ], dim=1)
+
+        self.hip_angle_history[:, :, self.history_idx] = current_hip_angles
+        self.history_idx = (self.history_idx + 1) % 10
 
         # Resample commands
         idx = (self.episode_length_buf % int(self.env_cfg["resampling_time_s"] / self.dt)==0).nonzero(as_tuple=False).flatten()
@@ -335,5 +346,63 @@ class DodoEnv:
         return torch.sum(torch.abs(self.dof_pos[:, self.knee_fe_indices]), dim=1)
     def _reward_penalize_ankle_height(self):
         return torch.mean(self.current_ankle_heights, dim=1)
+    
+    def _reward_gait_regularity(self):
+
+        left_hip = self.dof_pos[:, self.hip_fe_indices[0]]   
+        right_hip = self.dof_pos[:, self.hip_fe_indices[1]]  
+        
+        phase_diff = torch.abs(left_hip + right_hip) 
+        phase_reward = torch.exp(-phase_diff / 0.3)   
+        
+        if torch.sum(self.hip_angle_history) != 0: 
+            left_hip_history = self.hip_angle_history[:, 0, :]  # (num_envs, 10)
+            
+            hip_changes = torch.diff(left_hip_history, dim=1)  # (num_envs, 9)
+            
+            change_consistency = torch.zeros(self.num_envs, device=self.device)
+            for i in range(hip_changes.shape[1] - 1):
+
+                direction_consistency = torch.sign(hip_changes[:, i]) * torch.sign(hip_changes[:, i+1])
+                change_consistency += torch.clamp(direction_consistency, min=0)
+            
+            change_consistency = change_consistency / (hip_changes.shape[1] - 1)
+            periodicity_reward = change_consistency * 0.5  
+        else:
+            periodicity_reward = torch.zeros(self.num_envs, device=self.device)
+        
+        total_gait_reward = phase_reward + periodicity_reward
+        
+        return total_gait_reward
+
+    def _reward_foot_orientation(self):
+   
+        orientation_rewards = []
+        
+        for i in range(len(self.ankle_links)):
+            foot_quat = self.current_foot_orientations[:, i, :]  # (num_envs, 4)
+            
+            local_normal = torch.tensor([0., 0., 1.], device=self.device).expand(self.num_envs, 3)
+            
+            world_normal = transform_by_quat(local_normal, foot_quat)
+
+            dot_product = torch.abs(world_normal[:, 2])  
+            
+            orientation_reward = dot_product 
+            orientation_rewards.append(orientation_reward)
+        
+        mean_orientation_reward = torch.mean(torch.stack(orientation_rewards, dim=1), dim=1)
+        
+        return mean_orientation_reward
+    def _reward_step_height_consistency(self):
+
+        left_height = self.current_ankle_heights[:, 1]   
+        right_height = self.current_ankle_heights[:, 0]  
+        
+        height_diff = torch.abs(left_height - right_height)
+        
+        consistency_reward = torch.exp(-height_diff / 0.05) 
+        
+        return consistency_reward
 
 

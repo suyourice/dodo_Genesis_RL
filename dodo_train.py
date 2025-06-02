@@ -202,21 +202,24 @@ def get_cfgs():
     # Reward config
     reward_cfg = {
         "tracking_sigma": 0.25,
-        "base_height_target": 0.5,
+        "base_height_target": 0.48,
         "reward_scales": {
-            "tracking_lin_vel": 15.0,
+            "tracking_lin_vel": 5.0,
             "tracking_ang_vel": 0.7,
-            "lin_vel_z": -12.0,
-            "base_height": -80.0,
+            "lin_vel_z": -3.0,
+            "base_height": -180.0,
             "action_rate": -0.01,
             "similar_to_default": -0.08,
             "orientation_stability": -5.8,
             "survive": +0.15,
-            "penalize_hip_aa"      : -0.5,
-            "penalize_hip_fe"    : -0.02,
-            "penalize_hip_fe_diff"   : -0.3,
-            "penalize_knee_fe"   : -0.01,
-            "penalize_ankle_height": -0.05,
+            "penalize_hip_aa"      : -3.5,
+            "penalize_hip_fe"    : -0.08,
+            "penalize_hip_fe_diff"   : -0.5,
+            "penalize_knee_fe"   : -0.09,
+            "penalize_ankle_height": -0.2,
+            "step_height_consistency": 0.2,    
+            "gait_regularity": 0.8,            
+            "foot_orientation": 2.8, 
         },
     }
     # Command config
@@ -249,6 +252,7 @@ def main():
 
     # Save configs
     pickle.dump(
+
         [env_cfg, obs_cfg, reward_cfg, command_cfg, train_cfg],
         open(f"{log_dir}/cfgs.pkl", "wb"),
     )

@@ -219,7 +219,7 @@ def get_cfgs():
             "penalize_ankle_height": -0.2,
             "step_height_consistency": 0.2,    
             "gait_regularity": 0.8,            
-            "foot_orientation": 2.8, 
+            "foot_orientation": 1.5, 
         },
     }
     # Command config
@@ -236,7 +236,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-e", "--exp_name", type=str, default="dodo-walking")
     parser.add_argument("-B", "--num_envs", type=int, default=16384)
-    parser.add_argument("--max_iterations", type=int, default=2500)
+    parser.add_argument("--max_iterations", type=int, default=3500)
     args = parser.parse_args()
 
     gs.init(logging_level="warning")

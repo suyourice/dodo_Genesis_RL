@@ -376,24 +376,58 @@ class DodoEnv:
         return total_gait_reward
 
     def _reward_foot_orientation(self):
-   
+        """
+        Reward function for foot orientation with two components:
+        1. Individual foot orientation (rewards flat feet, penalizes tilted feet)
+        2. Foot orientation consistency (penalizes different orientations between feet)
+        """
         orientation_rewards = []
+        
+        # Use -z axis as sole normal (update based on your debug output)
+        sole_normal_local = torch.tensor([0., 0., -1.], device=self.device)
+        world_down = torch.tensor([0., 0., -1.], device=self.device)
+        
+        foot_alignments = []  # Store individual foot alignments for consistency check
         
         for i in range(len(self.ankle_links)):
             foot_quat = self.current_foot_orientations[:, i, :]  # (num_envs, 4)
             
-            local_normal = torch.tensor([0., 0., 1.], device=self.device).expand(self.num_envs, 3)
+            # Transform sole normal to world coordinates
+            world_sole_normal = transform_by_quat(
+                sole_normal_local.expand(self.num_envs, 3), 
+                foot_quat
+            )
             
-            world_normal = transform_by_quat(local_normal, foot_quat)
-
-            dot_product = torch.abs(world_normal[:, 2])  
+            # Calculate alignment with world down direction
+            # REMOVED clamp(min=0.0) to allow negative values (penalties)
+            alignment = torch.sum(world_sole_normal * world_down.expand_as(world_sole_normal), dim=1)
             
-            orientation_reward = dot_product 
-            orientation_rewards.append(orientation_reward)
+            orientation_rewards.append(alignment)
+            foot_alignments.append(alignment)
         
+        # Component 1: Mean orientation reward (can be negative for penalty)
         mean_orientation_reward = torch.mean(torch.stack(orientation_rewards, dim=1), dim=1)
         
-        return mean_orientation_reward
+        # Component 2: Foot orientation consistency penalty
+        # Penalize when the two feet have different orientations
+        if len(foot_alignments) >= 2:
+            left_foot_alignment = foot_alignments[0]   # First foot
+            right_foot_alignment = foot_alignments[1]  # Second foot
+            
+            # Calculate absolute difference in orientations
+            orientation_diff = torch.abs(left_foot_alignment - right_foot_alignment)
+            
+            # Convert to penalty (negative reward for differences)
+            consistency_penalty = -orientation_diff
+            
+            # Combine: 0.5 * orientation_reward + 0.5 * consistency_penalty
+            total_reward = 0.5 * mean_orientation_reward + 0.05 * consistency_penalty
+        else:
+            # If only one foot, just use orientation reward
+            total_reward = mean_orientation_reward
+        
+        return total_reward
+        
     def _reward_step_height_consistency(self):
 
         left_height = self.current_ankle_heights[:, 1]   

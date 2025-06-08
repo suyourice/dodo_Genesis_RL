@@ -7,6 +7,8 @@ def gs_rand_float(lower, upper, shape, device):
     return (upper - lower) * torch.rand(size=shape, device=device) + lower
 
 class DodoEnv:
+    CONTACT_HEIGHT = 0.05           # 低于这个高度视为接触
+    SWING_HEIGHT_THRESHOLD = 0.10   # 单脚悬空超过这个高度就视为“hopping”
     def __init__(self,
                  num_envs,
                  env_cfg,
@@ -119,6 +121,22 @@ class DodoEnv:
             self.reward_functions[name] = getattr(self, f"_reward_{name}")
             self.episode_sums[name] = torch.zeros((self.num_envs,), device=self.device)
 
+
+        # 假设你的 reward_cfg 里没这两项，就在初始化后手动加上：
+        self.reward_scales["foot_contact_penalty"] = -1.0 * self.dt     # 负值 scale，惩罚项
+        self.reward_scales["foot_contact_switch"]  = +0.5 * self.dt     # 正值 scale，奖励项
+
+        # 并绑定对应函数
+        self.reward_functions["foot_contact_penalty"] = self._reward_foot_contact_penalty
+        self.reward_functions["foot_contact_switch"]  = self._reward_foot_contact_switch
+
+        # 为“上一步接触”做缓存
+        self.prev_contact = torch.zeros((self.num_envs, 2), device=self.device)  # [num_envs, 左/右]
+
+
+
+
+
         # Initialize buffers
         self._init_buffers()
 
@@ -166,6 +184,16 @@ class DodoEnv:
         if len(env_ids) == 0:
             return
         # Reset joint positions & velocities
+
+        if hasattr(self, "current_ankle_heights"):
+            h = self.current_ankle_heights[env_ids]   # 只取这些 env 的高度
+        else:
+            h = torch.zeros((len(env_ids), 2), device=self.device)
+        contact_init = (h < self.CONTACT_HEIGHT).float()
+        self.prev_contact[env_ids] = contact_init
+        
+
+
         self.dof_pos[env_ids] = self.default_dof_pos
         self.dof_vel[env_ids] = 0.0
         self.robot.set_dofs_position(
@@ -340,10 +368,32 @@ class DodoEnv:
     def _reward_penalize_hip_fe_diff(self):
         # peanlize the difference between left and right hip fe absolute value
         return torch.abs(self.dof_pos[:, self.hip_fe_indices[0]] - self.dof_pos[:, self.hip_fe_indices[1]])
-    def _reward_penalize_knee_fe(self):
-        # self.dof_pos 的 shape 是 [num_envs, num_actions]
+    # def _reward_penalize_knee_fe(self):
+    #     # Penalize Right_SHIN_FE if > +0.9, and Left_KNEE_FE if < -0.9. No penalty otherwise.
+    #     # self.dof_pos shape: [num_envs, num_actions]
+    #     pos = self.dof_pos[:, self.knee_fe_indices]
+    #     left_knee = pos[:, 0]   # Left_KNEE_FE
+    #     right_shin = pos[:, 1]  # Right_SHIN_FE
 
-        return torch.sum(torch.abs(self.dof_pos[:, self.knee_fe_indices]), dim=1)
+    #     # For Left_KNEE_FE, penalize if below -0.9: deviation = relu(-0.9 - angle)
+    #     left_dev = torch.relu(0.9 + left_knee)
+    #     # For Right_SHIN_FE, penalize if above +0.9: deviation = relu(angle - 0.9)
+    #     right_dev = torch.relu(-right_shin+0.9)
+
+    #     return left_dev + right_dev
+    
+    def _reward_penalize_knee_fe_left(self):
+        pos = self.dof_pos[:, self.knee_fe_indices]
+        left_knee = pos[:, 0]   # Left_KNEE_FE
+        left_dev = torch.relu(0.9 + left_knee)
+        return left_dev
+    def _reward_penalize_knee_fe_right(self):
+        pos = self.dof_pos[:, self.knee_fe_indices]
+        right_shin = pos[:, 1]
+        right_dev = torch.relu(-right_shin + 0.9)
+        return right_dev
+
+
     def _reward_penalize_ankle_height(self):
         return torch.mean(self.current_ankle_heights, dim=1)
     
@@ -438,5 +488,42 @@ class DodoEnv:
         consistency_reward = torch.exp(-height_diff / 0.05) 
         
         return consistency_reward
+    
+    def _reward_foot_contact_penalty(self):
+        """
+        惩罚项：当出现单腿承重且摆动腿抬得太高，或者出现双脚都不着地的“飞行”阶段时给出 penalty。
+        """
+        h = self.current_ankle_heights      # [N, 2]
+        contact = (h < self.CONTACT_HEIGHT).float()   # [N,2] 0/1
+
+        # 1) 双脚都不接触（飞行阶段）：contact.sum==0
+        flight = (contact.sum(dim=1) == 0).float()
+
+        # 2) 单脚承重且摆动腿抬得太高：contact.sum==1 且 max_height > SWING_HEIGHT_THRESHOLD
+        one_contact = (contact.sum(dim=1) == 1).float()
+        max_swing_h = torch.max(h, dim=1)[0]  # 取两只脚最高高度
+        swing_hopping = one_contact * torch.relu(max_swing_h - self.SWING_HEIGHT_THRESHOLD)
+
+        return flight + swing_hopping
+
+
+    def _reward_foot_contact_switch(self):
+        """
+        奖励项：鼓励左右脚交替着地（contact 状态翻转）。
+        只要本步左右脚同时发生翻转，就给 reward=1，否则 0。
+        """
+        h = self.current_ankle_heights
+        contact = (h < self.CONTACT_HEIGHT).float()  # [N,2]
+
+        # 本步每条腿的 contact 状态是否跟上一步不同
+        change = (contact != self.prev_contact).float()  # [N,2]
+
+        # 只有当左右都翻转（contact 状态同时变化）才算一次完整的交替
+        both_changed = (change[:,0] * change[:,1])
+
+        # 更新缓存
+        self.prev_contact[:] = contact
+
+        return both_changed
 
 

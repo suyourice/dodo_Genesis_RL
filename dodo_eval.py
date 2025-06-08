@@ -24,7 +24,7 @@ from dodo_env import DodoEnv
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-e", "--exp_name", type=str, default="dodo-walking")
-    parser.add_argument("--ckpt", type=int, default=1700)
+    parser.add_argument("--ckpt", type=int, default=-1)
     parser.add_argument("-v", "--vel", type=float, default=0.5)
     parser.add_argument("-y", "--yvel", type=float, default=0.0)
     parser.add_argument("-r", "--rot", type=float, default=0.0)
@@ -39,7 +39,7 @@ def main():
     command_cfg["lin_vel_x_range"] = [args.vel, args.vel]
     command_cfg["lin_vel_y_range"] = [args.yvel, args.yvel]
     command_cfg["ang_vel_range"] = [args.rot, args.rot]
-    reward_cfg["reward_scales"] = {}
+    #reward_cfg["reward_scales"] = {}
 
     env = DodoEnv(
         num_envs=1,

@@ -202,24 +202,27 @@ def get_cfgs():
     # Reward config
     reward_cfg = {
         "tracking_sigma": 0.25,
-        "base_height_target": 0.48,
+        "base_height_target": 0.38,
         "reward_scales": {
             "tracking_lin_vel": 5.0,
-            "tracking_ang_vel": 0.7,
+            "tracking_ang_vel": 3.7,
             "lin_vel_z": -3.0,
             "base_height": -180.0,
             "action_rate": -0.01,
-            "similar_to_default": -0.08,
+            "similar_to_default": -0.01,
             "orientation_stability": -5.8,
             "survive": +0.15,
             "penalize_hip_aa"      : -3.5,
-            "penalize_hip_fe"    : -0.08,
-            "penalize_hip_fe_diff"   : -0.5,
-            "penalize_knee_fe"   : -0.09,
-            "penalize_ankle_height": -0.2,
-            "step_height_consistency": 0.2,    
+            "penalize_hip_fe"    : -0.00,
+            "penalize_hip_fe_diff"   : -0.8,
+            "penalize_knee_fe_left"   : -0.5,
+            "penalize_knee_fe_right": -0.5,
+            "penalize_ankle_height": -0.5,
+            "step_height_consistency": 0.5,    
             "gait_regularity": 0.8,            
             "foot_orientation": 1.5, 
+            "foot_contact_penalty": -2.0,
+            "foot_contact_switch" : 1.0
         },
     }
     # Command config
@@ -236,7 +239,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-e", "--exp_name", type=str, default="dodo-walking")
     parser.add_argument("-B", "--num_envs", type=int, default=16384)
-    parser.add_argument("--max_iterations", type=int, default=3500)
+    parser.add_argument("--max_iterations", type=int, default=2500)
     args = parser.parse_args()
 
     gs.init(logging_level="warning")

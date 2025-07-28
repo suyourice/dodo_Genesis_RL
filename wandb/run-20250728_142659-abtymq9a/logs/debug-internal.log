@@ -1,7 +1,0 @@
-{"time":"2025-07-28T14:26:59.465791839+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/wandb/run-20250728_142659-abtymq9a/logs/debug-core.log"}
-{"time":"2025-07-28T14:26:59.728187223+02:00","level":"INFO","msg":"created new stream","id":"abtymq9a"}
-{"time":"2025-07-28T14:26:59.728207852+02:00","level":"INFO","msg":"stream: started","id":"abtymq9a"}
-{"time":"2025-07-28T14:26:59.72822787+02:00","level":"INFO","msg":"sender: started","stream_id":"abtymq9a"}
-{"time":"2025-07-28T14:26:59.728235022+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"abtymq9a"}
-{"time":"2025-07-28T14:26:59.728263084+02:00","level":"INFO","msg":"handler: started","stream_id":"abtymq9a"}
-{"time":"2025-07-28T14:27:00.003795822+02:00","level":"INFO","msg":"Starting system monitor"}

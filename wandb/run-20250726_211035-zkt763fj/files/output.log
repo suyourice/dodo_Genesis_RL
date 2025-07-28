@@ -1,0 +1,80 @@
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+=== Stage 1: 0.1 m/s ===
+[WandB] Iter 0 | reward=0.00 | loss=0.1634
+[WandB] Iter 0 | reward=0.00 | loss=0.1634
+[Plot] saved to logs/test_logging/metrics.png
+[WandB] Iter 1 | reward=-0.00 | loss=0.1192
+[WandB] Iter 1 | reward=-0.00 | loss=0.1192
+[WandB] Iter 2 | reward=0.00 | loss=0.1001
+[WandB] Iter 2 | reward=0.00 | loss=0.1001
+[WandB] Iter 3 | reward=0.01 | loss=0.0771
+[WandB] Iter 3 | reward=0.01 | loss=0.0771
+[WandB] Iter 4 | reward=0.01 | loss=0.0758
+[WandB] Iter 4 | reward=0.01 | loss=0.0758
+[WandB] Iter 5 | reward=0.01 | loss=0.0716
+[WandB] Iter 5 | reward=0.01 | loss=0.0716
+[WandB] Iter 6 | reward=0.02 | loss=0.0669
+[WandB] Iter 6 | reward=0.02 | loss=0.0669
+[WandB] Iter 7 | reward=0.02 | loss=0.0592
+[WandB] Iter 7 | reward=0.02 | loss=0.0592
+[WandB] Iter 8 | reward=0.02 | loss=0.0719
+[WandB] Iter 8 | reward=0.02 | loss=0.0719
+[WandB] Iter 9 | reward=0.03 | loss=0.0593
+[WandB] Iter 9 | reward=0.03 | loss=0.0593
+[WandB] Iter 10 | reward=0.03 | loss=0.0625
+[WandB] Iter 10 | reward=0.03 | loss=0.0625
+[WandB] Iter 11 | reward=0.03 | loss=0.0721
+[WandB] Iter 11 | reward=0.03 | loss=0.0721
+[WandB] Iter 12 | reward=0.03 | loss=0.0718
+[WandB] Iter 12 | reward=0.03 | loss=0.0718
+[WandB] Iter 13 | reward=0.04 | loss=0.0672
+[WandB] Iter 13 | reward=0.04 | loss=0.0672
+[WandB] Iter 14 | reward=0.04 | loss=0.0814
+[WandB] Iter 14 | reward=0.04 | loss=0.0814
+[WandB] Iter 15 | reward=0.04 | loss=0.0818
+[WandB] Iter 15 | reward=0.04 | loss=0.0818
+[WandB] Iter 16 | reward=0.04 | loss=0.0808
+[WandB] Iter 16 | reward=0.04 | loss=0.0808
+[WandB] Iter 17 | reward=0.04 | loss=0.0834
+[WandB] Iter 17 | reward=0.04 | loss=0.0834
+[WandB] Iter 18 | reward=0.04 | loss=0.0857
+[WandB] Iter 18 | reward=0.04 | loss=0.0857
+[WandB] Iter 19 | reward=0.05 | loss=0.0906
+[WandB] Iter 19 | reward=0.05 | loss=0.0906
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 308, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 303, in main
+    runner.save(os.path.join(log_dir, fname))
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 231, in save
+    "scheduler_state_dict": self.alg.lr_scheduler.state_dict(),
+                            ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PPO' object has no attribute 'lr_scheduler'
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 308, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 303, in main
+    runner.save(os.path.join(log_dir, fname))
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 231, in save
+    "scheduler_state_dict": self.alg.lr_scheduler.state_dict(),
+                            ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PPO' object has no attribute 'lr_scheduler'
+
+[38;5;9m[Genesis] [21:13:16] [ERROR] AttributeError: 'PPO' object has no attribute 'lr_scheduler'[0m

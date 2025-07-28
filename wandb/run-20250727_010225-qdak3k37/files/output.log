@@ -1,0 +1,78 @@
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 310, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 217, in main
+    env = DodoEnv(args.num_envs, env_cfg, obs_cfg, reward_cfg, command_cfg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 78, in __init__
+    self.robot = self.scene.add_entity(
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/utils/misc.py", line 91, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/scene.py", line 360, in add_entity
+    entity = self._sim._add_entity(morph, material, surface, visualize_contact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/simulator.py", line 152, in _add_entity
+    entity = self.rigid_solver.add_entity(self.n_entities, material, morph, surface, visualize_contact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/solvers/rigid/rigid_solver_decomp.py", line 123, in add_entity
+    entity = EntityClass(
+             ^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/entities/rigid_entity/rigid_entity.py", line 86, in __init__
+    self._load_model()
+  File "/home/hoan/Genesis/genesis/engine/entities/rigid_entity/rigid_entity.py", line 96, in _load_model
+    self._load_scene(self._morph, self._surface)
+  File "/home/hoan/Genesis/genesis/engine/entities/rigid_entity/rigid_entity.py", line 330, in _load_scene
+    l_infos, links_j_infos, links_g_infos, eqs_info = mju.parse_xml(morph, surface)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/utils/mjcf.py", line 99, in parse_xml
+    mj = build_model(morph.file, not morph.visualization, merge_fixed_links, links_to_keep)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/utils/mjcf.py", line 82, in build_model
+    mj = mujoco.MjModel.from_xml_path(path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/numpy/lib/_version.py", line 55, in __init__
+    def __init__(self, vstring):
+
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 310, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 217, in main
+    env = DodoEnv(args.num_envs, env_cfg, obs_cfg, reward_cfg, command_cfg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 78, in __init__
+    self.robot = self.scene.add_entity(
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/utils/misc.py", line 91, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/scene.py", line 360, in add_entity
+    entity = self._sim._add_entity(morph, material, surface, visualize_contact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/simulator.py", line 152, in _add_entity
+    entity = self.rigid_solver.add_entity(self.n_entities, material, morph, surface, visualize_contact)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/solvers/rigid/rigid_solver_decomp.py", line 123, in add_entity
+    entity = EntityClass(
+             ^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/entities/rigid_entity/rigid_entity.py", line 86, in __init__
+    self._load_model()
+  File "/home/hoan/Genesis/genesis/engine/entities/rigid_entity/rigid_entity.py", line 96, in _load_model
+    self._load_scene(self._morph, self._surface)
+  File "/home/hoan/Genesis/genesis/engine/entities/rigid_entity/rigid_entity.py", line 330, in _load_scene
+    l_infos, links_j_infos, links_g_infos, eqs_info = mju.parse_xml(morph, surface)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/utils/mjcf.py", line 99, in parse_xml
+    mj = build_model(morph.file, not morph.visualization, merge_fixed_links, links_to_keep)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/utils/mjcf.py", line 82, in build_model
+    mj = mujoco.MjModel.from_xml_path(path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/numpy/lib/_version.py", line 55, in __init__
+    def __init__(self, vstring):
+
+KeyboardInterrupt
+
+[38;5;9m[Genesis] [01:02:29] [ERROR] KeyboardInterrupt: [0m

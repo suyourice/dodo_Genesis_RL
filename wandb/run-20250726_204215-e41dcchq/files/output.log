@@ -1,0 +1,40 @@
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 298, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 284, in main
+    runner = CustomRunner(env, train_cfg, log_dir, device=gs.device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 224, in __init__
+    self.init_writer()
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'CustomRunner' object has no attribute 'init_writer'
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 298, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 284, in main
+    runner = CustomRunner(env, train_cfg, log_dir, device=gs.device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 224, in __init__
+    self.init_writer()
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'CustomRunner' object has no attribute 'init_writer'
+
+[38;5;9m[Genesis] [20:42:37] [ERROR] AttributeError: 'CustomRunner' object has no attribute 'init_writer'[0m

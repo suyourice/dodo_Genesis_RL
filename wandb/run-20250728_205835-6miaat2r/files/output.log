@@ -1,0 +1,1638 @@
+=== Stage 1: Zielgeschwindigkeit 0.1 m/s ===
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+[DEBUG] Observation (env 0): tensor([-0.0004,  0.0209, -0.2047,  0.0010,  0.0078,  0.0214,  0.0004,  0.0004,
+        -0.0005, -0.0004, -0.0005, -0.0005,  0.0005, -0.0005,  0.0029,  0.0029,
+        -0.0031, -0.0030, -0.0033, -0.0033,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.5884,  0.1864, -0.7952, -0.9105, -1.7561, -0.4356,  0.1838, -2.1311],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1134, device='cuda:0')
+[WandB] Iter 0 | reward=1.72 | loss=495.3653
+[Plot] saved to logs/dodo-walking/metrics.png
+[WandB] Iter 1 | reward=1.37 | loss=327.6133
+[WandB] Iter 2 | reward=1.88 | loss=554.3938
+[WandB] Iter 3 | reward=2.11 | loss=669.4214
+[WandB] Iter 4 | reward=2.25 | loss=736.7070
+[WandB] Iter 5 | reward=2.35 | loss=757.9526
+[WandB] Iter 6 | reward=2.41 | loss=767.1668
+[WandB] Iter 7 | reward=2.45 | loss=770.0851
+[WandB] Iter 8 | reward=2.49 | loss=772.9641
+[WandB] Iter 9 | reward=2.50 | loss=757.8860
+[DEBUG] Observation (env 0): tensor([-0.0006,  0.0312, -0.2042,  0.0104,  0.0082,  0.0217, -0.0005,  0.0005,
+        -0.0005, -0.0005, -0.0005, -0.0005,  0.0005,  0.0005, -0.0034,  0.0034,
+        -0.0031, -0.0030, -0.0033, -0.0033,  0.0035,  0.0036,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.1198,  0.4473, -2.0366, -0.9977,  0.0819, -0.8474,  0.4096,  1.2080],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.0983, device='cuda:0')
+[WandB] Iter 10 | reward=2.58 | loss=836.1502
+[WandB] Iter 11 | reward=1.14 | loss=89.0795
+[WandB] Iter 12 | reward=1.80 | loss=239.5766
+[WandB] Iter 13 | reward=2.00 | loss=308.0290
+[WandB] Iter 14 | reward=2.20 | loss=453.2865
+[WandB] Iter 15 | reward=2.30 | loss=526.4312
+[WandB] Iter 16 | reward=2.35 | loss=522.7480
+[WandB] Iter 17 | reward=2.39 | loss=617.8997
+[WandB] Iter 18 | reward=2.42 | loss=723.7080
+[WandB] Iter 19 | reward=2.44 | loss=659.0239
+[DEBUG] Observation (env 0): tensor([-0.0028, -0.0239, -0.1945, -0.0102, -0.0008, -0.0142,  0.0005, -0.0005,
+         0.0005,  0.0005, -0.0005,  0.0005, -0.0005,  0.0005,  0.0034, -0.0034,
+         0.0032,  0.0031, -0.0037,  0.0033, -0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.9684, -0.4449,  1.5938,  1.4391, -1.3820, -0.1351, -2.1154,  0.5368],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1145, device='cuda:0')
+[WandB] Iter 20 | reward=2.59 | loss=505.3341
+[WandB] Iter 21 | reward=1.51 | loss=127.2853
+[WandB] Iter 22 | reward=1.50 | loss=35.1463
+[WandB] Iter 23 | reward=1.89 | loss=70.1579
+[WandB] Iter 24 | reward=2.01 | loss=114.0106
+[WandB] Iter 25 | reward=2.15 | loss=194.5808
+[WandB] Iter 26 | reward=2.22 | loss=230.1965
+[WandB] Iter 27 | reward=2.28 | loss=258.1022
+[WandB] Iter 28 | reward=2.31 | loss=279.4835
+[WandB] Iter 29 | reward=2.34 | loss=274.8297
+[WandB] Iter 30 | reward=2.40 | loss=248.8733
+[DEBUG] Observation (env 0): tensor([ 0.0055,  0.0012, -0.1890, -0.0006, -0.0056,  0.0013, -0.0004, -0.0004,
+         0.0005, -0.0005, -0.0005,  0.0005,  0.0005, -0.0005, -0.0029, -0.0029,
+         0.0035, -0.0035, -0.0035,  0.0035,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.3524, -0.7840,  2.8518, -0.8448, -0.8390,  1.9356,  0.1628, -3.0063],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1352, device='cuda:0')
+[WandB] Iter 31 | reward=2.31 | loss=233.1615
+[WandB] Iter 32 | reward=1.26 | loss=24.3085
+[WandB] Iter 33 | reward=1.85 | loss=33.8223
+[WandB] Iter 34 | reward=2.01 | loss=37.8965
+[WandB] Iter 35 | reward=2.14 | loss=69.3543
+[WandB] Iter 36 | reward=2.24 | loss=97.9590
+[WandB] Iter 37 | reward=2.29 | loss=97.2345
+[WandB] Iter 38 | reward=2.34 | loss=95.4675
+[WandB] Iter 39 | reward=2.38 | loss=91.9350
+[WandB] Iter 40 | reward=2.42 | loss=110.6014
+[DEBUG] Observation (env 0): tensor([ 0.0091, -0.0173, -0.1834, -0.0102, -0.0135, -0.0073,  0.0005, -0.0005,
+         0.0005, -0.0005,  0.0005,  0.0005, -0.0005, -0.0005,  0.0034, -0.0034,
+         0.0034, -0.0036,  0.0034,  0.0035, -0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.6982, -0.5292,  0.2183, -1.2774,  3.2220,  1.3548, -1.1372, -0.5819],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1329, device='cuda:0')
+[WandB] Iter 41 | reward=2.61 | loss=161.4388
+[WandB] Iter 42 | reward=1.24 | loss=42.4920
+[WandB] Iter 43 | reward=1.68 | loss=14.0780
+[WandB] Iter 44 | reward=1.95 | loss=13.2423
+[WandB] Iter 45 | reward=2.09 | loss=22.1292
+[WandB] Iter 46 | reward=2.18 | loss=47.1606
+[WandB] Iter 47 | reward=2.23 | loss=49.9168
+[WandB] Iter 48 | reward=2.25 | loss=57.5526
+[WandB] Iter 49 | reward=2.27 | loss=46.4233
+[WandB] Iter 50 | reward=2.32 | loss=48.0008
+[WandB] Iter 51 | reward=2.35 | loss=49.3891
+[DEBUG] Observation (env 0): tensor([-0.0028, -0.0239, -0.1945, -0.0102, -0.0008, -0.0142,  0.0005, -0.0005,
+         0.0005,  0.0005, -0.0005,  0.0005, -0.0005,  0.0005,  0.0034, -0.0034,
+         0.0032,  0.0031, -0.0037,  0.0033, -0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.6660, -3.4129,  1.0896,  1.9698, -0.4476,  2.3799, -0.8141,  2.3192],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1163, device='cuda:0')
+[WandB] Iter 52 | reward=2.01 | loss=103.9914
+[WandB] Iter 53 | reward=1.39 | loss=45.3825
+[WandB] Iter 54 | reward=1.94 | loss=10.6522
+[WandB] Iter 55 | reward=2.10 | loss=14.9220
+[WandB] Iter 56 | reward=2.20 | loss=22.6012
+[WandB] Iter 57 | reward=2.25 | loss=30.3492
+[WandB] Iter 58 | reward=2.28 | loss=33.8514
+[WandB] Iter 59 | reward=2.30 | loss=36.3784
+[WandB] Iter 60 | reward=2.33 | loss=40.2388
+[WandB] Iter 61 | reward=2.36 | loss=45.6601
+[DEBUG] Observation (env 0): tensor([-0.0029, -0.0127, -0.1939, -0.0009, -0.0004, -0.0131, -0.0004, -0.0004,
+         0.0005,  0.0005, -0.0005,  0.0005,  0.0005, -0.0005, -0.0029, -0.0029,
+         0.0032,  0.0031, -0.0036,  0.0033,  0.0035, -0.0036,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.0116, -0.9866,  1.1190,  2.4236, -0.5400, -0.1962,  0.0348, -1.1849],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1189, device='cuda:0')
+[WandB] Iter 62 | reward=2.51 | loss=75.1897
+[WandB] Iter 63 | reward=1.17 | loss=118.0410
+[WandB] Iter 64 | reward=1.85 | loss=12.9325
+[WandB] Iter 65 | reward=2.06 | loss=11.7328
+[WandB] Iter 66 | reward=2.16 | loss=17.9381
+[WandB] Iter 67 | reward=2.25 | loss=24.6010
+[WandB] Iter 68 | reward=2.28 | loss=23.4192
+[WandB] Iter 69 | reward=2.24 | loss=20.8357
+[WandB] Iter 70 | reward=2.28 | loss=20.9600
+[WandB] Iter 71 | reward=2.33 | loss=24.6497
+[DEBUG] Observation (env 0): tensor([-0.0089, -0.0025, -0.2086, -0.0100,  0.0134,  0.0079,  0.0005, -0.0005,
+        -0.0005,  0.0005, -0.0005, -0.0005, -0.0005,  0.0005,  0.0034, -0.0034,
+        -0.0034,  0.0036, -0.0035, -0.0035, -0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.5679, -3.2357, -0.2765,  0.3315, -1.2958, -0.8059, -0.1604,  0.6710],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1221, device='cuda:0')
+[WandB] Iter 72 | reward=2.38 | loss=25.8844
+[WandB] Iter 73 | reward=1.78 | loss=116.4220
+[WandB] Iter 74 | reward=1.56 | loss=59.2630
+[WandB] Iter 75 | reward=2.05 | loss=9.6598
+[WandB] Iter 76 | reward=2.22 | loss=9.5215
+[WandB] Iter 77 | reward=2.28 | loss=12.6192
+[WandB] Iter 78 | reward=2.31 | loss=14.6259
+[WandB] Iter 79 | reward=2.31 | loss=14.8498
+[WandB] Iter 80 | reward=2.32 | loss=14.2721
+[WandB] Iter 81 | reward=2.34 | loss=14.4331
+[WandB] Iter 82 | reward=2.35 | loss=14.7189
+[DEBUG] Observation (env 0): tensor([-0.0119,  0.0132, -0.2116,  0.0101,  0.0161,  0.0031, -0.0005,  0.0005,
+        -0.0005,  0.0005, -0.0005,  0.0005,  0.0005, -0.0005, -0.0034,  0.0034,
+        -0.0035,  0.0034, -0.0035,  0.0035,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-4.1684,  2.3088, -2.7356,  2.3895, -1.1579,  1.1979,  1.8925, -1.4212],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1211, device='cuda:0')
+[WandB] Iter 83 | reward=2.48 | loss=34.4560
+[WandB] Iter 84 | reward=1.18 | loss=184.0076
+[WandB] Iter 85 | reward=1.95 | loss=19.4213
+[WandB] Iter 86 | reward=2.14 | loss=11.7703
+[WandB] Iter 87 | reward=2.25 | loss=10.3116
+[WandB] Iter 88 | reward=2.31 | loss=10.7577
+[WandB] Iter 89 | reward=2.33 | loss=12.8433
+[WandB] Iter 90 | reward=2.36 | loss=13.4223
+[WandB] Iter 91 | reward=2.37 | loss=13.7326
+[WandB] Iter 92 | reward=2.39 | loss=14.2857
+[DEBUG] Observation (env 0): tensor([ 0.0002, -0.0308, -0.1891, -0.0104, -0.0075, -0.0212,  0.0005, -0.0005,
+         0.0005,  0.0005,  0.0005,  0.0005,  0.0005,  0.0005,  0.0034, -0.0034,
+         0.0031,  0.0030,  0.0033,  0.0033,  0.0036,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.9556, -1.8923, -0.0078,  0.6724,  2.6446,  0.5253,  3.1983,  0.9538],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.0992, device='cuda:0')
+[WandB] Iter 93 | reward=2.54 | loss=23.7722
+[WandB] Iter 94 | reward=1.50 | loss=179.7644
+[WandB] Iter 95 | reward=1.74 | loss=50.9850
+[WandB] Iter 96 | reward=2.09 | loss=11.4841
+[WandB] Iter 97 | reward=2.24 | loss=8.2493
+[WandB] Iter 98 | reward=2.30 | loss=8.6504
+[WandB] Iter 99 | reward=2.31 | loss=9.6891
+[WandB] Iter 100 | reward=2.32 | loss=12.4275
+[Plot] saved to logs/dodo-walking/metrics.png
+[WandB] Iter 101 | reward=2.32 | loss=10.1455
+[WandB] Iter 102 | reward=2.35 | loss=11.5174
+[WandB] Iter 103 | reward=2.38 | loss=13.6232
+[DEBUG] Observation (env 0): tensor([-0.0002,  0.0197, -0.2008,  0.0102,  0.0037,  0.0098, -0.0005,  0.0005,
+        -0.0005, -0.0005,  0.0005,  0.0005,  0.0005, -0.0005, -0.0034,  0.0034,
+        -0.0033, -0.0033,  0.0036,  0.0036,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.7202,  3.0014, -2.0296, -4.2682,  3.6051,  1.6037,  0.9853, -2.4944],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1232, device='cuda:0')
+[WandB] Iter 104 | reward=2.26 | loss=62.0489
+[WandB] Iter 105 | reward=1.30 | loss=117.4310
+[WandB] Iter 106 | reward=1.99 | loss=14.6003
+[WandB] Iter 107 | reward=2.20 | loss=7.9683
+[WandB] Iter 108 | reward=2.29 | loss=7.3413
+[WandB] Iter 109 | reward=2.33 | loss=13.9128
+[WandB] Iter 110 | reward=2.32 | loss=13.4893
+[WandB] Iter 111 | reward=2.34 | loss=14.7738
+[WandB] Iter 112 | reward=2.36 | loss=16.0843
+[WandB] Iter 113 | reward=2.38 | loss=16.4626
+[DEBUG] Observation (env 0): tensor([ 0.0056, -0.0004, -0.1906,  0.0008, -0.0064, -0.0006,  0.0004,  0.0004,
+         0.0005, -0.0005, -0.0005,  0.0005,  0.0005, -0.0005,  0.0029,  0.0029,
+         0.0035, -0.0035, -0.0035,  0.0035,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 4.0740,  0.8017,  1.4203, -0.5782, -3.5599,  0.9339,  1.9321, -4.9174],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1351, device='cuda:0')
+[WandB] Iter 114 | reward=2.56 | loss=31.5239
+[WandB] Iter 115 | reward=1.32 | loss=166.4020
+[WandB] Iter 116 | reward=1.84 | loss=23.4974
+[WandB] Iter 117 | reward=2.16 | loss=7.5743
+[WandB] Iter 118 | reward=2.27 | loss=7.8612
+[WandB] Iter 119 | reward=2.29 | loss=8.4990
+[WandB] Iter 120 | reward=2.28 | loss=10.2714
+[WandB] Iter 121 | reward=2.30 | loss=12.7142
+[WandB] Iter 122 | reward=2.29 | loss=11.6200
+[WandB] Iter 123 | reward=2.31 | loss=11.5968
+[WandB] Iter 124 | reward=2.32 | loss=11.0245
+[DEBUG] Observation (env 0): tensor([-0.0122,  0.0043, -0.2111, -0.0006,  0.0169,  0.0045, -0.0004, -0.0004,
+        -0.0005,  0.0005, -0.0005,  0.0005,  0.0005,  0.0005, -0.0029, -0.0029,
+        -0.0035,  0.0034, -0.0035,  0.0034,  0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.2380, -0.7964, -0.5156,  2.2225, -0.9528, -0.1990,  4.3753,  1.2830],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1252, device='cuda:0')
+[WandB] Iter 125 | reward=2.02 | loss=120.6435
+[WandB] Iter 126 | reward=1.50 | loss=65.3642
+[WandB] Iter 127 | reward=2.11 | loss=8.7641
+[WandB] Iter 128 | reward=2.21 | loss=7.2530
+[WandB] Iter 129 | reward=2.21 | loss=8.4183
+[WandB] Iter 130 | reward=2.19 | loss=9.7848
+[WandB] Iter 131 | reward=2.23 | loss=15.3930
+[WandB] Iter 132 | reward=2.27 | loss=9.3422
+[WandB] Iter 133 | reward=2.29 | loss=8.8941
+[WandB] Iter 134 | reward=2.32 | loss=8.5082
+[DEBUG] Observation (env 0): tensor([-0.0119,  0.0132, -0.2116,  0.0101,  0.0161,  0.0031, -0.0005,  0.0005,
+        -0.0005,  0.0005, -0.0005,  0.0005,  0.0005, -0.0005, -0.0034,  0.0034,
+        -0.0035,  0.0034, -0.0035,  0.0035,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.6399,  1.8410, -0.5917,  1.8596, -1.3779,  0.5946,  0.2662, -3.4073],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1214, device='cuda:0')
+[WandB] Iter 135 | reward=2.53 | loss=26.2102
+[WandB] Iter 136 | reward=1.24 | loss=187.5917
+[WandB] Iter 137 | reward=1.95 | loss=19.4224
+[WandB] Iter 138 | reward=2.21 | loss=6.7988
+[WandB] Iter 139 | reward=2.27 | loss=5.7459
+[WandB] Iter 140 | reward=2.27 | loss=6.3122
+[WandB] Iter 141 | reward=2.29 | loss=6.9936
+[WandB] Iter 142 | reward=2.31 | loss=7.5016
+[WandB] Iter 143 | reward=2.33 | loss=7.4676
+[WandB] Iter 144 | reward=2.35 | loss=7.2455
+[DEBUG] Observation (env 0): tensor([ 0.0026,  0.0149, -0.1975, -0.0005,  0.0017,  0.0155, -0.0004, -0.0004,
+        -0.0005, -0.0005,  0.0005, -0.0005,  0.0005,  0.0005, -0.0029, -0.0029,
+        -0.0032, -0.0031,  0.0036, -0.0033,  0.0035,  0.0036,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-4.0650, -1.9347, -0.4013,  0.0679,  0.4852, -0.4896,  1.1169,  0.4436],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1173, device='cuda:0')
+[WandB] Iter 145 | reward=2.37 | loss=11.6133
+[WandB] Iter 146 | reward=1.77 | loss=158.5465
+[WandB] Iter 147 | reward=1.66 | loss=52.5474
+[WandB] Iter 148 | reward=2.13 | loss=9.7303
+[WandB] Iter 149 | reward=2.27 | loss=6.6784
+[WandB] Iter 150 | reward=2.29 | loss=6.3524
+[WandB] Iter 151 | reward=2.29 | loss=7.2032
+[WandB] Iter 152 | reward=2.31 | loss=7.4847
+[WandB] Iter 153 | reward=2.33 | loss=7.4252
+[WandB] Iter 154 | reward=2.34 | loss=7.4038
+[WandB] Iter 155 | reward=2.36 | loss=7.3603
+[DEBUG] Observation (env 0): tensor([-0.0003,  0.0004, -0.2008, -0.0099,  0.0041,  0.0110,  0.0005, -0.0005,
+        -0.0005, -0.0005,  0.0005,  0.0005,  0.0005, -0.0005,  0.0034, -0.0034,
+        -0.0034, -0.0033,  0.0036,  0.0036,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.7607, -0.0062, -2.3756, -1.6445,  2.7101,  0.6111,  2.2089, -0.5293],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1257, device='cuda:0')
+[WandB] Iter 156 | reward=2.47 | loss=34.0411
+[WandB] Iter 157 | reward=1.22 | loss=147.7306
+[WandB] Iter 158 | reward=1.99 | loss=16.9062
+[WandB] Iter 159 | reward=2.22 | loss=7.0090
+[WandB] Iter 160 | reward=2.27 | loss=6.2829
+[WandB] Iter 161 | reward=2.28 | loss=6.0994
+[WandB] Iter 162 | reward=2.31 | loss=6.4477
+[WandB] Iter 163 | reward=2.33 | loss=6.6228
+[WandB] Iter 164 | reward=2.34 | loss=6.1929
+[WandB] Iter 165 | reward=2.35 | loss=6.4198
+[DEBUG] Observation (env 0): tensor([ 0.0002, -0.0092, -0.1908, -0.0009, -0.0035, -0.0095, -0.0004, -0.0004,
+         0.0005,  0.0005, -0.0005, -0.0005, -0.0005,  0.0005, -0.0029, -0.0029,
+         0.0033,  0.0033, -0.0036, -0.0036, -0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.2281, -0.4143,  0.4645,  1.0744, -1.3680, -1.5654, -0.0409,  1.1990],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1252, device='cuda:0')
+[WandB] Iter 166 | reward=2.50 | loss=22.1201
+[WandB] Iter 167 | reward=1.49 | loss=190.5889
+[WandB] Iter 168 | reward=1.77 | loss=37.7222
+[WandB] Iter 169 | reward=2.16 | loss=8.7814
+[WandB] Iter 170 | reward=2.28 | loss=6.8950
+[WandB] Iter 171 | reward=2.29 | loss=6.1038
+[WandB] Iter 172 | reward=2.31 | loss=6.5110
+[WandB] Iter 173 | reward=2.33 | loss=7.0474
+[WandB] Iter 174 | reward=2.36 | loss=6.8805
+[WandB] Iter 175 | reward=2.36 | loss=8.5297
+[WandB] Iter 176 | reward=2.36 | loss=9.2863
+[DEBUG] Observation (env 0): tensor([ 0.0030,  0.0040, -0.1974, -0.0099,  0.0007,  0.0147,  0.0005, -0.0005,
+        -0.0005, -0.0005,  0.0005, -0.0005, -0.0005, -0.0005,  0.0034, -0.0034,
+        -0.0032, -0.0031,  0.0036, -0.0033, -0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.7703, -1.8031, -0.5064, -0.8619,  0.7632, -2.2571, -1.5949, -0.7202],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1205, device='cuda:0')
+[WandB] Iter 177 | reward=2.27 | loss=101.1350
+[WandB] Iter 178 | reward=1.31 | loss=87.8055
+[WandB] Iter 179 | reward=2.04 | loss=12.9975
+[WandB] Iter 180 | reward=2.22 | loss=7.8347
+[WandB] Iter 181 | reward=2.23 | loss=9.0603
+[WandB] Iter 182 | reward=2.24 | loss=10.6516
+[WandB] Iter 183 | reward=2.27 | loss=9.9885
+[WandB] Iter 184 | reward=2.31 | loss=8.2196
+[WandB] Iter 185 | reward=2.35 | loss=8.1811
+[WandB] Iter 186 | reward=2.39 | loss=7.3567
+[DEBUG] Observation (env 0): tensor([ 0.0030,  0.0040, -0.1974, -0.0099,  0.0007,  0.0147,  0.0005, -0.0005,
+        -0.0005, -0.0005,  0.0005, -0.0005, -0.0005, -0.0005,  0.0034, -0.0034,
+        -0.0032, -0.0031,  0.0036, -0.0033, -0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 2.0181, -1.5089, -3.3380, -0.6169,  3.7527, -4.6232, -2.1893, -5.6654],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1201, device='cuda:0')
+[WandB] Iter 187 | reward=2.59 | loss=21.9334
+[WandB] Iter 188 | reward=1.33 | loss=201.1297
+[WandB] Iter 189 | reward=1.81 | loss=33.6467
+[WandB] Iter 190 | reward=2.12 | loss=12.5380
+[WandB] Iter 191 | reward=2.30 | loss=7.1037
+[WandB] Iter 192 | reward=2.37 | loss=7.0107
+[WandB] Iter 193 | reward=2.41 | loss=7.5342
+[WandB] Iter 194 | reward=2.43 | loss=9.1953
+[WandB] Iter 195 | reward=2.48 | loss=10.3223
+[WandB] Iter 196 | reward=2.50 | loss=13.6149
+[WandB] Iter 197 | reward=2.52 | loss=9.9963
+[DEBUG] Observation (env 0): tensor([ 0.0006, -0.0208, -0.1874, -0.0010, -0.0081, -0.0213, -0.0004, -0.0004,
+         0.0005,  0.0005,  0.0005,  0.0005, -0.0005, -0.0005, -0.0029, -0.0029,
+         0.0031,  0.0030,  0.0033,  0.0033, -0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.5715e+00, -4.4302e+00,  1.7645e+00,  7.3429e+00,  3.9986e-01,
+         1.1341e+00, -2.8197e-01, -2.5127e-03], device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(3.1039, device='cuda:0')
+[WandB] Iter 198 | reward=1.98 | loss=153.1948
+[WandB] Iter 199 | reward=1.49 | loss=73.1415
+[CustomRunner] ✅ Saved checkpoint to logs/dodo-walking/model_stage1.pt
+=== Stage 2: Zielgeschwindigkeit 0.3 m/s ===
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+[DEBUG] Observation (env 0): tensor([-0.0119,  0.0132, -0.2116,  0.0101,  0.0161,  0.0031, -0.0005,  0.0005,
+        -0.0005,  0.0005, -0.0005,  0.0005,  0.0005, -0.0005, -0.0034,  0.0034,
+        -0.0035,  0.0034, -0.0035,  0.0035,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.1745,  0.7126, -0.1706,  1.5617, -1.0466,  0.1066,  0.8072, -0.0482],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6799, device='cuda:0')
+[WandB] Iter 200 | reward=1.57 | loss=409.5523
+[Plot] saved to logs/dodo-walking/metrics.png
+[WandB] Iter 201 | reward=1.13 | loss=222.0596
+[WandB] Iter 202 | reward=1.57 | loss=395.6085
+[WandB] Iter 203 | reward=1.74 | loss=475.6491
+[WandB] Iter 204 | reward=1.88 | loss=532.3707
+[WandB] Iter 205 | reward=1.95 | loss=552.9304
+[WandB] Iter 206 | reward=1.98 | loss=539.3198
+[WandB] Iter 207 | reward=2.00 | loss=527.0175
+[WandB] Iter 208 | reward=2.03 | loss=519.9388
+[WandB] Iter 209 | reward=2.07 | loss=509.1479
+[DEBUG] Observation (env 0): tensor([-2.3351e-04,  1.9674e-02, -2.0077e-01,  1.0239e-02,  3.6631e-03,
+         9.8431e-03, -5.1329e-04,  5.1301e-04, -5.0220e-04, -4.9848e-04,
+         5.4082e-04,  5.4439e-04,  5.2948e-04, -5.2901e-04, -3.4219e-03,
+         3.4201e-03, -3.3480e-03, -3.3232e-03,  3.6054e-03,  3.6293e-03,
+         3.5299e-03, -3.5267e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         3.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.7130,  2.6689, -1.5072, -0.8291,  1.7628,  0.6069,  0.4106, -0.9915],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6879, device='cuda:0')
+[WandB] Iter 210 | reward=2.09 | loss=550.1014
+[WandB] Iter 211 | reward=0.95 | loss=67.3109
+[WandB] Iter 212 | reward=1.50 | loss=229.3299
+[WandB] Iter 213 | reward=1.74 | loss=302.3694
+[WandB] Iter 214 | reward=1.88 | loss=362.3025
+[WandB] Iter 215 | reward=1.99 | loss=418.5279
+[WandB] Iter 216 | reward=2.05 | loss=444.6740
+[WandB] Iter 217 | reward=2.07 | loss=452.0050
+[WandB] Iter 218 | reward=2.08 | loss=451.5472
+[WandB] Iter 219 | reward=2.09 | loss=449.1624
+[DEBUG] Observation (env 0): tensor([-0.0027, -0.0237, -0.1942, -0.0103, -0.0011, -0.0140,  0.0005, -0.0005,
+         0.0005,  0.0005, -0.0005,  0.0005, -0.0005, -0.0005,  0.0034, -0.0034,
+         0.0032,  0.0031, -0.0037,  0.0033, -0.0035, -0.0036,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.2041, -1.0091,  2.7273,  0.8058, -0.6161,  1.1758, -0.4139, -0.2066],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6775, device='cuda:0')
+[WandB] Iter 220 | reward=2.22 | loss=510.5501
+[WandB] Iter 221 | reward=1.26 | loss=96.8304
+[WandB] Iter 222 | reward=1.20 | loss=90.5874
+[WandB] Iter 223 | reward=1.68 | loss=222.9225
+[WandB] Iter 224 | reward=1.76 | loss=237.6973
+[WandB] Iter 225 | reward=1.86 | loss=268.2508
+[WandB] Iter 226 | reward=1.96 | loss=286.8278
+[WandB] Iter 227 | reward=1.99 | loss=280.4635
+[WandB] Iter 228 | reward=2.01 | loss=272.4309
+[WandB] Iter 229 | reward=2.02 | loss=263.0458
+[WandB] Iter 230 | reward=2.03 | loss=252.6958
+[DEBUG] Observation (env 0): tensor([ 1.4327e-03, -2.2378e-02, -1.8951e-01, -1.0295e-02, -6.2453e-03,
+        -1.2597e-02,  5.1230e-04, -5.1273e-04,  4.9511e-04,  4.9345e-04,
+        -2.2176e-04, -5.4675e-04, -5.2901e-04,  5.2883e-04,  3.4142e-03,
+        -3.4179e-03,  3.2923e-03,  3.2837e-03, -1.0984e-03, -3.6478e-03,
+        -3.5261e-03,  3.5253e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         3.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.0256, -2.3088,  0.3050,  0.7033,  0.2742, -0.5749, -2.3109,  2.6878],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6847, device='cuda:0')
+[WandB] Iter 231 | reward=1.89 | loss=236.4749
+[WandB] Iter 232 | reward=0.94 | loss=14.6021
+[WandB] Iter 233 | reward=1.38 | loss=74.6896
+[WandB] Iter 234 | reward=1.63 | loss=122.8792
+[WandB] Iter 235 | reward=1.73 | loss=148.2302
+[WandB] Iter 236 | reward=1.84 | loss=178.9746
+[WandB] Iter 237 | reward=1.90 | loss=188.7010
+[WandB] Iter 238 | reward=1.92 | loss=194.3154
+[WandB] Iter 239 | reward=1.94 | loss=198.2852
+[WandB] Iter 240 | reward=1.97 | loss=204.1558
+[DEBUG] Observation (env 0): tensor([-0.0090,  0.0069, -0.2099,  0.0008,  0.0133,  0.0069,  0.0004,  0.0004,
+        -0.0005,  0.0005, -0.0005, -0.0005,  0.0005,  0.0005,  0.0029,  0.0029,
+        -0.0033,  0.0036, -0.0034, -0.0035,  0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.6066,  1.6033, -1.5126,  0.8419, -3.6800, -0.7059,  1.6187,  0.5437],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6929, device='cuda:0')
+[WandB] Iter 241 | reward=2.16 | loss=279.4381
+[WandB] Iter 242 | reward=1.09 | loss=19.1339
+[WandB] Iter 243 | reward=1.19 | loss=28.5004
+[WandB] Iter 244 | reward=1.58 | loss=81.9209
+[WandB] Iter 245 | reward=1.72 | loss=115.2413
+[WandB] Iter 246 | reward=1.81 | loss=143.7126
+[WandB] Iter 247 | reward=1.86 | loss=157.4238
+[WandB] Iter 248 | reward=1.85 | loss=149.8103
+[WandB] Iter 249 | reward=1.84 | loss=138.1188
+[WandB] Iter 250 | reward=1.87 | loss=135.9704
+[WandB] Iter 251 | reward=1.88 | loss=132.9754
+[DEBUG] Observation (env 0): tensor([-0.0029, -0.0232, -0.1947, -0.0103, -0.0005, -0.0134,  0.0005, -0.0005,
+         0.0005,  0.0005, -0.0005,  0.0005,  0.0005, -0.0005,  0.0034, -0.0034,
+         0.0032,  0.0031, -0.0036,  0.0033,  0.0035, -0.0036,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 2.1545, -0.7030,  0.1010,  1.0367, -2.7385,  0.6297,  2.6232, -1.6367],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6781, device='cuda:0')
+[WandB] Iter 252 | reward=1.72 | loss=131.0576
+[WandB] Iter 253 | reward=1.04 | loss=13.9191
+[WandB] Iter 254 | reward=1.52 | loss=56.9385
+[WandB] Iter 255 | reward=1.70 | loss=85.9303
+[WandB] Iter 256 | reward=1.75 | loss=93.5434
+[WandB] Iter 257 | reward=1.83 | loss=112.5766
+[WandB] Iter 258 | reward=1.86 | loss=121.3240
+[WandB] Iter 259 | reward=1.82 | loss=111.9564
+[WandB] Iter 260 | reward=1.83 | loss=115.4550
+[WandB] Iter 261 | reward=1.84 | loss=118.5674
+[DEBUG] Observation (env 0): tensor([ 0.0005, -0.0225, -0.1893,  0.0004, -0.0086, -0.0233,  0.0004,  0.0004,
+         0.0005,  0.0005,  0.0005,  0.0005, -0.0005,  0.0005,  0.0029,  0.0029,
+         0.0031,  0.0030,  0.0033,  0.0033, -0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 2.3750,  3.7900,  2.2177,  0.6711,  0.5584,  2.4685, -2.2977,  2.0292],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6601, device='cuda:0')
+[WandB] Iter 262 | reward=2.06 | loss=203.8216
+[WandB] Iter 263 | reward=1.04 | loss=12.5800
+[WandB] Iter 264 | reward=1.34 | loss=34.9467
+[WandB] Iter 265 | reward=1.64 | loss=71.5215
+[WandB] Iter 266 | reward=1.74 | loss=93.5725
+[WandB] Iter 267 | reward=1.82 | loss=115.2828
+[WandB] Iter 268 | reward=1.85 | loss=125.5814
+[WandB] Iter 269 | reward=1.86 | loss=126.0134
+[WandB] Iter 270 | reward=1.83 | loss=118.5599
+[WandB] Iter 271 | reward=1.84 | loss=122.6225
+[DEBUG] Observation (env 0): tensor([-0.0090,  0.0173, -0.2091,  0.0102,  0.0135,  0.0073, -0.0005,  0.0005,
+        -0.0005,  0.0005, -0.0005, -0.0005,  0.0005,  0.0005, -0.0034,  0.0034,
+        -0.0034,  0.0036, -0.0034, -0.0035,  0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.2319,  1.4411, -1.0288,  2.0877, -0.3823, -2.4200,  2.4634,  0.2708],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6805, device='cuda:0')
+[WandB] Iter 272 | reward=1.87 | loss=127.8197
+[WandB] Iter 273 | reward=1.54 | loss=82.0032
+[WandB] Iter 274 | reward=1.12 | loss=16.4008
+[WandB] Iter 275 | reward=1.58 | loss=61.6067
+[WandB] Iter 276 | reward=1.72 | loss=85.1834
+[WandB] Iter 277 | reward=1.78 | loss=96.4551
+[WandB] Iter 278 | reward=1.83 | loss=108.2479
+[WandB] Iter 279 | reward=1.84 | loss=110.7968
+[WandB] Iter 280 | reward=1.82 | loss=104.6792
+[WandB] Iter 281 | reward=1.83 | loss=105.6567
+[WandB] Iter 282 | reward=1.84 | loss=109.5577
+[DEBUG] Observation (env 0): tensor([ 0.0035, -0.0176, -0.1867,  0.0003, -0.0111, -0.0183,  0.0004,  0.0004,
+         0.0005,  0.0005,  0.0005, -0.0005,  0.0005, -0.0005,  0.0029,  0.0029,
+         0.0032,  0.0032,  0.0034, -0.0037,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.6642,  1.9316,  0.6778,  0.7125,  1.1780, -2.2217,  0.1301, -0.5187],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6846, device='cuda:0')
+[WandB] Iter 283 | reward=2.03 | loss=188.2111
+[WandB] Iter 284 | reward=0.96 | loss=12.3964
+[WandB] Iter 285 | reward=1.40 | loss=41.2462
+[WandB] Iter 286 | reward=1.67 | loss=75.0797
+[WandB] Iter 287 | reward=1.74 | loss=89.0770
+[WandB] Iter 288 | reward=1.83 | loss=113.2208
+[WandB] Iter 289 | reward=1.86 | loss=121.0948
+[WandB] Iter 290 | reward=1.83 | loss=113.0385
+[WandB] Iter 291 | reward=1.82 | loss=110.8056
+[WandB] Iter 292 | reward=1.84 | loss=115.7519
+[DEBUG] Observation (env 0): tensor([ 6.7661e-05, -1.0284e-02, -1.9296e-01,  5.4302e-04, -3.7132e-03,
+        -1.0761e-02,  4.3637e-04,  4.3863e-04,  5.0653e-04,  5.0118e-04,
+        -5.3835e-04, -5.4320e-04,  5.3045e-04,  5.2913e-04,  2.9091e-03,
+         2.9242e-03,  3.3769e-03,  3.3412e-03, -3.5890e-03, -3.6213e-03,
+         3.5363e-03,  3.5276e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         3.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.6216,  0.6365,  1.8458,  1.2472, -2.5987, -4.6295,  3.8088,  1.1109],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6875, device='cuda:0')
+[WandB] Iter 293 | reward=2.00 | loss=166.2766
+[WandB] Iter 294 | reward=1.28 | loss=37.5951
+[WandB] Iter 295 | reward=1.19 | loss=20.2113
+[WandB] Iter 296 | reward=1.61 | loss=61.7663
+[WandB] Iter 297 | reward=1.74 | loss=87.3592
+[WandB] Iter 298 | reward=1.79 | loss=100.6043
+[WandB] Iter 299 | reward=1.83 | loss=108.2005
+[WandB] Iter 300 | reward=1.84 | loss=110.3018
+[Plot] saved to logs/dodo-walking/metrics.png
+[WandB] Iter 301 | reward=1.82 | loss=102.0237
+[WandB] Iter 302 | reward=1.82 | loss=102.2898
+[WandB] Iter 303 | reward=1.85 | loss=106.8689
+[DEBUG] Observation (env 0): tensor([ 0.0121, -0.0027, -0.1797, -0.0008, -0.0162, -0.0026, -0.0004, -0.0004,
+         0.0005, -0.0005,  0.0005, -0.0005, -0.0005, -0.0005, -0.0029, -0.0029,
+         0.0035, -0.0034,  0.0035, -0.0035, -0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-2.0970, -0.2530,  0.1105,  0.0520,  2.4436, -1.7508, -1.5837, -2.3186],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.7085, device='cuda:0')
+[WandB] Iter 304 | reward=1.89 | loss=155.2527
+[WandB] Iter 305 | reward=0.98 | loss=13.8967
+[WandB] Iter 306 | reward=1.47 | loss=45.8378
+[WandB] Iter 307 | reward=1.67 | loss=71.5983
+[WandB] Iter 308 | reward=1.73 | loss=81.3004
+[WandB] Iter 309 | reward=1.82 | loss=102.9357
+[WandB] Iter 310 | reward=1.86 | loss=112.7853
+[WandB] Iter 311 | reward=1.83 | loss=105.5975
+[WandB] Iter 312 | reward=1.83 | loss=106.9938
+[WandB] Iter 313 | reward=1.85 | loss=112.5341
+[DEBUG] Observation (env 0): tensor([ 0.0085,  0.0036, -0.1881,  0.0008, -0.0090,  0.0036,  0.0004,  0.0004,
+         0.0005, -0.0005, -0.0005, -0.0005,  0.0005,  0.0005,  0.0029,  0.0029,
+         0.0037, -0.0033, -0.0035, -0.0034,  0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.7623,  0.1737,  2.9382, -0.8032, -3.4493, -4.2934,  0.1305,  1.4727],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.7044, device='cuda:0')
+[WandB] Iter 314 | reward=2.05 | loss=185.7587
+[WandB] Iter 315 | reward=1.13 | loss=20.8548
+[WandB] Iter 316 | reward=1.27 | loss=25.0087
+[WandB] Iter 317 | reward=1.63 | loss=61.4054
+[WandB] Iter 318 | reward=1.75 | loss=87.0766
+[WandB] Iter 319 | reward=1.82 | loss=106.2623
+[WandB] Iter 320 | reward=1.86 | loss=116.2276
+[WandB] Iter 321 | reward=1.84 | loss=109.6476
+[WandB] Iter 322 | reward=1.81 | loss=102.2651
+[WandB] Iter 323 | reward=1.82 | loss=102.8325
+[WandB] Iter 324 | reward=1.85 | loss=107.7970
+[DEBUG] Observation (env 0): tensor([ 0.0028,  0.0143, -0.1969, -0.0005,  0.0011,  0.0149, -0.0004, -0.0004,
+        -0.0005, -0.0005,  0.0005, -0.0005, -0.0005,  0.0005, -0.0029, -0.0029,
+        -0.0033, -0.0031,  0.0036, -0.0033, -0.0035,  0.0036,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.7723, -1.0433, -3.5010, -2.9095,  0.9777, -2.9448, -0.9465,  4.0195],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6843, device='cuda:0')
+[WandB] Iter 325 | reward=1.72 | loss=120.2021
+[WandB] Iter 326 | reward=1.06 | loss=14.8257
+[WandB] Iter 327 | reward=1.54 | loss=49.6049
+[WandB] Iter 328 | reward=1.72 | loss=78.2432
+[WandB] Iter 329 | reward=1.77 | loss=85.0161
+[WandB] Iter 330 | reward=1.83 | loss=98.8401
+[WandB] Iter 331 | reward=1.85 | loss=103.3972
+[WandB] Iter 332 | reward=1.81 | loss=93.9135
+[WandB] Iter 333 | reward=1.82 | loss=97.1920
+[WandB] Iter 334 | reward=1.84 | loss=102.4552
+[DEBUG] Observation (env 0): tensor([ 0.0085,  0.0141, -0.1872,  0.0102, -0.0088,  0.0040, -0.0005,  0.0005,
+         0.0005, -0.0005, -0.0005, -0.0005,  0.0005,  0.0005, -0.0034,  0.0034,
+         0.0037, -0.0033, -0.0035, -0.0034,  0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.1174,  0.7059,  0.6483, -1.6127, -0.7506, -2.0344,  0.6394,  0.0154],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.7031, device='cuda:0')
+[WandB] Iter 335 | reward=2.05 | loss=179.4915
+[WandB] Iter 336 | reward=1.03 | loss=14.2415
+[WandB] Iter 337 | reward=1.37 | loss=32.2729
+[WandB] Iter 338 | reward=1.66 | loss=64.2645
+[WandB] Iter 339 | reward=1.76 | loss=86.2093
+[WandB] Iter 340 | reward=1.83 | loss=104.9741
+[WandB] Iter 341 | reward=1.87 | loss=115.5348
+[WandB] Iter 342 | reward=1.84 | loss=106.8675
+[WandB] Iter 343 | reward=1.83 | loss=104.3539
+[WandB] Iter 344 | reward=1.84 | loss=106.0704
+[DEBUG] Observation (env 0): tensor([ 2.4321e-04,  2.9070e-04, -1.9179e-01,  9.8560e-03, -3.7900e-03,
+        -1.0248e-02, -5.0735e-04,  5.1535e-04,  5.0665e-04,  5.0260e-04,
+        -5.3459e-04, -5.4100e-04,  5.3051e-04, -5.3054e-04, -3.3824e-03,
+         3.4357e-03,  3.3777e-03,  3.3507e-03, -3.5640e-03, -3.6067e-03,
+         3.5367e-03, -3.5369e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         3.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.8004,  2.3225,  1.4008,  0.3599, -1.7905, -3.7287,  1.5434, -3.1583],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6883, device='cuda:0')
+[WandB] Iter 345 | reward=1.87 | loss=113.7519
+[WandB] Iter 346 | reward=1.52 | loss=70.2532
+[WandB] Iter 347 | reward=1.14 | loss=16.7331
+[WandB] Iter 348 | reward=1.57 | loss=49.9306
+[WandB] Iter 349 | reward=1.74 | loss=78.6011
+[WandB] Iter 350 | reward=1.79 | loss=88.0604
+[WandB] Iter 351 | reward=1.84 | loss=97.5710
+[WandB] Iter 352 | reward=1.85 | loss=101.5826
+[WandB] Iter 353 | reward=1.82 | loss=92.9091
+[WandB] Iter 354 | reward=1.83 | loss=94.9328
+[WandB] Iter 355 | reward=1.85 | loss=99.0438
+[DEBUG] Observation (env 0): tensor([ 0.0087,  0.0142, -0.1869,  0.0101, -0.0091,  0.0041, -0.0005,  0.0005,
+         0.0005, -0.0005, -0.0005, -0.0005,  0.0005, -0.0005, -0.0034,  0.0034,
+         0.0037, -0.0033, -0.0035, -0.0034,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-2.5524,  0.5661,  0.6714, -0.2940,  0.1934, -2.0315,  0.7146, -1.2697],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.7039, device='cuda:0')
+[WandB] Iter 356 | reward=2.02 | loss=169.9073
+[WandB] Iter 357 | reward=0.97 | loss=14.4990
+[WandB] Iter 358 | reward=1.43 | loss=37.5172
+[WandB] Iter 359 | reward=1.67 | loss=65.2226
+[WandB] Iter 360 | reward=1.75 | loss=80.2540
+[WandB] Iter 361 | reward=1.83 | loss=99.0496
+[WandB] Iter 362 | reward=1.85 | loss=105.2514
+[WandB] Iter 363 | reward=1.83 | loss=98.9469
+[WandB] Iter 364 | reward=1.81 | loss=94.2260
+[WandB] Iter 365 | reward=1.82 | loss=95.9733
+[DEBUG] Observation (env 0): tensor([ 0.0087, -0.0169, -0.1842, -0.0101, -0.0127, -0.0069,  0.0005, -0.0005,
+         0.0005, -0.0005,  0.0005,  0.0005,  0.0005,  0.0005,  0.0034, -0.0034,
+         0.0034, -0.0036,  0.0034,  0.0035,  0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.9837, -0.0174,  2.3292, -0.1209,  0.9045,  0.0972,  1.0140,  4.1198],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.7009, device='cuda:0')
+[WandB] Iter 366 | reward=2.00 | loss=148.3056
+[WandB] Iter 367 | reward=1.28 | loss=34.4881
+[WandB] Iter 368 | reward=1.22 | loss=19.9183
+[WandB] Iter 369 | reward=1.62 | loss=53.7067
+[WandB] Iter 370 | reward=1.77 | loss=81.3172
+[WandB] Iter 371 | reward=1.81 | loss=90.8091
+[WandB] Iter 372 | reward=1.83 | loss=95.2382
+[WandB] Iter 373 | reward=1.83 | loss=93.4761
+[WandB] Iter 374 | reward=1.80 | loss=85.5978
+[WandB] Iter 375 | reward=1.81 | loss=86.2346
+[WandB] Iter 376 | reward=1.83 | loss=91.1879
+[DEBUG] Observation (env 0): tensor([-0.0005,  0.0218, -0.2028, -0.0004,  0.0083,  0.0226, -0.0004, -0.0004,
+        -0.0005, -0.0005, -0.0005, -0.0005, -0.0005,  0.0005, -0.0029, -0.0029,
+        -0.0031, -0.0030, -0.0033, -0.0033, -0.0036,  0.0036,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.7029, -0.6581, -0.3069, -1.9202, -0.8765, -1.4653, -0.1651,  0.2319],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6632, device='cuda:0')
+[WandB] Iter 377 | reward=1.86 | loss=135.2823
+[WandB] Iter 378 | reward=1.00 | loss=14.9434
+[WandB] Iter 379 | reward=1.49 | loss=40.4785
+[WandB] Iter 380 | reward=1.70 | loss=65.9269
+[WandB] Iter 381 | reward=1.76 | loss=77.0336
+[WandB] Iter 382 | reward=1.83 | loss=91.7416
+[WandB] Iter 383 | reward=1.85 | loss=97.1307
+[WandB] Iter 384 | reward=1.81 | loss=88.7906
+[WandB] Iter 385 | reward=1.80 | loss=87.9474
+[WandB] Iter 386 | reward=1.82 | loss=92.1273
+[DEBUG] Observation (env 0): tensor([ 0.0028,  0.0143, -0.1969, -0.0005,  0.0011,  0.0149, -0.0004, -0.0004,
+        -0.0005, -0.0005,  0.0005, -0.0005, -0.0005,  0.0005, -0.0029, -0.0029,
+        -0.0033, -0.0031,  0.0036, -0.0033, -0.0035,  0.0036,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-3.1332, -0.0773, -1.2700, -1.0261,  0.5600, -1.0412, -1.3327,  0.0124],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6834, device='cuda:0')
+[WandB] Iter 387 | reward=2.03 | loss=162.0610
+[WandB] Iter 388 | reward=1.12 | loss=20.2681
+[WandB] Iter 389 | reward=1.31 | loss=23.6497
+[WandB] Iter 390 | reward=1.64 | loss=54.2827
+[WandB] Iter 391 | reward=1.76 | loss=77.6178
+[WandB] Iter 392 | reward=1.82 | loss=91.6749
+[WandB] Iter 393 | reward=1.83 | loss=95.3188
+[WandB] Iter 394 | reward=1.81 | loss=88.9104
+[WandB] Iter 395 | reward=1.79 | loss=84.5013
+[WandB] Iter 396 | reward=1.81 | loss=86.5196
+[WandB] Iter 397 | reward=1.81 | loss=84.4948
+[DEBUG] Observation (env 0): tensor([-0.0033,  0.0266, -0.2061,  0.0104,  0.0103,  0.0169, -0.0005,  0.0005,
+        -0.0005, -0.0005, -0.0005,  0.0006, -0.0005, -0.0005, -0.0034,  0.0034,
+        -0.0032, -0.0032, -0.0034,  0.0037, -0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.3569,  0.2663, -0.2573, -1.9428, -1.2109,  0.8262, -1.3139, -1.3748],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.6706, device='cuda:0')
+[WandB] Iter 398 | reward=1.69 | loss=102.8177
+[WandB] Iter 399 | reward=1.10 | loss=15.0038
+[CustomRunner] ✅ Saved checkpoint to logs/dodo-walking/model_stage2.pt
+=== Stage 3: Zielgeschwindigkeit 0.4 m/s ===
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+[DEBUG] Observation (env 0): tensor([ 0.0035, -0.0167, -0.1849, -0.0010, -0.0107, -0.0171, -0.0004, -0.0004,
+         0.0005,  0.0005,  0.0005, -0.0006, -0.0005,  0.0005, -0.0029, -0.0029,
+         0.0032,  0.0032,  0.0034, -0.0037, -0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.9969, -0.5184, -0.1436,  0.9670,  0.8771, -2.4514, -0.9544,  0.0567],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4709, device='cuda:0')
+[WandB] Iter 400 | reward=1.45 | loss=346.1723
+[Plot] saved to logs/dodo-walking/metrics.png
+[WandB] Iter 401 | reward=0.96 | loss=155.3512
+[WandB] Iter 402 | reward=1.33 | loss=285.9291
+[WandB] Iter 403 | reward=1.52 | loss=366.1934
+[WandB] Iter 404 | reward=1.59 | loss=389.5786
+[WandB] Iter 405 | reward=1.65 | loss=411.2816
+[WandB] Iter 406 | reward=1.70 | loss=417.2561
+[WandB] Iter 407 | reward=1.72 | loss=408.3078
+[WandB] Iter 408 | reward=1.75 | loss=413.1174
+[WandB] Iter 409 | reward=1.81 | loss=423.7405
+[DEBUG] Observation (env 0): tensor([-0.0028, -0.0046, -0.1944,  0.0099, -0.0013, -0.0153, -0.0005,  0.0005,
+         0.0005,  0.0005, -0.0005,  0.0005, -0.0005,  0.0005, -0.0034,  0.0034,
+         0.0032,  0.0031, -0.0036,  0.0033, -0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.6813,  0.7764,  1.2987,  0.3572, -1.0955, -0.2579, -1.9108,  0.2909],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4688, device='cuda:0')
+[WandB] Iter 410 | reward=1.94 | loss=527.5418
+[WandB] Iter 411 | reward=0.87 | loss=71.0392
+[WandB] Iter 412 | reward=1.26 | loss=187.1367
+[WandB] Iter 413 | reward=1.43 | loss=239.8196
+[WandB] Iter 414 | reward=1.55 | loss=283.0985
+[WandB] Iter 415 | reward=1.62 | loss=293.4524
+[WandB] Iter 416 | reward=1.67 | loss=304.7129
+[WandB] Iter 417 | reward=1.74 | loss=337.1702
+[WandB] Iter 418 | reward=1.79 | loss=339.4183
+[WandB] Iter 419 | reward=1.81 | loss=329.1592
+[DEBUG] Observation (env 0): tensor([ 0.0056,  0.0093, -0.1895,  0.0102, -0.0065, -0.0009, -0.0005,  0.0005,
+         0.0005, -0.0005, -0.0005,  0.0005, -0.0005,  0.0005, -0.0034,  0.0034,
+         0.0035, -0.0035, -0.0035,  0.0035, -0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-2.0260,  1.3198,  2.5418, -2.7322, -0.7298,  0.7627, -0.5728,  0.9005],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4908, device='cuda:0')
+[WandB] Iter 420 | reward=1.97 | loss=386.7426
+[WandB] Iter 421 | reward=1.19 | loss=83.1682
+[WandB] Iter 422 | reward=1.07 | loss=66.4771
+[WandB] Iter 423 | reward=1.40 | loss=137.6757
+[WandB] Iter 424 | reward=1.52 | loss=172.2662
+[WandB] Iter 425 | reward=1.60 | loss=186.4140
+[WandB] Iter 426 | reward=1.64 | loss=188.8309
+[WandB] Iter 427 | reward=1.66 | loss=184.2341
+[WandB] Iter 428 | reward=1.70 | loss=187.2831
+[WandB] Iter 429 | reward=1.73 | loss=190.1522
+[WandB] Iter 430 | reward=1.74 | loss=183.3528
+[DEBUG] Observation (env 0): tensor([-0.0026, -0.0149, -0.1949,  0.0005, -0.0017, -0.0155,  0.0004,  0.0004,
+         0.0005,  0.0005, -0.0005,  0.0005, -0.0005, -0.0005,  0.0029,  0.0029,
+         0.0032,  0.0031, -0.0036,  0.0033, -0.0035, -0.0036,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.2563,  1.6388,  2.1949,  1.1481, -0.4459,  1.2134, -1.3667, -1.0666],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4680, device='cuda:0')
+[WandB] Iter 431 | reward=1.76 | loss=226.9035
+[WandB] Iter 432 | reward=0.93 | loss=20.3202
+[WandB] Iter 433 | reward=1.39 | loss=92.6280
+[WandB] Iter 434 | reward=1.54 | loss=123.8549
+[WandB] Iter 435 | reward=1.60 | loss=131.1552
+[WandB] Iter 436 | reward=1.61 | loss=127.8765
+[WandB] Iter 437 | reward=1.62 | loss=128.2976
+[WandB] Iter 438 | reward=1.65 | loss=134.2662
+[WandB] Iter 439 | reward=1.67 | loss=140.1522
+[WandB] Iter 440 | reward=1.68 | loss=139.4374
+[DEBUG] Observation (env 0): tensor([ 0.0088, -0.0167, -0.1839, -0.0102, -0.0130, -0.0067,  0.0005, -0.0005,
+         0.0005, -0.0005,  0.0005,  0.0005,  0.0005, -0.0005,  0.0034, -0.0034,
+         0.0034, -0.0036,  0.0034,  0.0035,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 2.4373, -2.4833,  1.3948, -4.1480,  1.6218, -0.0636,  2.5065, -0.2606],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4902, device='cuda:0')
+[WandB] Iter 441 | reward=1.88 | loss=213.5304
+[WandB] Iter 442 | reward=1.03 | loss=18.9356
+[WandB] Iter 443 | reward=1.21 | loss=42.7362
+[WandB] Iter 444 | reward=1.53 | loss=95.3615
+[WandB] Iter 445 | reward=1.60 | loss=112.1691
+[WandB] Iter 446 | reward=1.60 | loss=109.5470
+[WandB] Iter 447 | reward=1.62 | loss=105.5856
+[WandB] Iter 448 | reward=1.64 | loss=107.6195
+[WandB] Iter 449 | reward=1.65 | loss=107.1275
+[WandB] Iter 450 | reward=1.66 | loss=107.0484
+[WandB] Iter 451 | reward=1.64 | loss=99.1248
+[DEBUG] Observation (env 0): tensor([-0.0088,  0.0063, -0.2093,  0.0008,  0.0128,  0.0064,  0.0004,  0.0004,
+        -0.0005,  0.0005, -0.0005, -0.0005, -0.0005,  0.0005,  0.0029,  0.0029,
+        -0.0034,  0.0036, -0.0034, -0.0035, -0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.3145,  0.5263, -1.6224,  1.8102, -0.2168, -0.7441, -0.3019,  4.3107],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4757, device='cuda:0')
+[WandB] Iter 452 | reward=1.61 | loss=124.5451
+[WandB] Iter 453 | reward=0.99 | loss=13.0313
+[WandB] Iter 454 | reward=1.43 | loss=57.6114
+[WandB] Iter 455 | reward=1.54 | loss=74.2563
+[WandB] Iter 456 | reward=1.57 | loss=78.1608
+[WandB] Iter 457 | reward=1.57 | loss=76.6562
+[WandB] Iter 458 | reward=1.59 | loss=81.0935
+[WandB] Iter 459 | reward=1.63 | loss=92.1998
+[WandB] Iter 460 | reward=1.65 | loss=96.8532
+[WandB] Iter 461 | reward=1.65 | loss=98.1517
+[DEBUG] Observation (env 0): tensor([ 0.0058, -0.0010, -0.1900,  0.0008, -0.0069, -0.0012,  0.0004,  0.0004,
+         0.0005, -0.0005, -0.0005,  0.0005, -0.0005, -0.0005,  0.0029,  0.0029,
+         0.0035, -0.0035, -0.0035,  0.0035, -0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.4993,  0.1679,  0.7848, -1.8261, -0.3815, -0.0215, -0.4722, -3.9084],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4935, device='cuda:0')
+[WandB] Iter 462 | reward=1.89 | loss=186.8271
+[WandB] Iter 463 | reward=0.94 | loss=7.6878
+[WandB] Iter 464 | reward=1.30 | loss=37.6581
+[WandB] Iter 465 | reward=1.51 | loss=67.8841
+[WandB] Iter 466 | reward=1.57 | loss=82.2477
+[WandB] Iter 467 | reward=1.59 | loss=87.3793
+[WandB] Iter 468 | reward=1.60 | loss=91.0335
+[WandB] Iter 469 | reward=1.63 | loss=97.2604
+[WandB] Iter 470 | reward=1.66 | loss=103.5897
+[WandB] Iter 471 | reward=1.66 | loss=102.9294
+[DEBUG] Observation (env 0): tensor([-0.0088,  0.0063, -0.2093,  0.0008,  0.0128,  0.0064,  0.0004,  0.0004,
+        -0.0005,  0.0005, -0.0005, -0.0005, -0.0005,  0.0005,  0.0029,  0.0029,
+        -0.0034,  0.0036, -0.0034, -0.0035, -0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.2451,  0.4228, -4.4692,  2.0534, -3.9573, -0.9422, -0.2533,  1.4669],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4757, device='cuda:0')
+[WandB] Iter 472 | reward=1.66 | loss=102.0604
+[WandB] Iter 473 | reward=1.47 | loss=79.4243
+[WandB] Iter 474 | reward=1.07 | loss=16.5469
+[WandB] Iter 475 | reward=1.46 | loss=58.3328
+[WandB] Iter 476 | reward=1.55 | loss=74.1256
+[WandB] Iter 477 | reward=1.58 | loss=76.1028
+[WandB] Iter 478 | reward=1.58 | loss=76.0176
+[WandB] Iter 479 | reward=1.61 | loss=80.4243
+[WandB] Iter 480 | reward=1.64 | loss=87.8068
+[WandB] Iter 481 | reward=1.66 | loss=91.9423
+[WandB] Iter 482 | reward=1.65 | loss=92.0011
+[DEBUG] Observation (env 0): tensor([ 6.7661e-05, -1.0284e-02, -1.9296e-01,  5.4302e-04, -3.7132e-03,
+        -1.0761e-02,  4.3637e-04,  4.3863e-04,  5.0653e-04,  5.0118e-04,
+        -5.3835e-04, -5.4320e-04,  5.3045e-04,  5.2913e-04,  2.9091e-03,
+         2.9242e-03,  3.3769e-03,  3.3412e-03, -3.5890e-03, -3.6213e-03,
+         3.5363e-03,  3.5276e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         4.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.3172,  0.5973,  0.8917,  3.5006, -0.7863, -0.5974,  2.7436,  0.9069],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4785, device='cuda:0')
+[WandB] Iter 483 | reward=1.87 | loss=177.0011
+[WandB] Iter 484 | reward=0.90 | loss=8.3332
+[WandB] Iter 485 | reward=1.36 | loss=42.2386
+[WandB] Iter 486 | reward=1.51 | loss=65.3741
+[WandB] Iter 487 | reward=1.57 | loss=75.6469
+[WandB] Iter 488 | reward=1.58 | loss=78.7379
+[WandB] Iter 489 | reward=1.61 | loss=87.0644
+[WandB] Iter 490 | reward=1.64 | loss=94.9258
+[WandB] Iter 491 | reward=1.66 | loss=98.6435
+[WandB] Iter 492 | reward=1.66 | loss=99.3694
+[DEBUG] Observation (env 0): tensor([ 0.0007, -0.0120, -0.1882,  0.0097, -0.0087, -0.0228, -0.0005,  0.0005,
+         0.0005,  0.0005,  0.0005,  0.0005, -0.0005, -0.0005, -0.0034,  0.0034,
+         0.0031,  0.0030,  0.0033,  0.0033, -0.0035, -0.0036,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.9145,  0.9467,  1.5636,  1.3400,  1.3698,  0.7591, -3.1308, -0.6587],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4541, device='cuda:0')
+[WandB] Iter 493 | reward=1.82 | loss=143.6889
+[WandB] Iter 494 | reward=1.22 | loss=34.2770
+[WandB] Iter 495 | reward=1.14 | loss=19.1923
+[WandB] Iter 496 | reward=1.48 | loss=57.7173
+[WandB] Iter 497 | reward=1.56 | loss=74.3061
+[WandB] Iter 498 | reward=1.57 | loss=73.8472
+[WandB] Iter 499 | reward=1.58 | loss=75.3769
+[WandB] Iter 500 | reward=1.61 | loss=79.1535
+[Plot] saved to logs/dodo-walking/metrics.png
+[WandB] Iter 501 | reward=1.63 | loss=84.7639
+[WandB] Iter 502 | reward=1.64 | loss=84.8219
+[WandB] Iter 503 | reward=1.64 | loss=86.2213
+[DEBUG] Observation (env 0): tensor([-3.0577e-03, -1.2880e-02, -1.9419e-01, -8.2271e-04, -1.1869e-04,
+        -1.3231e-02, -4.3113e-04, -4.3568e-04,  4.8308e-04,  4.6643e-04,
+        -5.4380e-04,  4.9772e-04,  5.3121e-04,  5.2743e-04, -2.8742e-03,
+        -2.9046e-03,  3.2205e-03,  3.1095e-03, -3.6254e-03,  3.3182e-03,
+         3.5414e-03,  3.5162e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         4.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.5656, -1.4283,  1.5842,  2.1454, -0.3140,  0.2791,  4.1307,  2.0026],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4718, device='cuda:0')
+[WandB] Iter 504 | reward=1.75 | loss=144.6190
+[WandB] Iter 505 | reward=0.93 | loss=9.8389
+[WandB] Iter 506 | reward=1.38 | loss=41.8830
+[WandB] Iter 507 | reward=1.50 | loss=58.5550
+[WandB] Iter 508 | reward=1.55 | loss=66.5498
+[WandB] Iter 509 | reward=1.57 | loss=69.4313
+[WandB] Iter 510 | reward=1.61 | loss=79.1718
+[WandB] Iter 511 | reward=1.62 | loss=84.2418
+[WandB] Iter 512 | reward=1.65 | loss=90.0246
+[WandB] Iter 513 | reward=1.66 | loss=93.8797
+[DEBUG] Observation (env 0): tensor([ 0.0056, -0.0004, -0.1906,  0.0008, -0.0064, -0.0006,  0.0004,  0.0004,
+         0.0005, -0.0005, -0.0005,  0.0005,  0.0005, -0.0005,  0.0029,  0.0029,
+         0.0035, -0.0035, -0.0035,  0.0035,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.8813,  0.9754,  1.8243, -1.6097, -2.4453,  1.1387,  3.9868, -1.9348],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4910, device='cuda:0')
+[WandB] Iter 514 | reward=1.87 | loss=164.1221
+[WandB] Iter 515 | reward=1.05 | loss=14.7387
+[WandB] Iter 516 | reward=1.23 | loss=23.7748
+[WandB] Iter 517 | reward=1.47 | loss=52.2144
+[WandB] Iter 518 | reward=1.55 | loss=69.3372
+[WandB] Iter 519 | reward=1.57 | loss=73.8405
+[WandB] Iter 520 | reward=1.59 | loss=77.6918
+[WandB] Iter 521 | reward=1.61 | loss=81.8044
+[WandB] Iter 522 | reward=1.63 | loss=84.1852
+[WandB] Iter 523 | reward=1.64 | loss=85.2920
+[WandB] Iter 524 | reward=1.61 | loss=77.9777
+[DEBUG] Observation (env 0): tensor([-3.7499e-03,  1.8209e-02, -2.0623e-01, -3.2141e-04,  1.1675e-02,
+         1.8839e-02, -4.3364e-04, -4.3957e-04, -4.8288e-04, -4.8610e-04,
+        -5.0418e-04,  5.4954e-04,  5.2806e-04,  5.3148e-04, -2.8910e-03,
+        -2.9305e-03, -3.2192e-03, -3.2406e-03, -3.3612e-03,  3.6636e-03,
+         3.5204e-03,  3.5432e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         4.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.5881, -0.9224, -2.8932, -3.1275, -1.4426,  0.5030,  0.2757,  0.4948],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4599, device='cuda:0')
+[WandB] Iter 525 | reward=1.62 | loss=115.8624
+[WandB] Iter 526 | reward=1.00 | loss=11.6360
+[WandB] Iter 527 | reward=1.42 | loss=45.3590
+[WandB] Iter 528 | reward=1.51 | loss=58.3701
+[WandB] Iter 529 | reward=1.56 | loss=62.2738
+[WandB] Iter 530 | reward=1.58 | loss=67.2346
+[WandB] Iter 531 | reward=1.61 | loss=72.8389
+[WandB] Iter 532 | reward=1.62 | loss=74.9071
+[WandB] Iter 533 | reward=1.63 | loss=78.7007
+[WandB] Iter 534 | reward=1.62 | loss=78.5506
+[DEBUG] Observation (env 0): tensor([-0.0035,  0.0272, -0.2067,  0.0104,  0.0108,  0.0175, -0.0005,  0.0005,
+        -0.0005, -0.0005, -0.0005,  0.0006,  0.0005, -0.0005, -0.0034,  0.0034,
+        -0.0032, -0.0032, -0.0034,  0.0037,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.1486,  4.4023, -2.1457, -0.0268, -0.3527,  4.0571,  2.1756, -0.3195],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4636, device='cuda:0')
+[WandB] Iter 535 | reward=1.89 | loss=165.5928
+[WandB] Iter 536 | reward=0.95 | loss=8.6088
+[WandB] Iter 537 | reward=1.29 | loss=27.8329
+[WandB] Iter 538 | reward=1.46 | loss=47.7968
+[WandB] Iter 539 | reward=1.55 | loss=64.2012
+[WandB] Iter 540 | reward=1.57 | loss=70.0976
+[WandB] Iter 541 | reward=1.60 | loss=76.8500
+[WandB] Iter 542 | reward=1.62 | loss=80.7997
+[WandB] Iter 543 | reward=1.64 | loss=85.3872
+[WandB] Iter 544 | reward=1.63 | loss=81.9433
+[DEBUG] Observation (env 0): tensor([-0.0033,  0.0266, -0.2061,  0.0104,  0.0103,  0.0169, -0.0005,  0.0005,
+        -0.0005, -0.0005, -0.0005,  0.0006, -0.0005, -0.0005, -0.0034,  0.0034,
+        -0.0032, -0.0032, -0.0034,  0.0037, -0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-4.2519,  2.4996, -0.5573, -1.8033, -1.8324,  0.2209, -2.0917, -1.3371],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.5185, device='cuda:0')
+[WandB] Iter 545 | reward=1.66 | loss=87.2647
+[WandB] Iter 546 | reward=1.46 | loss=69.2017
+[WandB] Iter 547 | reward=1.06 | loss=12.5944
+[WandB] Iter 548 | reward=1.43 | loss=43.5281
+[WandB] Iter 549 | reward=1.52 | loss=56.7760
+[WandB] Iter 550 | reward=1.55 | loss=59.7737
+[WandB] Iter 551 | reward=1.57 | loss=61.8197
+[WandB] Iter 552 | reward=1.60 | loss=66.6808
+[WandB] Iter 553 | reward=1.63 | loss=72.9453
+[WandB] Iter 554 | reward=1.63 | loss=72.9995
+[WandB] Iter 555 | reward=1.61 | loss=69.8098
+[DEBUG] Observation (env 0): tensor([-0.0090,  0.0069, -0.2099,  0.0008,  0.0133,  0.0069,  0.0004,  0.0004,
+        -0.0005,  0.0005, -0.0005, -0.0005,  0.0005,  0.0005,  0.0029,  0.0029,
+        -0.0033,  0.0036, -0.0034, -0.0035,  0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.2505,  1.6545, -1.6259,  1.4540, -0.5857, -3.2730,  0.1967,  0.7971],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4750, device='cuda:0')
+[WandB] Iter 556 | reward=1.84 | loss=150.8560
+[WandB] Iter 557 | reward=0.91 | loss=9.2745
+[WandB] Iter 558 | reward=1.34 | loss=31.3707
+[WandB] Iter 559 | reward=1.46 | loss=46.4933
+[WandB] Iter 560 | reward=1.53 | loss=56.7442
+[WandB] Iter 561 | reward=1.55 | loss=60.9405
+[WandB] Iter 562 | reward=1.58 | loss=69.0015
+[WandB] Iter 563 | reward=1.61 | loss=74.2538
+[WandB] Iter 564 | reward=1.62 | loss=76.8092
+[WandB] Iter 565 | reward=1.62 | loss=77.7993
+[DEBUG] Observation (env 0): tensor([-0.0035,  0.0272, -0.2067,  0.0104,  0.0108,  0.0175, -0.0005,  0.0005,
+        -0.0005, -0.0005, -0.0005,  0.0006,  0.0005, -0.0005, -0.0034,  0.0034,
+        -0.0032, -0.0032, -0.0034,  0.0037,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.1203,  0.9432, -0.5815, -1.2422, -3.8770,  3.6054,  1.3164, -3.6195],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4615, device='cuda:0')
+[WandB] Iter 566 | reward=1.78 | loss=118.2140
+[WandB] Iter 567 | reward=1.21 | loss=30.2525
+[WandB] Iter 568 | reward=1.15 | loss=14.5137
+[WandB] Iter 569 | reward=1.43 | loss=40.3263
+[WandB] Iter 570 | reward=1.53 | loss=57.1067
+[WandB] Iter 571 | reward=1.54 | loss=58.7485
+[WandB] Iter 572 | reward=1.57 | loss=62.6361
+[WandB] Iter 573 | reward=1.59 | loss=64.4074
+[WandB] Iter 574 | reward=1.60 | loss=67.2938
+[WandB] Iter 575 | reward=1.62 | loss=68.5743
+[WandB] Iter 576 | reward=1.60 | loss=64.7376
+[DEBUG] Observation (env 0): tensor([-0.0035,  0.0265, -0.2065,  0.0104,  0.0105,  0.0168, -0.0005,  0.0005,
+        -0.0005, -0.0005, -0.0005,  0.0005, -0.0005,  0.0005, -0.0034,  0.0034,
+        -0.0032, -0.0032, -0.0034,  0.0037, -0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.5516,  1.8029, -4.2476, -1.6371, -0.7591,  1.5218, -1.8857,  0.0700],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4634, device='cuda:0')
+[WandB] Iter 577 | reward=1.72 | loss=124.8479
+[WandB] Iter 578 | reward=0.94 | loss=10.1250
+[WandB] Iter 579 | reward=1.36 | loss=32.6862
+[WandB] Iter 580 | reward=1.46 | loss=43.9259
+[WandB] Iter 581 | reward=1.53 | loss=51.8901
+[WandB] Iter 582 | reward=1.56 | loss=59.0087
+[WandB] Iter 583 | reward=1.60 | loss=66.0183
+[WandB] Iter 584 | reward=1.61 | loss=70.5178
+[WandB] Iter 585 | reward=1.61 | loss=68.7074
+[WandB] Iter 586 | reward=1.61 | loss=70.6381
+[DEBUG] Observation (env 0): tensor([-0.0030, -0.0040, -0.1950,  0.0100, -0.0007, -0.0147, -0.0005,  0.0005,
+         0.0005,  0.0005, -0.0005,  0.0005,  0.0005,  0.0005, -0.0034,  0.0034,
+         0.0032,  0.0031, -0.0036,  0.0033,  0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.7463,  2.7505,  3.1798,  2.2353,  0.2472,  3.9614,  0.0753,  0.5179],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4701, device='cuda:0')
+[WandB] Iter 587 | reward=1.85 | loss=142.3733
+[WandB] Iter 588 | reward=1.05 | loss=14.2744
+[WandB] Iter 589 | reward=1.21 | loss=17.2782
+[WandB] Iter 590 | reward=1.43 | loss=37.2662
+[WandB] Iter 591 | reward=1.52 | loss=52.3858
+[WandB] Iter 592 | reward=1.54 | loss=56.2002
+[WandB] Iter 593 | reward=1.57 | loss=63.2361
+[WandB] Iter 594 | reward=1.59 | loss=66.1334
+[WandB] Iter 595 | reward=1.59 | loss=65.5463
+[WandB] Iter 596 | reward=1.59 | loss=64.1144
+[WandB] Iter 597 | reward=1.59 | loss=62.6539
+[DEBUG] Observation (env 0): tensor([-0.0004,  0.0091, -0.2019,  0.0009,  0.0037,  0.0093,  0.0004,  0.0004,
+        -0.0005, -0.0005,  0.0005,  0.0005,  0.0005,  0.0005,  0.0029,  0.0029,
+        -0.0033, -0.0033,  0.0036,  0.0036,  0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 2.8814,  0.5508, -0.4987, -1.6348,  1.0976,  0.7105,  0.0031,  0.8125],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.4799, device='cuda:0')
+[WandB] Iter 598 | reward=1.60 | loss=100.3129
+[WandB] Iter 599 | reward=1.00 | loss=10.8237
+[CustomRunner] ✅ Saved checkpoint to logs/dodo-walking/model_stage3.pt
+=== Stage 4: Zielgeschwindigkeit 0.5 m/s ===
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+[DEBUG] Observation (env 0): tensor([ 3.3257e-03, -2.6618e-02, -1.8629e-01, -1.0389e-02, -1.0291e-02,
+        -1.6908e-02,  5.0999e-04, -5.1219e-04,  4.8097e-04,  4.8323e-04,
+         5.0423e-04, -5.5153e-04,  5.3209e-04,  5.2847e-04,  3.3999e-03,
+        -3.4146e-03,  3.2064e-03,  3.2215e-03,  3.3615e-03, -3.6769e-03,
+         3.5472e-03,  3.5231e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.2734, -1.3873,  0.2292,  1.1659,  0.9633, -0.9177,  0.6426,  0.0955],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3276, device='cuda:0')
+[WandB] Iter 600 | reward=1.45 | loss=348.0886
+[Plot] saved to logs/dodo-walking/metrics.png
+[WandB] Iter 601 | reward=0.93 | loss=145.1023
+[WandB] Iter 602 | reward=1.30 | loss=273.7400
+[WandB] Iter 603 | reward=1.49 | loss=345.6040
+[WandB] Iter 604 | reward=1.60 | loss=383.7252
+[WandB] Iter 605 | reward=1.64 | loss=374.7903
+[WandB] Iter 606 | reward=1.66 | loss=365.5235
+[WandB] Iter 607 | reward=1.69 | loss=374.8661
+[WandB] Iter 608 | reward=1.72 | loss=383.0685
+[WandB] Iter 609 | reward=1.76 | loss=379.7759
+[DEBUG] Observation (env 0): tensor([ 0.0089,  0.0025, -0.1838,  0.0100, -0.0134, -0.0079, -0.0005,  0.0005,
+         0.0005, -0.0005,  0.0005,  0.0005,  0.0005, -0.0005, -0.0034,  0.0034,
+         0.0034, -0.0036,  0.0035,  0.0035,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.5000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.5604,  3.4953,  0.4099,  0.1231,  1.0932,  1.0939,  0.0105, -0.3724],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3512, device='cuda:0')
+[WandB] Iter 610 | reward=1.99 | loss=512.4862
+[WandB] Iter 611 | reward=0.89 | loss=61.4521
+[WandB] Iter 612 | reward=1.08 | loss=122.3739
+[WandB] Iter 613 | reward=1.37 | loss=198.7516
+[WandB] Iter 614 | reward=1.53 | loss=254.0117
+[WandB] Iter 615 | reward=1.63 | loss=280.5045
+[WandB] Iter 616 | reward=1.69 | loss=295.9710
+[WandB] Iter 617 | reward=1.68 | loss=281.0597
+[WandB] Iter 618 | reward=1.71 | loss=280.2235
+[WandB] Iter 619 | reward=1.73 | loss=287.5460
+[DEBUG] Observation (env 0): tensor([-3.5715e-03,  1.8350e-02, -2.0591e-01, -3.8035e-04,  1.1431e-02,
+         1.8989e-02, -4.3332e-04, -4.3965e-04, -4.8137e-04, -4.8355e-04,
+        -5.0360e-04,  5.5148e-04,  5.2802e-04, -5.2851e-04, -2.8889e-03,
+        -2.9310e-03, -3.2091e-03, -3.2237e-03, -3.3573e-03,  3.6765e-03,
+         3.5201e-03, -3.5234e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.1804, -1.1079, -2.2289, -0.9672, -0.8244,  0.4548,  0.0171, -1.1740],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3188, device='cuda:0')
+[WandB] Iter 620 | reward=1.87 | loss=335.8780
+[WandB] Iter 621 | reward=1.28 | loss=110.6662
+[WandB] Iter 622 | reward=0.99 | loss=41.9926
+[WandB] Iter 623 | reward=1.30 | loss=104.6595
+[WandB] Iter 624 | reward=1.50 | loss=162.3405
+[WandB] Iter 625 | reward=1.50 | loss=159.6685
+[WandB] Iter 626 | reward=1.56 | loss=165.5836
+[WandB] Iter 627 | reward=1.59 | loss=161.2256
+[WandB] Iter 628 | reward=1.61 | loss=160.6876
+[WandB] Iter 629 | reward=1.62 | loss=154.8880
+[WandB] Iter 630 | reward=1.63 | loss=147.0482
+[DEBUG] Observation (env 0): tensor([-8.6575e-03, -3.7933e-03, -2.0466e-01, -7.4390e-04,  9.2307e-03,
+        -3.7407e-03, -4.3557e-04, -4.3704e-04, -5.5060e-04,  4.9139e-04,
+         5.2134e-04,  5.0915e-04, -5.2922e-04,  5.2831e-04, -2.9038e-03,
+        -2.9136e-03, -3.6707e-03,  3.2759e-03,  3.4756e-03,  3.3943e-03,
+        -3.5281e-03,  3.5220e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.1741, -0.3986, -0.5157,  0.4193,  1.2297,  0.8905, -1.8056,  0.4156],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3441, device='cuda:0')
+[WandB] Iter 631 | reward=1.83 | loss=247.4812
+[WandB] Iter 632 | reward=0.89 | loss=14.0477
+[WandB] Iter 633 | reward=1.16 | loss=49.0193
+[WandB] Iter 634 | reward=1.38 | loss=85.5065
+[WandB] Iter 635 | reward=1.51 | loss=111.3991
+[WandB] Iter 636 | reward=1.53 | loss=116.5651
+[WandB] Iter 637 | reward=1.58 | loss=130.5507
+[WandB] Iter 638 | reward=1.59 | loss=134.1409
+[WandB] Iter 639 | reward=1.61 | loss=130.5142
+[WandB] Iter 640 | reward=1.62 | loss=132.0733
+[DEBUG] Observation (env 0): tensor([ 2.8006e-03,  1.5042e-02, -1.9716e-01, -5.7105e-04,  1.4235e-03,
+         1.5672e-02, -4.3623e-04, -4.3935e-04, -4.8486e-04, -4.6787e-04,
+         5.4761e-04, -4.9752e-04,  5.2900e-04, -5.2715e-04, -2.9083e-03,
+        -2.9290e-03, -3.2324e-03, -3.1191e-03,  3.6507e-03, -3.3168e-03,
+         3.5267e-03, -3.5143e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-2.0778, -1.7961, -1.8625, -1.0482,  0.6371, -1.1699,  2.7061, -0.9868],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3288, device='cuda:0')
+[WandB] Iter 641 | reward=1.86 | loss=215.7087
+[WandB] Iter 642 | reward=1.16 | loss=38.1791
+[WandB] Iter 643 | reward=1.05 | loss=20.4873
+[WandB] Iter 644 | reward=1.33 | loss=53.4097
+[WandB] Iter 645 | reward=1.51 | loss=93.6751
+[WandB] Iter 646 | reward=1.54 | loss=100.7844
+[WandB] Iter 647 | reward=1.57 | loss=108.6906
+[WandB] Iter 648 | reward=1.59 | loss=112.4092
+[WandB] Iter 649 | reward=1.57 | loss=108.2354
+[WandB] Iter 650 | reward=1.58 | loss=107.9352
+[WandB] Iter 651 | reward=1.58 | loss=97.0033
+[DEBUG] Observation (env 0): tensor([-9.0438e-03,  6.8513e-03, -2.0989e-01,  7.8332e-04,  1.3348e-02,
+         6.9383e-03,  4.3499e-04,  4.3626e-04, -5.0202e-04,  5.4375e-04,
+        -5.1516e-04, -5.2350e-04,  5.2849e-04,  5.3064e-04,  2.8999e-03,
+         2.9084e-03, -3.3468e-03,  3.6250e-03, -3.4344e-03, -3.4900e-03,
+         3.5233e-03,  3.5376e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.6579,  0.5775, -3.7583,  1.8766, -0.3417, -1.5750,  0.7594,  0.9941],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3356, device='cuda:0')
+[WandB] Iter 652 | reward=1.67 | loss=148.7642
+[WandB] Iter 653 | reward=0.89 | loss=10.0323
+[WandB] Iter 654 | reward=1.22 | loss=32.6084
+[WandB] Iter 655 | reward=1.44 | loss=63.0629
+[WandB] Iter 656 | reward=1.53 | loss=75.4541
+[WandB] Iter 657 | reward=1.55 | loss=81.8792
+[WandB] Iter 658 | reward=1.58 | loss=87.3154
+[WandB] Iter 659 | reward=1.58 | loss=87.2309
+[WandB] Iter 660 | reward=1.59 | loss=87.4644
+[WandB] Iter 661 | reward=1.58 | loss=83.8681
+[DEBUG] Observation (env 0): tensor([-3.5715e-03,  7.9099e-03, -2.0674e-01, -9.7532e-03,  1.1256e-02,
+         1.8614e-02,  5.1071e-04, -5.1644e-04, -4.8000e-04, -4.8244e-04,
+        -5.0678e-04,  5.5121e-04,  5.2791e-04, -5.2882e-04,  3.4047e-03,
+        -3.4430e-03, -3.2000e-03, -3.2162e-03, -3.3785e-03,  3.6748e-03,
+         3.5194e-03, -3.5255e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 2.6433, -1.8327, -1.0538, -1.4484, -0.0137,  0.8030,  2.9360, -1.5679],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3210, device='cuda:0')
+[WandB] Iter 662 | reward=1.86 | loss=168.2853
+[WandB] Iter 663 | reward=0.98 | loss=11.8936
+[WandB] Iter 664 | reward=1.09 | loss=16.5974
+[WandB] Iter 665 | reward=1.33 | loss=36.1361
+[WandB] Iter 666 | reward=1.51 | loss=65.2672
+[WandB] Iter 667 | reward=1.53 | loss=69.5669
+[WandB] Iter 668 | reward=1.57 | loss=80.7770
+[WandB] Iter 669 | reward=1.57 | loss=81.9721
+[WandB] Iter 670 | reward=1.57 | loss=82.0728
+[WandB] Iter 671 | reward=1.59 | loss=83.3858
+[DEBUG] Observation (env 0): tensor([ 3.5006e-03, -1.6044e-02, -1.8512e-01, -1.0759e-03, -1.0369e-02,
+        -1.6397e-02, -4.3374e-04, -4.3547e-04,  4.8109e-04,  4.8465e-04,
+         5.0798e-04, -5.4933e-04,  5.3214e-04, -5.3120e-04, -2.8916e-03,
+        -2.9031e-03,  3.2073e-03,  3.2310e-03,  3.3866e-03, -3.6622e-03,
+         3.5476e-03, -3.5413e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.7449, -1.1219,  4.3600,  0.3671,  2.9531, -1.4248,  0.1119, -0.0393],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3276, device='cuda:0')
+[WandB] Iter 672 | reward=1.59 | loss=79.6330
+[WandB] Iter 673 | reward=1.51 | loss=86.4808
+[WandB] Iter 674 | reward=0.94 | loss=10.3213
+[WandB] Iter 675 | reward=1.27 | loss=27.0921
+[WandB] Iter 676 | reward=1.45 | loss=50.3804
+[WandB] Iter 677 | reward=1.52 | loss=58.1819
+[WandB] Iter 678 | reward=1.54 | loss=63.1729
+[WandB] Iter 679 | reward=1.55 | loss=64.7107
+[WandB] Iter 680 | reward=1.55 | loss=65.0062
+[WandB] Iter 681 | reward=1.57 | loss=69.1954
+[WandB] Iter 682 | reward=1.57 | loss=69.2057
+[DEBUG] Observation (env 0): tensor([ 0.0087, -0.0169, -0.1842, -0.0101, -0.0127, -0.0069,  0.0005, -0.0005,
+         0.0005, -0.0005,  0.0005,  0.0005,  0.0005,  0.0005,  0.0034, -0.0034,
+         0.0034, -0.0036,  0.0034,  0.0035,  0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.5000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 2.2511, -0.4694,  0.2772,  0.1300,  2.7840,  0.2799,  1.9311,  2.0666],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3447, device='cuda:0')
+[WandB] Iter 683 | reward=1.85 | loss=158.9106
+[WandB] Iter 684 | reward=0.88 | loss=9.4838
+[WandB] Iter 685 | reward=1.16 | loss=19.4657
+[WandB] Iter 686 | reward=1.34 | loss=33.8786
+[WandB] Iter 687 | reward=1.50 | loss=55.5447
+[WandB] Iter 688 | reward=1.52 | loss=60.0596
+[WandB] Iter 689 | reward=1.56 | loss=69.3199
+[WandB] Iter 690 | reward=1.56 | loss=70.5600
+[WandB] Iter 691 | reward=1.56 | loss=71.6631
+[WandB] Iter 692 | reward=1.56 | loss=71.8469
+[DEBUG] Observation (env 0): tensor([ 5.6210e-03, -1.1007e-03, -1.9036e-01,  8.3481e-04, -6.6954e-03,
+        -1.3127e-03,  4.3509e-04,  4.3783e-04,  5.2744e-04, -5.2723e-04,
+        -5.3118e-04,  5.2963e-04, -5.3019e-04,  5.2969e-04,  2.9006e-03,
+         2.9188e-03,  3.5163e-03, -3.5149e-03, -3.5412e-03,  3.5309e-03,
+        -3.5346e-03,  3.5313e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 4.7286,  3.0241,  0.7399, -3.1648, -0.8280,  1.5826, -1.4722,  1.1105],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3464, device='cuda:0')
+[WandB] Iter 693 | reward=1.72 | loss=109.7674
+[WandB] Iter 694 | reward=1.28 | loss=47.3894
+[WandB] Iter 695 | reward=0.99 | loss=10.1280
+[WandB] Iter 696 | reward=1.29 | loss=25.4632
+[WandB] Iter 697 | reward=1.48 | loss=51.4209
+[WandB] Iter 698 | reward=1.51 | loss=56.2005
+[WandB] Iter 699 | reward=1.54 | loss=61.9242
+[WandB] Iter 700 | reward=1.56 | loss=65.4230
+[Plot] saved to logs/dodo-walking/metrics.png
+[WandB] Iter 701 | reward=1.55 | loss=62.0530
+[WandB] Iter 702 | reward=1.54 | loss=61.2446
+[WandB] Iter 703 | reward=1.55 | loss=62.6547
+[DEBUG] Observation (env 0): tensor([ 3.0182e-03,  4.0441e-03, -1.9744e-01, -9.9493e-03,  7.0775e-04,
+         1.4722e-02,  5.0791e-04, -5.1606e-04, -4.8545e-04, -4.6794e-04,
+         5.4288e-04, -4.9835e-04, -5.3112e-04, -5.2751e-04,  3.3860e-03,
+        -3.4404e-03, -3.2363e-03, -3.1196e-03,  3.6192e-03, -3.3223e-03,
+        -3.5408e-03, -3.5167e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 2.0448, -1.1939, -2.5769, -1.5679,  3.1836, -4.5998, -0.7600, -0.4680],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3312, device='cuda:0')
+[WandB] Iter 704 | reward=1.78 | loss=141.4780
+[WandB] Iter 705 | reward=0.86 | loss=10.8653
+[WandB] Iter 706 | reward=1.19 | loss=19.6995
+[WandB] Iter 707 | reward=1.37 | loss=35.7458
+[WandB] Iter 708 | reward=1.49 | loss=49.8572
+[WandB] Iter 709 | reward=1.51 | loss=54.6843
+[WandB] Iter 710 | reward=1.54 | loss=61.1798
+[WandB] Iter 711 | reward=1.55 | loss=63.6356
+[WandB] Iter 712 | reward=1.55 | loss=64.8098
+[WandB] Iter 713 | reward=1.55 | loss=66.0432
+[DEBUG] Observation (env 0): tensor([-5.7516e-03,  9.7876e-03, -2.0314e-01,  1.0000e-02,  6.3451e-03,
+        -3.3444e-04, -5.1221e-04,  5.1398e-04, -5.2658e-04,  5.2620e-04,
+         5.3151e-04, -5.3095e-04,  5.3015e-04,  5.3037e-04, -3.4147e-03,
+         3.4266e-03, -3.5105e-03,  3.5080e-03,  3.5434e-03, -3.5396e-03,
+         3.5343e-03,  3.5358e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-4.1350,  2.9649, -0.9513,  0.8951,  0.5612, -1.7286,  0.4015,  1.1752],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3401, device='cuda:0')
+[WandB] Iter 714 | reward=1.78 | loss=128.7289
+[WandB] Iter 715 | reward=1.09 | loss=23.6406
+[WandB] Iter 716 | reward=1.04 | loss=11.1657
+[WandB] Iter 717 | reward=1.30 | loss=22.6979
+[WandB] Iter 718 | reward=1.46 | loss=46.1883
+[WandB] Iter 719 | reward=1.49 | loss=51.9199
+[WandB] Iter 720 | reward=1.53 | loss=59.4898
+[WandB] Iter 721 | reward=1.53 | loss=60.6553
+[WandB] Iter 722 | reward=1.55 | loss=63.9396
+[WandB] Iter 723 | reward=1.55 | loss=61.9881
+[WandB] Iter 724 | reward=1.55 | loss=61.4009
+[DEBUG] Observation (env 0): tensor([-4.0506e-04,  2.0226e-02, -2.0445e-01,  1.0406e-03,  7.5312e-03,
+         2.0712e-02,  4.3396e-04,  4.3482e-04, -4.6140e-04, -4.5255e-04,
+        -5.0028e-04, -4.9196e-04, -5.3271e-04,  5.3314e-04,  2.8930e-03,
+         2.8987e-03, -3.0760e-03, -3.0170e-03, -3.3352e-03, -3.2798e-03,
+        -3.5514e-03,  3.5542e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.8901,  1.7345, -1.1419, -0.7024, -2.4035, -2.3295, -1.1268,  3.2337],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3153, device='cuda:0')
+[WandB] Iter 725 | reward=1.65 | loss=113.9331
+[WandB] Iter 726 | reward=0.90 | loss=10.5028
+[WandB] Iter 727 | reward=1.22 | loss=19.2032
+[WandB] Iter 728 | reward=1.39 | loss=35.6941
+[WandB] Iter 729 | reward=1.48 | loss=45.6920
+[WandB] Iter 730 | reward=1.52 | loss=51.7952
+[WandB] Iter 731 | reward=1.54 | loss=55.5955
+[WandB] Iter 732 | reward=1.54 | loss=56.7738
+[WandB] Iter 733 | reward=1.54 | loss=58.2732
+[WandB] Iter 734 | reward=1.54 | loss=59.9755
+[DEBUG] Observation (env 0): tensor([-3.7030e-03,  1.6591e-02, -2.0784e-01,  1.0816e-03,  1.0907e-02,
+         1.6962e-02,  4.3360e-04,  4.3536e-04, -4.7915e-04, -4.8347e-04,
+        -5.0644e-04,  5.4989e-04,  5.2787e-04,  5.3124e-04,  2.8906e-03,
+         2.9024e-03, -3.1943e-03, -3.2232e-03, -3.3763e-03,  3.6659e-03,
+         3.5192e-03,  3.5416e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.4415,  1.6120, -0.3217, -1.0128, -2.7629,  1.9578,  0.1067,  1.0596],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3225, device='cuda:0')
+[WandB] Iter 735 | reward=1.83 | loss=138.6772
+[WandB] Iter 736 | reward=0.97 | loss=13.3508
+[WandB] Iter 737 | reward=1.11 | loss=13.2250
+[WandB] Iter 738 | reward=1.33 | loss=24.8956
+[WandB] Iter 739 | reward=1.47 | loss=44.4119
+[WandB] Iter 740 | reward=1.49 | loss=49.7972
+[WandB] Iter 741 | reward=1.53 | loss=56.7418
+[WandB] Iter 742 | reward=1.53 | loss=57.6900
+[WandB] Iter 743 | reward=1.54 | loss=59.6513
+[WandB] Iter 744 | reward=1.54 | loss=59.5794
+[DEBUG] Observation (env 0): tensor([ 8.8330e-03, -5.5984e-03, -1.8643e-01, -1.0035e-02, -9.1802e-03,
+         4.6607e-03,  5.1246e-04, -5.1460e-04,  5.4628e-04, -4.9409e-04,
+        -5.2381e-04, -5.1034e-04, -5.3071e-04, -5.2843e-04,  3.4164e-03,
+        -3.4307e-03,  3.6419e-03, -3.2939e-03, -3.4920e-03, -3.4023e-03,
+        -3.5381e-03, -3.5229e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.4604, -0.0722,  2.1391, -1.5539, -3.6110, -1.8446, -0.2077, -0.7479],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3474, device='cuda:0')
+[WandB] Iter 745 | reward=1.56 | loss=62.7225
+[WandB] Iter 746 | reward=1.50 | loss=78.2473
+[WandB] Iter 747 | reward=0.94 | loss=9.6622
+[WandB] Iter 748 | reward=1.26 | loss=20.3815
+[WandB] Iter 749 | reward=1.43 | loss=38.5406
+[WandB] Iter 750 | reward=1.48 | loss=44.8891
+[WandB] Iter 751 | reward=1.50 | loss=48.0377
+[WandB] Iter 752 | reward=1.53 | loss=53.3784
+[WandB] Iter 753 | reward=1.53 | loss=52.3465
+[WandB] Iter 754 | reward=1.54 | loss=55.2184
+[WandB] Iter 755 | reward=1.53 | loss=52.5594
+[DEBUG] Observation (env 0): tensor([ 2.6222e-03,  4.4594e-03, -1.9831e-01, -9.8846e-03,  1.4934e-03,
+         1.5148e-02,  5.0749e-04, -5.1607e-04, -4.8500e-04, -4.6930e-04,
+         5.4385e-04, -4.9972e-04,  5.2894e-04,  5.3252e-04,  3.3832e-03,
+        -3.4405e-03, -3.2333e-03, -3.1286e-03,  3.6256e-03, -3.3315e-03,
+         3.5263e-03,  3.5501e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 1.9670, -0.6627, -0.7670,  0.1158,  0.3713, -2.2614,  1.2807,  1.8908],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3309, device='cuda:0')
+[WandB] Iter 756 | reward=1.83 | loss=137.6957
+[WandB] Iter 757 | reward=0.87 | loss=12.8062
+[WandB] Iter 758 | reward=1.15 | loss=15.7777
+[WandB] Iter 759 | reward=1.33 | loss=26.2897
+[WandB] Iter 760 | reward=1.45 | loss=40.1932
+[WandB] Iter 761 | reward=1.49 | loss=46.6535
+[WandB] Iter 762 | reward=1.53 | loss=54.6454
+[WandB] Iter 763 | reward=1.52 | loss=54.0098
+[WandB] Iter 764 | reward=1.53 | loss=56.1899
+[WandB] Iter 765 | reward=1.54 | loss=58.6999
+[DEBUG] Observation (env 0): tensor([-0.0119,  0.0132, -0.2116,  0.0101,  0.0161,  0.0031, -0.0005,  0.0005,
+        -0.0005,  0.0005, -0.0005,  0.0005,  0.0005, -0.0005, -0.0034,  0.0034,
+        -0.0035,  0.0034, -0.0035,  0.0035,  0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.5000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.9282,  1.3868, -2.4802,  0.4733, -0.1620,  1.3799,  2.4683, -0.7064],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3381, device='cuda:0')
+[WandB] Iter 766 | reward=1.69 | loss=92.3070
+[WandB] Iter 767 | reward=1.26 | loss=43.4791
+[WandB] Iter 768 | reward=0.99 | loss=9.9358
+[WandB] Iter 769 | reward=1.28 | loss=18.9808
+[WandB] Iter 770 | reward=1.44 | loss=38.3809
+[WandB] Iter 771 | reward=1.46 | loss=42.8376
+[WandB] Iter 772 | reward=1.50 | loss=47.9398
+[WandB] Iter 773 | reward=1.52 | loss=50.5961
+[WandB] Iter 774 | reward=1.52 | loss=48.3783
+[WandB] Iter 775 | reward=1.52 | loss=48.8700
+[WandB] Iter 776 | reward=1.53 | loss=50.6720
+[DEBUG] Observation (env 0): tensor([-6.6937e-04,  1.1960e-02, -2.0422e-01, -9.7293e-03,  8.6658e-03,
+         2.2791e-02,  5.1065e-04, -5.1700e-04, -4.6181e-04, -4.5287e-04,
+        -4.9965e-04, -4.9201e-04,  5.2739e-04,  5.3310e-04,  3.4042e-03,
+        -3.4467e-03, -3.0787e-03, -3.0191e-03, -3.3310e-03, -3.2801e-03,
+         3.5159e-03,  3.5540e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 4.1039, -0.9838, -4.1214, -0.1469, -0.7271, -1.3303,  0.2342,  0.0206],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3413, device='cuda:0')
+[WandB] Iter 777 | reward=1.76 | loss=124.0498
+[WandB] Iter 778 | reward=0.86 | loss=13.3248
+[WandB] Iter 779 | reward=1.19 | loss=16.1688
+[WandB] Iter 780 | reward=1.35 | loss=27.7317
+[WandB] Iter 781 | reward=1.44 | loss=37.1288
+[WandB] Iter 782 | reward=1.48 | loss=42.3863
+[WandB] Iter 783 | reward=1.52 | loss=48.6744
+[WandB] Iter 784 | reward=1.52 | loss=49.5449
+[WandB] Iter 785 | reward=1.51 | loss=49.4701
+[WandB] Iter 786 | reward=1.52 | loss=52.5198
+[DEBUG] Observation (env 0): tensor([-8.8751e-03, -3.2360e-03, -2.0521e-01, -7.3810e-04,  9.7724e-03,
+        -3.1644e-03, -4.3568e-04, -4.3712e-04, -5.4865e-04,  4.9258e-04,
+         5.2288e-04,  5.0972e-04,  5.3080e-04,  5.2835e-04, -2.9045e-03,
+        -2.9141e-03, -3.6577e-03,  3.2838e-03,  3.4859e-03,  3.3981e-03,
+         3.5387e-03,  3.5223e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.8438, -1.4155, -1.2695,  3.0927,  0.9789,  1.2857,  0.8852,  0.3117],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3392, device='cuda:0')
+[WandB] Iter 787 | reward=1.76 | loss=111.3468
+[WandB] Iter 788 | reward=1.10 | loss=24.4385
+[WandB] Iter 789 | reward=1.05 | loss=10.5081
+[WandB] Iter 790 | reward=1.30 | loss=18.4863
+[WandB] Iter 791 | reward=1.43 | loss=34.0288
+[WandB] Iter 792 | reward=1.46 | loss=39.7780
+[WandB] Iter 793 | reward=1.49 | loss=45.0576
+[WandB] Iter 794 | reward=1.51 | loss=48.6906
+[WandB] Iter 795 | reward=1.51 | loss=48.3397
+[WandB] Iter 796 | reward=1.51 | loss=49.3585
+[WandB] Iter 797 | reward=1.51 | loss=47.7196
+[DEBUG] Observation (env 0): tensor([ 5.7995e-03, -9.5877e-04, -1.9004e-01,  7.7589e-04, -6.9394e-03,
+        -1.1628e-03,  4.3540e-04,  4.3775e-04,  5.2895e-04, -5.2469e-04,
+        -5.3059e-04,  5.3157e-04, -5.3023e-04, -5.3029e-04,  2.9027e-03,
+         2.9183e-03,  3.5263e-03, -3.4979e-03, -3.5373e-03,  3.5438e-03,
+        -3.5349e-03, -3.5353e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.7544,  2.7420,  0.4985, -0.2418, -1.1357,  2.1676, -3.1350, -0.3830],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3473, device='cuda:0')
+[WandB] Iter 798 | reward=1.64 | loss=102.0681
+[WandB] Iter 799 | reward=0.88 | loss=12.4416
+[WandB] Iter 800 | reward=1.23 | loss=16.3967
+[Plot] saved to logs/dodo-walking/metrics.png
+[WandB] Iter 801 | reward=1.37 | loss=28.1980
+[WandB] Iter 802 | reward=1.43 | loss=33.6273
+[WandB] Iter 803 | reward=1.46 | loss=38.2498
+[WandB] Iter 804 | reward=1.50 | loss=43.6879
+[WandB] Iter 805 | reward=1.51 | loss=45.8641
+[WandB] Iter 806 | reward=1.50 | loss=44.6143
+[WandB] Iter 807 | reward=1.50 | loss=44.4265
+[DEBUG] Observation (env 0): tensor([-0.0055,  0.0092, -0.2026,  0.0100,  0.0058, -0.0009, -0.0005,  0.0005,
+        -0.0005,  0.0005,  0.0005, -0.0005, -0.0005,  0.0005, -0.0034,  0.0034,
+        -0.0035,  0.0035,  0.0035, -0.0035, -0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.5000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.8473,  0.6960, -0.7164,  0.2167,  2.0499, -1.1431, -0.8785,  1.2655],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3401, device='cuda:0')
+[WandB] Iter 808 | reward=1.80 | loss=119.7054
+[WandB] Iter 809 | reward=0.95 | loss=16.4139
+[WandB] Iter 810 | reward=1.11 | loss=12.2120
+[WandB] Iter 811 | reward=1.31 | loss=19.3859
+[WandB] Iter 812 | reward=1.41 | loss=30.0527
+[WandB] Iter 813 | reward=1.45 | loss=37.1733
+[WandB] Iter 814 | reward=1.49 | loss=42.2297
+[WandB] Iter 815 | reward=1.52 | loss=46.8959
+[WandB] Iter 816 | reward=1.52 | loss=48.1908
+[WandB] Iter 817 | reward=1.50 | loss=45.2781
+[DEBUG] Observation (env 0): tensor([ 8.4817e-03,  1.4087e-02, -1.8723e-01,  1.0177e-02, -8.8167e-03,
+         3.9573e-03, -5.0878e-04,  5.1392e-04,  5.4772e-04, -4.9505e-04,
+        -5.1875e-04, -5.1083e-04,  5.2936e-04,  5.3199e-04, -3.3919e-03,
+         3.4261e-03,  3.6515e-03, -3.3004e-03, -3.4583e-03, -3.4055e-03,
+         3.5291e-03,  3.5466e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.0416,  0.1105,  1.3429,  0.1287, -0.9746, -0.8288,  0.8879,  2.2474],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3468, device='cuda:0')
+[WandB] Iter 818 | reward=1.53 | loss=50.3189
+[WandB] Iter 819 | reward=1.48 | loss=68.0041
+[WandB] Iter 820 | reward=0.93 | loss=12.5715
+[WandB] Iter 821 | reward=1.27 | loss=16.6744
+[WandB] Iter 822 | reward=1.39 | loss=28.6057
+[WandB] Iter 823 | reward=1.44 | loss=34.0942
+[WandB] Iter 824 | reward=1.47 | loss=38.4309
+[WandB] Iter 825 | reward=1.51 | loss=42.8491
+[WandB] Iter 826 | reward=1.50 | loss=40.4800
+[WandB] Iter 827 | reward=1.50 | loss=41.1224
+[WandB] Iter 828 | reward=1.50 | loss=41.6014
+[DEBUG] Observation (env 0): tensor([ 6.7661e-05, -1.0284e-02, -1.9296e-01,  5.4302e-04, -3.7132e-03,
+        -1.0761e-02,  4.3637e-04,  4.3863e-04,  5.0653e-04,  5.0118e-04,
+        -5.3835e-04, -5.4320e-04,  5.3045e-04,  5.2913e-04,  2.9091e-03,
+         2.9242e-03,  3.3769e-03,  3.3412e-03, -3.5890e-03, -3.6213e-03,
+         3.5363e-03,  3.5276e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.0314,  0.6790, -0.0767,  0.5098, -0.2794, -1.2404,  0.1418,  1.8393],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3363, device='cuda:0')
+[WandB] Iter 829 | reward=1.81 | loss=119.8752
+[WandB] Iter 830 | reward=0.85 | loss=17.2032
+[WandB] Iter 831 | reward=1.18 | loss=14.5183
+[WandB] Iter 832 | reward=1.33 | loss=22.4715
+[WandB] Iter 833 | reward=1.42 | loss=32.0809

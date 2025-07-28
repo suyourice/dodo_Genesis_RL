@@ -1,0 +1,542 @@
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 332, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 303, in main
+    env = DodoEnv(
+          ^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 87, in __init__
+    self.scene.build(n_envs=num_envs)
+  File "/home/hoan/Genesis/genesis/utils/misc.py", line 91, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/scene.py", line 595, in build
+    self._sim.build()
+  File "/home/hoan/Genesis/genesis/engine/simulator.py", line 190, in build
+    solver.build()
+  File "/home/hoan/Genesis/genesis/engine/solvers/rigid/rigid_solver_decomp.py", line 224, in build
+    self._kernel_forward_kinematics_links_geoms(self._scene._envs_idx)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 1174, in __call__
+    return self._primal(self._kernel_owner, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 1043, in __call__
+    key = self.ensure_compiled(*args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 1011, in ensure_compiled
+    self.materialize(key=key, args=args, arg_features=arg_features)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 681, in materialize
+    taichi_kernel = impl.get_runtime().prog.create_kernel(taichi_ast_generator, kernel_name, self.autodiff_mode)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 672, in taichi_ast_generator
+    transform_tree(tree, ctx)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/transform.py", line 6, in transform_tree
+    ASTTransformer()(ctx, tree)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 941, in build_Module
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 815, in build_FunctionDef
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1523, in build_For
+    return ASTTransformer.build_struct_for(ctx, node, is_grouped=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1419, in build_struct_for
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1569, in build_Expr
+    build_stmt(ctx, node.value)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 598, in build_Call
+    node.ptr = func(*args, **keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 83, in decorated
+    return fun.__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 247, in __call__
+    ret = transform_tree(tree, ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/transform.py", line 6, in transform_tree
+    ASTTransformer()(ctx, tree)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 941, in build_Module
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 815, in build_FunctionDef
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1569, in build_Expr
+    build_stmt(ctx, node.value)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 598, in build_Call
+    node.ptr = func(*args, **keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 83, in decorated
+    return fun.__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 247, in __call__
+    ret = transform_tree(tree, ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/transform.py", line 6, in transform_tree
+    ASTTransformer()(ctx, tree)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 941, in build_Module
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 815, in build_FunctionDef
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1553, in build_If
+    build_stmts(ctx, node.orelse)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1511, in build_For
+    return ASTTransformer.build_range_for(ctx, node)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1308, in build_range_for
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1563, in build_If
+    build_stmts(ctx, node.orelse)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 124, in build_Assign
+    build_stmt(ctx, node.value)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 598, in build_Call
+    node.ptr = func(*args, **keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 83, in decorated
+    return fun.__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 247, in __call__
+    ret = transform_tree(tree, ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/transform.py", line 6, in transform_tree
+    ASTTransformer()(ctx, tree)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 941, in build_Module
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 815, in build_FunctionDef
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 124, in build_Assign
+    build_stmt(ctx, node.value)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 598, in build_Call
+    node.ptr = func(*args, **keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 83, in decorated
+    return fun.__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 247, in __call__
+    ret = transform_tree(tree, ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/transform.py", line 6, in transform_tree
+    ASTTransformer()(ctx, tree)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 941, in build_Module
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 815, in build_FunctionDef
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 124, in build_Assign
+    build_stmt(ctx, node.value)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 598, in build_Call
+    node.ptr = func(*args, **keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 83, in decorated
+    return fun.__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 247, in __call__
+    ret = transform_tree(tree, ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/transform.py", line 6, in transform_tree
+    ASTTransformer()(ctx, tree)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 941, in build_Module
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 815, in build_FunctionDef
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 124, in build_Assign
+    build_stmt(ctx, node.value)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1045, in build_BinOp
+    build_stmt(ctx, node.left)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1045, in build_BinOp
+    build_stmt(ctx, node.left)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1045, in build_BinOp
+    build_stmt(ctx, node.left)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 237, in build_Subscript
+    build_stmt(ctx, node.slice)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 267, in build_Tuple
+    build_stmts(ctx, node.elts)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1719, in build_stmts
+    if ctx.returned != ReturnStatus.NoReturn or ctx.loop_status() != LoopStatus.Normal:
+                                                ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 217, in loop_status
+    def loop_status(self):
+
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 332, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 303, in main
+    env = DodoEnv(
+          ^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 87, in __init__
+    self.scene.build(n_envs=num_envs)
+  File "/home/hoan/Genesis/genesis/utils/misc.py", line 91, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/scene.py", line 595, in build
+    self._sim.build()
+  File "/home/hoan/Genesis/genesis/engine/simulator.py", line 190, in build
+    solver.build()
+  File "/home/hoan/Genesis/genesis/engine/solvers/rigid/rigid_solver_decomp.py", line 224, in build
+    self._kernel_forward_kinematics_links_geoms(self._scene._envs_idx)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 1174, in __call__
+    return self._primal(self._kernel_owner, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 1043, in __call__
+    key = self.ensure_compiled(*args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 1011, in ensure_compiled
+    self.materialize(key=key, args=args, arg_features=arg_features)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 681, in materialize
+    taichi_kernel = impl.get_runtime().prog.create_kernel(taichi_ast_generator, kernel_name, self.autodiff_mode)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 672, in taichi_ast_generator
+    transform_tree(tree, ctx)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/transform.py", line 6, in transform_tree
+    ASTTransformer()(ctx, tree)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 941, in build_Module
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 815, in build_FunctionDef
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1523, in build_For
+    return ASTTransformer.build_struct_for(ctx, node, is_grouped=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1419, in build_struct_for
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1569, in build_Expr
+    build_stmt(ctx, node.value)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 598, in build_Call
+    node.ptr = func(*args, **keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 83, in decorated
+    return fun.__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 247, in __call__
+    ret = transform_tree(tree, ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/transform.py", line 6, in transform_tree
+    ASTTransformer()(ctx, tree)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 941, in build_Module
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 815, in build_FunctionDef
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1569, in build_Expr
+    build_stmt(ctx, node.value)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 598, in build_Call
+    node.ptr = func(*args, **keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 83, in decorated
+    return fun.__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 247, in __call__
+    ret = transform_tree(tree, ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/transform.py", line 6, in transform_tree
+    ASTTransformer()(ctx, tree)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 941, in build_Module
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 815, in build_FunctionDef
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1553, in build_If
+    build_stmts(ctx, node.orelse)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1511, in build_For
+    return ASTTransformer.build_range_for(ctx, node)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1308, in build_range_for
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1563, in build_If
+    build_stmts(ctx, node.orelse)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 124, in build_Assign
+    build_stmt(ctx, node.value)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 598, in build_Call
+    node.ptr = func(*args, **keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 83, in decorated
+    return fun.__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 247, in __call__
+    ret = transform_tree(tree, ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/transform.py", line 6, in transform_tree
+    ASTTransformer()(ctx, tree)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 941, in build_Module
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 815, in build_FunctionDef
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 124, in build_Assign
+    build_stmt(ctx, node.value)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 598, in build_Call
+    node.ptr = func(*args, **keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 83, in decorated
+    return fun.__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 247, in __call__
+    ret = transform_tree(tree, ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/transform.py", line 6, in transform_tree
+    ASTTransformer()(ctx, tree)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 941, in build_Module
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 815, in build_FunctionDef
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 124, in build_Assign
+    build_stmt(ctx, node.value)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 598, in build_Call
+    node.ptr = func(*args, **keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 83, in decorated
+    return fun.__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 247, in __call__
+    ret = transform_tree(tree, ctx)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/transform.py", line 6, in transform_tree
+    ASTTransformer()(ctx, tree)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 941, in build_Module
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 815, in build_FunctionDef
+    build_stmts(ctx, node.body)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1722, in build_stmts
+    build_stmt(ctx, stmt)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 124, in build_Assign
+    build_stmt(ctx, node.value)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1045, in build_BinOp
+    build_stmt(ctx, node.left)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1045, in build_BinOp
+    build_stmt(ctx, node.left)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1045, in build_BinOp
+    build_stmt(ctx, node.left)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 237, in build_Subscript
+    build_stmt(ctx, node.slice)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 27, in __call__
+    return method(ctx, node)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 267, in build_Tuple
+    build_stmts(ctx, node.elts)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer.py", line 1719, in build_stmts
+    if ctx.returned != ReturnStatus.NoReturn or ctx.loop_status() != LoopStatus.Normal:
+                                                ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/ast/ast_transformer_utils.py", line 217, in loop_status
+    def loop_status(self):
+
+KeyboardInterrupt
+
+[38;5;9m[Genesis] [14:53:43] [ERROR] KeyboardInterrupt: [0m

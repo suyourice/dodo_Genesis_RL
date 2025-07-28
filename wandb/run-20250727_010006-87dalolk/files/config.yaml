@@ -1,0 +1,133 @@
+_wandb:
+    value:
+        cli_version: 0.19.11
+        m: []
+        python_version: 3.12.9
+        t:
+            "1":
+                - 1
+                - 55
+            "2":
+                - 1
+                - 55
+            "3":
+                - 13
+                - 23
+                - 55
+            "4": 3.12.9
+            "5": 0.19.11
+            "8":
+                - 5
+            "12": 0.19.11
+            "13": linux-x86_64
+command_cfg:
+    value:
+        ang_vel_range:
+            - 0
+            - 0
+        lin_vel_x_range:
+            - 0.2
+            - 0.2
+        lin_vel_y_range:
+            - 0
+            - 0
+        num_commands: 3
+env_cfg:
+    value:
+        action_scale: 0.25
+        base_init_pos:
+            - 0
+            - 0
+            - 0.5
+        base_init_quat:
+            - 1
+            - 0
+            - 0
+            - 0
+        clip_actions: 100
+        default_joint_angles:
+            Left_FOOT_ANKLE: 0
+            Left_HIP_AA: 0
+            Left_KNEE_FE: 0
+            Left_THIGH_FE: 0
+            Right_FOOT_ANKLE: 0
+            Right_HIP_AA: 0
+            Right_SHIN_FE: 0
+            Right_THIGH_FE: 0
+        episode_length_s: 20
+        joint_names:
+            - Left_HIP_AA
+            - Right_HIP_AA
+            - Left_THIGH_FE
+            - Right_THIGH_FE
+            - Left_KNEE_FE
+            - Right_SHIN_FE
+            - Left_FOOT_ANKLE
+            - Right_FOOT_ANKLE
+        kd: 28.284271247461902
+        kp: 200
+        num_actions: 8
+        resampling_time_s: 4
+        simulate_action_latency: true
+        termination_if_pitch_greater_than: 30
+        termination_if_roll_greater_than: 30
+max_iterations:
+    value: 100
+num_envs:
+    value: 16384
+obs_cfg:
+    value:
+        num_obs: 33
+        obs_scales:
+            ang_vel: 0.25
+            dof_pos: 1
+            dof_vel: 0.05
+            lin_vel: 2
+reward_scales:
+    value:
+        bird_knee_posture: 2
+train_cfg:
+    value:
+        algorithm:
+            class_name: PPO
+            clip_param: 0.2
+            desired_kl: 0.01
+            entropy_coef: 0.02
+            gamma: 0.98
+            lam: 0.95
+            learning_rate: 0.0002
+            max_grad_norm: 1
+            num_learning_epochs: 8
+            num_mini_batches: 4
+            schedule: adaptive
+            use_clipped_value_loss: true
+            value_loss_coef: 1
+        empirical_normalization: null
+        logger: wandb
+        num_steps_per_env: 96
+        policy:
+            activation: elu
+            actor_hidden_dims:
+                - 512
+                - 256
+                - 128
+            class_name: ActorCritic
+            critic_hidden_dims:
+                - 512
+                - 256
+                - 128
+            init_noise_std: 1
+        runner:
+            checkpoint: -1
+            experiment_name: test_logging
+            load_run: -1
+            log_interval: 1
+            max_iterations: 100
+            record_interval: -1
+            resume: false
+            resume_path: null
+            run_name: ""
+        runner_class_name: OnPolicyRunner
+        save_interval: 50
+        seed: 1
+        tensorboard_subdir: tb

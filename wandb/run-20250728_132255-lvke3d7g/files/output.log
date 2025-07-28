@@ -1,0 +1,42 @@
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+=== Stage 1: 0.1 m/s ===
+[WandB] Iter 0 | reward=0.00 | loss=0.0007
+[WandB] Iter 0 | reward=0.00 | loss=0.0007
+[Plot] saved to logs/test_logging/metrics.png
+[WandB] Iter 1 | reward=0.00 | loss=0.0000
+[WandB] Iter 1 | reward=0.00 | loss=0.0000
+[CustomRunner] ✅ Saved checkpoint to logs/test_logging/model_stage1.pt
+=== Stage 2: 0.3 m/s ===
+[WandB] Iter 1 | reward=0.00 | loss=0.0000
+[WandB] Iter 1 | reward=0.00 | loss=0.0000
+[CustomRunner] ✅ Saved checkpoint to logs/test_logging/model_stage2.pt
+=== Stage 3: 0.4 m/s ===
+[WandB] Iter 1 | reward=0.00 | loss=0.0000
+[WandB] Iter 1 | reward=0.00 | loss=0.0000
+[CustomRunner] ✅ Saved checkpoint to logs/test_logging/model_stage3.pt
+=== Stage 4: 0.5 m/s ===
+[WandB] Iter 1 | reward=0.00 | loss=0.0000
+[WandB] Iter 1 | reward=0.00 | loss=0.0000
+[WandB] Iter 2 | reward=0.00 | loss=0.0000
+[WandB] Iter 2 | reward=0.00 | loss=0.0000
+[WandB] Iter 3 | reward=0.00 | loss=0.0000
+[WandB] Iter 3 | reward=0.00 | loss=0.0000
+[CustomRunner] ✅ Saved checkpoint to logs/test_logging/model_final.pt
+=== Trained model saved at logs/test_logging/model_final.pt ===

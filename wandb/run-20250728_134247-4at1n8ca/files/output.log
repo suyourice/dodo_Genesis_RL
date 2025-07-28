@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 306, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 219, in main
+    env = DodoEnv(args.num_envs, env_cfg, obs_cfg, reward_cfg, command_cfg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 78, in __init__
+    self.ankle_links = [self.robot.get_link(n) for n in env_cfg.get("foot_link_names",[])]
+                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/entities/rigid_entity/rigid_entity.py", line 1750, in get_link
+    gs.raise_exception(f"Link not found for name: {name}.")
+  File "/home/hoan/Genesis/genesis/utils/misc.py", line 40, in raise_exception
+    raise gs.GenesisException(msg)
+genesis.GenesisException: Link not found for name: Left_FOOT_ANKLE.
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 306, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 219, in main
+    env = DodoEnv(args.num_envs, env_cfg, obs_cfg, reward_cfg, command_cfg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 78, in __init__
+    self.ankle_links = [self.robot.get_link(n) for n in env_cfg.get("foot_link_names",[])]
+                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/entities/rigid_entity/rigid_entity.py", line 1750, in get_link
+    gs.raise_exception(f"Link not found for name: {name}.")
+  File "/home/hoan/Genesis/genesis/utils/misc.py", line 40, in raise_exception
+    raise gs.GenesisException(msg)
+genesis.GenesisException: Link not found for name: Left_FOOT_ANKLE.
+
+[38;5;9m[Genesis] [13:43:08] [ERROR] GenesisException: Link not found for name: Left_FOOT_ANKLE.[0m

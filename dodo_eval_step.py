@@ -145,10 +145,15 @@ def main():
     log_dir = f"logs/{args.exp_name}"
     env_cfg, obs_cfg, reward_cfg, command_cfg, train_cfg = pickle.load(open(f"{log_dir}/cfgs.pkl", "rb"))
 
+    # Fallback für alte Key-Namen
+    if "resampling_time_s" not in command_cfg and "resampling_time" in command_cfg:
+        command_cfg["resampling_time_s"] = command_cfg.pop("resampling_time")
+
     # Fix commands to desired values
-    command_cfg["lin_vel_x_range"] = [args.vel, args.vel]
-    command_cfg["lin_vel_y_range"] = [args.yvel, args.yvel]
-    command_cfg["ang_vel_range"] = [args.rot, args.rot]
+    command_cfg["command_ranges"]["lin_vel_x"]  = [args.vel,  args.vel]
+    command_cfg["command_ranges"]["lin_vel_y"]  = [args.yvel, args.yvel]
+    command_cfg["command_ranges"]["ang_vel_yaw"]= [args.rot,  args.rot]
+
 
     # Create environment with single env for detailed inspection
     env = DodoEnv(

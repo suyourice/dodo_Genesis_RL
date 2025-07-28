@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 296, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 206, in main
+    env = DodoEnv(args.num_envs, env_cfg, obs_cfg, reward_cfg, command_cfg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 82, in __init__
+    self.robot = self.scene.add_entity(gs.morphs.MJCF(
+                                       ^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/options/morphs.py", line 621, in __init__
+    super().__init__(**data)
+  File "/home/hoan/Genesis/genesis/options/morphs.py", line 446, in __init__
+    gs.raise_exception(f"File not found in either current directory or assets directory: '{self.file}'.")
+  File "/home/hoan/Genesis/genesis/utils/misc.py", line 40, in raise_exception
+    raise gs.GenesisException(msg)
+genesis.GenesisException: File not found in either current directory or assets directory: 'dodo.xml'.
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 296, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 206, in main
+    env = DodoEnv(args.num_envs, env_cfg, obs_cfg, reward_cfg, command_cfg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 82, in __init__
+    self.robot = self.scene.add_entity(gs.morphs.MJCF(
+                                       ^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/options/morphs.py", line 621, in __init__
+    super().__init__(**data)
+  File "/home/hoan/Genesis/genesis/options/morphs.py", line 446, in __init__
+    gs.raise_exception(f"File not found in either current directory or assets directory: '{self.file}'.")
+  File "/home/hoan/Genesis/genesis/utils/misc.py", line 40, in raise_exception
+    raise gs.GenesisException(msg)
+genesis.GenesisException: File not found in either current directory or assets directory: 'dodo.xml'.
+
+[38;5;9m[Genesis] [13:00:36] [ERROR] GenesisException: File not found in either current directory or assets directory: 'dodo.xml'.[0m

@@ -1,122 +1,93 @@
-### dodo_train.py ###
 import argparse
 import os
 import pickle
+import torch
 import shutil
 import math
 import numpy as np
-from importlib import metadata
 import matplotlib
-matplotlib.use("Agg") 
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import genesis as gs
-from rsl_rl.runners import OnPolicyRunner
-
+from rsl_rl.runners.on_policy_runner import OnPolicyRunner
 from dodo_env import DodoEnv
-
 import wandb
-import os
+import copy
 
-
-from dataclasses import dataclass
-
-@dataclass
-class EnvWrapper:
-    env_cfg:    dict
-    obs_cfg:    dict
-    reward_cfg: dict
-    command_cfg: dict
-
-
-
-# 全局列表，记录各个指标随迭代的变化
+# -----------------------------------------------------------------------------
+# Global logs (alle wichtigen Reward‑Terme)
+# -----------------------------------------------------------------------------
 iters = []
 val_loss = []
 surrogate_loss = []
 noise_std = []
 total_reward = []
 ep_length = []
-rew_lin_vel = []
-rew_ang_vel = []
-rew_vel_z = []
-rew_base_h = []
-rew_act_rate = []
-rew_sim_def = []
-rew_ori_stab = []
-rew_survive = []
-
+periodic_gait = []
+energy_penalty = []
+foot_swing_clearance = []
+forward_torso_pitch = []
+knee_extension_at_push = []
+bird_hip_phase = []
+hip_abduction_penalty = []
+lateral_drift_penalty = []
 
 def wandb_log(step, stats):
-    wandb.log({
-        "value_loss":                stats["value_loss"],
-        "surrogate_loss":            stats["surrogate_loss"],
-        "action_noise_std":          stats["action_noise_std"],
-        "episode_reward_mean":       stats["episode_reward_mean"],
-        "episode_length_mean":       stats["episode_length_mean"],
-        "rew_tracking_lin_vel":      stats["rew_tracking_lin_vel"],
-        "rew_tracking_ang_vel":      stats["rew_tracking_ang_vel"],
-        "rew_lin_vel_z":             stats["rew_lin_vel_z"],
-        "rew_base_height":           stats["rew_base_height"],
-        "rew_action_rate":           stats["rew_action_rate"],
-        "rew_similar_to_default":    stats["rew_similar_to_default"],
-        "rew_orientation_stability": stats["rew_orientation_stability"],
-        "rew_survive":               stats["rew_survive"],
-    }, step=step)
-
+    # Konsole und W&B loggen
+    print(f"[WandB] Iter {step} | reward={stats['episode_reward_mean']:.2f} | loss={stats['value_loss']:.4f}")
+    wandb.log(stats, step=step)
 
 def log_and_plot(log_dir, it, stats):
+    # 1) Daten anhängen
     iters.append(it)
-    wandb_log(it, stats)
     val_loss.append(stats["value_loss"])
     surrogate_loss.append(stats["surrogate_loss"])
     noise_std.append(stats["action_noise_std"])
     total_reward.append(stats["episode_reward_mean"])
     ep_length.append(stats["episode_length_mean"])
-    rew_lin_vel.append(stats["rew_tracking_lin_vel"])
-    rew_ang_vel.append(stats["rew_tracking_ang_vel"])
-    rew_vel_z.append(stats["rew_lin_vel_z"])
-    rew_base_h.append(stats["rew_base_height"])
-    rew_act_rate.append(stats["rew_action_rate"])
-    rew_sim_def.append(stats["rew_similar_to_default"])
-    rew_ori_stab.append(stats["rew_orientation_stability"])
-    rew_survive.append(stats["rew_survive"])
+    periodic_gait.append(stats.get("periodic_gait", 0.0))
+    energy_penalty.append(stats.get("energy_penalty", 0.0))
+    foot_swing_clearance.append(stats.get("foot_swing_clearance", 0.0))
+    forward_torso_pitch.append(stats.get("forward_torso_pitch", 0.0))
+    knee_extension_at_push.append(stats.get("knee_extension_at_push", 0.0))
+    bird_hip_phase.append(stats.get("bird_hip_phase", 0.0))
+    hip_abduction_penalty.append(stats.get("hip_abduction_penalty", 0.0))
+    lateral_drift_penalty.append(stats.get("lateral_drift_penalty", 0.0))
 
+    # 2) Logging an W&B
+    wandb_log(it, stats)
+
+    # 3) Alle 100 Iterationen lokal plotten
     if it % 100 == 0:
-        # 建立一个多子图的 figure
-        fig, axes = plt.subplots(4, 4, figsize=(16, 12))
+        fig, axes = plt.subplots(3, 5, figsize=(24, 12))
         axes = axes.flatten()
-
-        # 每个子图画一条曲线
-        axes[0].plot(iters, val_loss);           axes[0].set_title("Value Loss")
-        axes[1].plot(iters, surrogate_loss);     axes[1].set_title("Surrogate Loss")
-        axes[2].plot(iters, noise_std);          axes[2].set_title("Action Noise Std")
-        axes[3].plot(iters, total_reward);       axes[3].set_title("Mean Total Reward")
-        axes[4].plot(iters, ep_length);          axes[4].set_title("Mean Episode Length")
-        axes[5].plot(iters, rew_lin_vel);        axes[5].set_title("rew_tracking_lin_vel")
-        axes[6].plot(iters, rew_ang_vel);        axes[6].set_title("rew_tracking_ang_vel")
-        axes[7].plot(iters, rew_vel_z);          axes[7].set_title("rew_lin_vel_z")
-        axes[8].plot(iters, rew_base_h);         axes[8].set_title("rew_base_height")
-        axes[9].plot(iters, rew_act_rate);       axes[9].set_title("rew_action_rate")
-        axes[10].plot(iters, rew_sim_def);       axes[10].set_title("rew_similar_to_default")
-        axes[11].plot(iters, rew_ori_stab);      axes[11].set_title("rew_orientation_stability")
-        axes[12].plot(iters, rew_survive);       axes[12].set_title("rew_survive")
-
-        # 如果还剩一个空子图，可以留白
-        # axes[13].axis("off")
-
-        for ax in axes:
+        metrics = [
+            val_loss, surrogate_loss, noise_std,
+            total_reward, ep_length,
+            periodic_gait, energy_penalty, foot_swing_clearance,
+            forward_torso_pitch, knee_extension_at_push,
+            bird_hip_phase, hip_abduction_penalty, lateral_drift_penalty,
+        ]
+        titles = [
+            "Value Loss", "Surrogate Loss", "Action Noise Std",
+            "Mean Total Reward", "Mean Episode Length",
+            "Periodic Gait", "Energy Penalty", "Foot Swing Clearance",
+            "Forward Torso Pitch", "Knee Ext. at Push",
+            "Bird Hip Phase", "Hip Abduction Penalty", "Lateral Drift"
+        ]
+        for ax, metric, title in zip(axes, metrics, titles):
+            ax.plot(iters, metric)
+            ax.set_title(title)
             ax.tick_params(axis='x', rotation=45)
         plt.tight_layout()
-
-        # 保存（覆盖之前的同名文件）
-        save_path = os.path.join(log_dir, f"metrics.png")
+        save_path = os.path.join(log_dir, "metrics.png")
         fig.savefig(save_path)
+        wandb.log({"metrics_plot": wandb.Image(save_path)}, step=it)
         plt.close(fig)
         print(f"[Plot] saved to {save_path}")
 
-
 def get_train_cfg(exp_name, max_iterations):
-    train_cfg_dict = {
+    return {
         "algorithm": {
             "class_name": "PPO",
             "clip_param": 0.2,
@@ -131,11 +102,9 @@ def get_train_cfg(exp_name, max_iterations):
             "schedule": "adaptive",
             "use_clipped_value_loss": True,
             "value_loss_coef": 1.0,
-            
         },
         "init_member_classes": {},
         "policy": {
-            #"activation": "mish",
             "activation": "elu",
             "actor_hidden_dims": [512, 256, 128],
             "critic_hidden_dims": [512, 256, 128],
@@ -158,24 +127,24 @@ def get_train_cfg(exp_name, max_iterations):
         "save_interval": 50,
         "empirical_normalization": None,
         "seed": 1,
-        "logger": "tensorboard",
+        "logger": "wandb",
         "tensorboard_subdir": "tb",
-
     }
-    return train_cfg_dict
-
 
 def get_cfgs():
-    # Environment config
     env_cfg = {
         "num_actions": 8,
-        "default_joint_angles": { name: 0.0 for name in [
-            "Left_HIP_AA","Right_HIP_AA","Left_THIGH_FE","Right_THIGH_FE",
-            "Left_KNEE_FE","Right_SHIN_FE","Left_FOOT_ANKLE","Right_FOOT_ANKLE"]
+        "default_joint_angles": {
+            "Left_HIP_AA": 0.0, "Right_HIP_AA": 0.0,
+            "Left_THIGH_FE": 0.6, "Right_THIGH_FE": -0.6,
+            "Left_KNEE_FE": -1.1, "Right_SHIN_FE": 1.1,
+            "Left_FOOT_ANKLE": 0.0, "Right_FOOT_ANKLE": 0.0
         },
         "joint_names": [
-            "Left_HIP_AA","Right_HIP_AA","Left_THIGH_FE","Right_THIGH_FE",
-            "Left_KNEE_FE","Right_SHIN_FE","Left_FOOT_ANKLE","Right_FOOT_ANKLE",
+            "Left_HIP_AA", "Right_HIP_AA",
+            "Left_THIGH_FE", "Right_THIGH_FE",
+            "Left_KNEE_FE", "Right_SHIN_FE",
+            "Left_FOOT_ANKLE", "Right_FOOT_ANKLE"
         ],
         "kp": 200.0,
         "kd": 2.0 * math.sqrt(200.0),
@@ -183,15 +152,16 @@ def get_cfgs():
         "termination_if_pitch_greater_than": 30,
         "base_init_pos": [0.0, 0.0, 0.5],
         "base_init_quat": [1.0, 0.0, 0.0, 0.0],
-        "episode_length_s": 20.0,
-        "resampling_time_s": 4.0,
-        "action_scale": 0.25,
-        "simulate_action_latency": True,
-        "clip_actions": 100.0,
+        "episode_length_s": 10.0,
+        "resampling_time_s": 2.0,
+        "action_scale": 4,
+        "simulate_action_latency": False,
+        "clip_actions": 1.0,
+        "robot_mjcf": "dodo_robot/dodo.xml",
+        "foot_link_names": ["Left_FOOT_FE", "Right_FOOT_FE"]
     }
-    # Observation config
     obs_cfg = {
-        "num_obs": 3 + 3 + 3 + env_cfg["num_actions"] + env_cfg["num_actions"] + env_cfg["num_actions"],
+        "num_obs": 6 + 3 * env_cfg["num_actions"] + 3,
         "obs_scales": {
             "lin_vel": 2.0,
             "ang_vel": 0.25,
@@ -199,91 +169,192 @@ def get_cfgs():
             "dof_vel": 0.05,
         },
     }
-    # Reward config
     reward_cfg = {
-        "tracking_sigma": 0.25,
-        "base_height_target": 0.38,
         "reward_scales": {
-            "tracking_lin_vel": 5.0,
-            "tracking_ang_vel": 3.7,
-            "lin_vel_z": -3.0,
-            "base_height": -180.0,
-            "action_rate": -0.01,
-            "similar_to_default": -0.01,
-            "orientation_stability": -5.8,
-            "survive": +0.15,
-            "penalize_hip_aa"      : -3.5,
-            "penalize_hip_fe"    : -0.00,
-            "penalize_hip_fe_diff"   : -0.8,
-            "penalize_knee_fe_left"   : -0.5,
-            "penalize_knee_fe_right": -0.5,
-            "penalize_ankle_height": -0.5,
-            "step_height_consistency": 0.5,    
-            "gait_regularity": 0.8,            
-            "foot_orientation": 1.5, 
-            "foot_contact_penalty": -2.0,
-            "foot_contact_switch" : 1.0
+            # Geschwindigkeits‑Tracking
+            "tracking_lin_vel":          1.0,
+            "tracking_ang_vel":          0.5,
+            # Stabilität & Haltung
+            "orientation_stability":     0.3,
+            "base_height":               0.2,
+            "survive":                   0.1,
+            "fall_penalty":              5.0,
+            # Gait‑Shaping Vogelstil
+            "periodic_gait":             0.5,
+            "foot_swing_clearance":      0.3,
+            "knee_extension_at_push":    0.3,
+            "bird_hip_phase":            0.5,
+            "forward_torso_pitch":       0.2,
+            # Gelenk‑Penalties
+            "hip_abduction_penalty":     1.0,
+            # Drift & Effizienz
+            "lateral_drift_penalty":     0.2,
+            "energy_penalty":            0.1,
+
+            
         },
+        # Hyperparameter für die Gauß‑Formen und Targets
+        "tracking_sigma":       0.25,   # für lin/ang Vel
+        "base_height_target":   0.35,
+        "height_sigma":         0.10,   # Hüfthöhe
+        "orient_sigma":         0.10,   # Roll/Pitch
+        "energy_sigma":         1.00,   # Aktionsänderung
+        "period":               1.00,   # Zyklusdauer in s
+        "clearance_target":     0.15,   # m, min. Fußhöhe im Swing
+        "pitch_target":         0.17,   # rad (~10°), leichter Vorwärts‑Pitch
+        "pitch_sigma":          0.10,   # Breite für Pitch‑Reward
+        "bird_hip_target":     -0.35,   # rad (~20°) Hüft‑FE‑Baseline nach hinten
+        "bird_hip_amp":         0.15,   # rad (~8°) Zyklus‑Amplitude
+        "bird_hip_sigma":       0.10,   # Breite des Hüft‑Phase‑Rewards
+        "hip_abduction_sigma":  0.10,   # Breite für Hüft‑AA‑Penalty
+        "drift_sigma":          0.10,   # Breite für seitliche Drift
+        "pitch_threshold": 30 * math.pi/180,
+        "roll_threshold": 30 * math.pi/180,
     }
-    # Command config
+
     command_cfg = {
         "num_commands": 3,
-        "lin_vel_x_range": [0.2, 0.2],
-        "lin_vel_y_range": [0.0, 0.0],
-        "ang_vel_range": [0.0, 0.0],
+        "resampling_time_s": 2.0,
+        "command_ranges": {
+            "lin_vel_x": [0.2, 0.6],
+            "lin_vel_y": [0.0, 0.0],
+            "ang_vel_yaw": [0.0, 0.0]
+        }
     }
     return env_cfg, obs_cfg, reward_cfg, command_cfg
-
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-e", "--exp_name", type=str, default="dodo-walking")
-    parser.add_argument("-B", "--num_envs", type=int, default=16384)
+    parser.add_argument("-B", "--num_envs", type=int, default=4096)
     parser.add_argument("--max_iterations", type=int, default=2500)
     args = parser.parse_args()
 
+    wandb.init(project="dodo-birdlike-gait", name=args.exp_name)
     gs.init(logging_level="warning")
 
-    
-    log_dir = f"logs/{args.exp_name}"
     env_cfg, obs_cfg, reward_cfg, command_cfg = get_cfgs()
     train_cfg = get_train_cfg(args.exp_name, args.max_iterations)
 
+    wandb.config.update({
+        "num_envs": args.num_envs,
+        "max_iterations": args.max_iterations,
+        "env_cfg": env_cfg,
+        "reward_scales": reward_cfg["reward_scales"],
+        "obs_cfg": obs_cfg,
+        "command_cfg": command_cfg,
+        "train_cfg": train_cfg,
+    })
+
+    log_dir = f"logs/{args.exp_name}"
     if os.path.exists(log_dir):
         shutil.rmtree(log_dir)
     os.makedirs(log_dir, exist_ok=True)
+    with open(f"{log_dir}/cfgs.pkl", "wb") as f:
+        pickle.dump([env_cfg, obs_cfg, reward_cfg, command_cfg, train_cfg], f)
 
-    # Save configs
-    pickle.dump(
+    class CustomRunner(OnPolicyRunner):
+        def __init__(self, env, train_cfg, log_dir, device):
+            super().__init__(env, train_cfg, log_dir, device)
+            self.log_dir = log_dir
 
-        [env_cfg, obs_cfg, reward_cfg, command_cfg, train_cfg],
-        open(f"{log_dir}/cfgs.pkl", "wb"),
-    )
+        def save(self, path):
+            checkpoint = {
+                "model_state_dict": self.alg.actor_critic.state_dict(),
+                "optimizer_state_dict": self.alg.optimizer.state_dict(),
+                "iter": self.current_learning_iteration,
+                "infos": getattr(self, "infos", {}),
+            }
+            if hasattr(self.alg, "lr_scheduler"):
+                checkpoint["scheduler_state_dict"] = self.alg.lr_scheduler.state_dict()
+            torch.save(checkpoint, path)
+            print(f"[CustomRunner] ✅ Saved checkpoint to {path}")
 
+        def learn(self, num_learning_iterations, init_at_random_ep_len=False):
+            self.env.reset()
+            obs, extras = self.env.get_observations()
+            critic_obs = extras["observations"]["critic"].to(self.device)
+            obs = obs.to(self.device)
+            self.train_mode()
+
+            for it in range(self.current_learning_iteration, num_learning_iterations):
+                ep_infos, rewbuffer, lenbuffer = [], [], []
+
+                # Rollout sammeln
+                for _ in range(self.num_steps_per_env):
+                    actions = self.alg.act(obs, critic_obs)
+                    obs, rewards, dones, infos = self.env.step(actions.to(self.env.device))
+                    obs = obs.to(self.device)
+                    rewards = rewards.to(self.device)
+                    dones = dones.to(self.device)
+
+                    obs = self.obs_normalizer(obs)
+                    critic_obs = infos["observations"]["critic"].to(self.device)
+                    critic_obs = self.critic_obs_normalizer(critic_obs)
+
+                    self.alg.process_env_step(rewards, dones, infos)
+                    ep_infos.append(infos["episode"])
+                    rewbuffer.append(rewards.mean().item())
+                    lenbuffer.append((~dones).sum().item())
+
+                # Update
+                self.alg.compute_returns(critic_obs)
+                mv, ms, *_ = self.alg.update()
+
+                # Stats initialisieren
+                stats = {
+                    "value_loss": mv,
+                    "surrogate_loss": ms,
+                    "action_noise_std": self.alg.actor_critic.action_std.mean().item(),
+                    "episode_reward_mean": np.mean(rewbuffer),
+                    "episode_length_mean": np.mean(lenbuffer),
+                }
+                # Alle Reward‑Terms auf 0 setzen
+                for name in self.env.reward_scales.keys():
+                    stats[name] = 0.0
+
+                # Mittlere Rewards berechnen
+                mean_logs = {}
+                for ep in ep_infos:
+                    for k, v in ep.items():
+                        if k in stats:
+                            mean_logs.setdefault(k, []).append(v.mean().cpu().item())
+                for k, v_list in mean_logs.items():
+                    stats[k] = float(np.mean(v_list))
+
+                # Logging & Plot
+                log_and_plot(self.log_dir, it, stats)
+                self.current_learning_iteration = it
+
+    # Einmaliges Environment-Build
     env = DodoEnv(
         num_envs=args.num_envs,
         env_cfg=env_cfg,
         obs_cfg=obs_cfg,
         reward_cfg=reward_cfg,
         command_cfg=command_cfg,
+        show_viewer=False
     )
-    env.cfg = EnvWrapper(env_cfg, obs_cfg, reward_cfg, command_cfg)
+    env.reset()
 
-    runner = OnPolicyRunner(env, train_cfg, log_dir, device=gs.device)
-
-    # Curriculum stages
-    stages = [0.1, 0.3, 0.4, 0.5]
-    total_it = 0
-    for i, v in enumerate(stages, start=1):
-        iters = int(args.max_iterations * (0.2 if i < 4 else 1 - sum(stages[:3])))
-        print(f"=== Stage {i}: {v} m/s ===")
-        env.command_cfg["lin_vel_x_range"] = [v, v]
-        runner.learn(num_learning_iterations=iters, init_at_random_ep_len=(i==1))
+    # Stage‑Loop: nur Commands anpassen, Env wiederverwenden
+    cumulative_iter = 0
+    for i, v in enumerate([0.1, 0.3, 0.4, 0.5], start=1):
+        iters_stage = int(args.max_iterations * (0.2 if i < 4 else 0.4))
+        print(f"=== Stage {i}: Zielgeschwindigkeit {v:.1f} m/s ===")
+        command_cfg["command_ranges"]["lin_vel_x"] = [v, v]
+        env.reset()
+        runner = CustomRunner(env, copy.deepcopy(train_cfg), log_dir, device=gs.device)
+        runner.current_learning_iteration = cumulative_iter
+        runner.learn(
+            num_learning_iterations=cumulative_iter + iters_stage,
+            init_at_random_ep_len=(i == 1)
+        )
         fname = f"model_stage{i}.pt" if i < 4 else "model_final.pt"
         runner.save(os.path.join(log_dir, fname))
+        cumulative_iter += iters_stage
 
     print(f"=== Trained model saved at {log_dir}/model_final.pt ===")
-
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,60 @@
+=== Stage 1: Zielgeschwindigkeit 0.1 m/s ===
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+[DEBUG] Observation (env 0): tensor([ 0.0091, -0.0085, -0.1841,  0.0006, -0.0141, -0.0088,  0.0004,  0.0004,
+         0.0005, -0.0005,  0.0005,  0.0005, -0.0005, -0.0005,  0.0029,  0.0029,
+         0.0034, -0.0036,  0.0034,  0.0035, -0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.5237,  0.2763, -0.0628, -1.7280,  0.5207,  1.0729, -0.7515, -0.5118],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(0.0282, device='cuda:0')
+[WandB] Iter 0 | reward=0.02 | loss=0.0126
+[WandB] Iter 0 | reward=0.02 | loss=0.0126
+[Plot] saved to logs/dodo-walking/metrics.png
+[WandB] Iter 1 | reward=0.02 | loss=0.0230
+[WandB] Iter 1 | reward=0.02 | loss=0.0230
+[CustomRunner] ✅ Saved checkpoint to logs/dodo-walking/model_stage1.pt
+=== Stage 2: Zielgeschwindigkeit 0.3 m/s ===
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 341, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 325, in main
+    runner = CustomRunner(env, train_cfg, log_dir, device=gs.device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 233, in __init__
+    super().__init__(env, train_cfg, log_dir, device)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/rsl_rl/runners/on_policy_runner.py", line 38, in __init__
+    actor_critic_class = eval(self.policy_cfg.pop("class_name"))  # ActorCritic
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'class_name'
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 341, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 325, in main
+    runner = CustomRunner(env, train_cfg, log_dir, device=gs.device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 233, in __init__
+    super().__init__(env, train_cfg, log_dir, device)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/rsl_rl/runners/on_policy_runner.py", line 38, in __init__
+    actor_critic_class = eval(self.policy_cfg.pop("class_name"))  # ActorCritic
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'class_name'
+
+[38;5;9m[Genesis] [15:40:36] [ERROR] KeyError: 'class_name'[0m

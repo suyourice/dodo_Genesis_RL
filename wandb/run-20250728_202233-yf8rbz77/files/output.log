@@ -1,0 +1,272 @@
+=== Stage 1: Zielgeschwindigkeit 0.1 m/s ===
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+[DEBUG] Observation (env 0): tensor([-0.0003,  0.0115, -0.2034, -0.0098,  0.0079,  0.0224,  0.0005, -0.0005,
+        -0.0005, -0.0005, -0.0005, -0.0005, -0.0005, -0.0005,  0.0034, -0.0034,
+        -0.0031, -0.0030, -0.0033, -0.0033, -0.0036, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 2.4655, -0.4617, -1.2240,  0.1315, -0.3734, -0.9815, -1.2169, -1.2088],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3063, device='cuda:0')
+[WandB] Iter 0 | reward=1.52 | loss=393.4961
+[Plot] saved to logs/dodo-walking/metrics.png
+[WandB] Iter 1 | reward=1.41 | loss=359.1571
+[WandB] Iter 2 | reward=1.93 | loss=601.8600
+[WandB] Iter 3 | reward=2.17 | loss=730.2825
+[WandB] Iter 4 | reward=2.31 | loss=797.4833
+[WandB] Iter 5 | reward=2.42 | loss=856.4008
+[WandB] Iter 6 | reward=2.46 | loss=852.7687
+[WandB] Iter 7 | reward=2.49 | loss=853.8001
+[WandB] Iter 8 | reward=2.51 | loss=833.0265
+[WandB] Iter 9 | reward=2.53 | loss=803.0399
+[DEBUG] Observation (env 0): tensor([ 0.0004, -0.0202, -0.1880, -0.0010, -0.0075, -0.0207, -0.0004, -0.0004,
+         0.0005,  0.0005,  0.0005,  0.0005,  0.0005, -0.0005, -0.0029, -0.0029,
+         0.0031,  0.0030,  0.0033,  0.0033,  0.0036, -0.0036,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.2435, -0.8422,  3.1833,  1.7798,  0.3098,  0.8463,  0.7364, -0.7997],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3043, device='cuda:0')
+[WandB] Iter 10 | reward=2.38 | loss=695.9721
+[WandB] Iter 11 | reward=1.11 | loss=105.4329
+[WandB] Iter 12 | reward=1.89 | loss=389.1275
+[WandB] Iter 13 | reward=2.08 | loss=473.9081
+[WandB] Iter 14 | reward=2.20 | loss=520.2260
+[WandB] Iter 15 | reward=2.28 | loss=557.9014
+[WandB] Iter 16 | reward=2.31 | loss=573.6812
+[WandB] Iter 17 | reward=2.34 | loss=577.1855
+[WandB] Iter 18 | reward=2.37 | loss=594.5176
+[WandB] Iter 19 | reward=2.39 | loss=579.2290
+[CustomRunner] ✅ Saved checkpoint to logs/dodo-walking/model_stage1.pt
+=== Stage 2: Zielgeschwindigkeit 0.3 m/s ===
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+[DEBUG] Observation (env 0): tensor([-0.0028, -0.0143, -0.1955,  0.0005, -0.0011, -0.0149,  0.0004,  0.0004,
+         0.0005,  0.0005, -0.0005,  0.0005,  0.0005, -0.0005,  0.0029,  0.0029,
+         0.0033,  0.0031, -0.0036,  0.0033,  0.0035, -0.0036,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.4032,  0.2701,  0.9269,  0.3822,  0.1859,  2.1178,  0.3347, -0.1169],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(1.8774, device='cuda:0')
+[WandB] Iter 20 | reward=1.40 | loss=335.3108
+[WandB] Iter 21 | reward=1.08 | loss=207.8738
+[WandB] Iter 22 | reward=1.60 | loss=409.5120
+[WandB] Iter 23 | reward=1.86 | loss=545.6573
+[WandB] Iter 24 | reward=1.89 | loss=541.9673
+[WandB] Iter 25 | reward=1.93 | loss=554.6925
+[WandB] Iter 26 | reward=1.91 | loss=510.2624
+[WandB] Iter 27 | reward=1.94 | loss=516.6867
+[WandB] Iter 28 | reward=1.99 | loss=520.2206
+[WandB] Iter 29 | reward=1.99 | loss=503.3295
+[DEBUG] Observation (env 0): tensor([ 0.0091, -0.0069, -0.1825, -0.0008, -0.0133, -0.0069, -0.0004, -0.0004,
+         0.0005, -0.0005,  0.0005,  0.0005, -0.0005, -0.0005, -0.0029, -0.0029,
+         0.0033, -0.0036,  0.0034,  0.0035, -0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.3000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.6270, -0.3172,  0.5848, -1.3453,  1.8605,  0.3511, -1.3765, -1.9995],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(1.9054, device='cuda:0')
+[WandB] Iter 30 | reward=1.86 | loss=419.7143
+[WandB] Iter 31 | reward=0.89 | loss=57.9023
+[WandB] Iter 32 | reward=1.43 | loss=216.0146
+[WandB] Iter 33 | reward=1.74 | loss=321.8282
+[WandB] Iter 34 | reward=1.92 | loss=388.5473
+[WandB] Iter 35 | reward=1.97 | loss=413.8872
+[WandB] Iter 36 | reward=2.00 | loss=405.6588
+[WandB] Iter 37 | reward=2.02 | loss=399.4598
+[WandB] Iter 38 | reward=2.05 | loss=411.8790
+[WandB] Iter 39 | reward=2.08 | loss=411.2718
+[CustomRunner] ✅ Saved checkpoint to logs/dodo-walking/model_stage2.pt
+=== Stage 3: Zielgeschwindigkeit 0.4 m/s ===
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+[DEBUG] Observation (env 0): tensor([-6.6884e-04,  2.2403e-02, -2.0339e-01, -3.5645e-04,  8.8417e-03,
+         2.3167e-02, -4.3338e-04, -4.4020e-04, -4.6318e-04, -4.5398e-04,
+        -4.9647e-04, -4.9175e-04,  5.2749e-04,  5.3341e-04, -2.8893e-03,
+        -2.9347e-03, -3.0878e-03, -3.0265e-03, -3.3098e-03, -3.2783e-03,
+         3.5166e-03,  3.5561e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         4.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.0635, -0.0574, -0.6613, -0.0087,  0.1186, -1.0223,  1.9159,  1.2455],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(1.6510, device='cuda:0')
+[WandB] Iter 40 | reward=1.28 | loss=276.3212
+[WandB] Iter 41 | reward=0.99 | loss=166.7492
+[WandB] Iter 42 | reward=1.37 | loss=300.8359
+[WandB] Iter 43 | reward=1.53 | loss=358.3657
+[WandB] Iter 44 | reward=1.62 | loss=387.6310
+[WandB] Iter 45 | reward=1.69 | loss=410.6958
+[WandB] Iter 46 | reward=1.71 | loss=412.8364
+[WandB] Iter 47 | reward=1.77 | loss=420.1722
+[WandB] Iter 48 | reward=1.83 | loss=426.4373
+[WandB] Iter 49 | reward=1.85 | loss=424.5263
+[DEBUG] Observation (env 0): tensor([-0.0120, -0.0067, -0.2114, -0.0100,  0.0162,  0.0035,  0.0005, -0.0005,
+        -0.0005,  0.0005, -0.0005,  0.0005, -0.0005,  0.0005,  0.0034, -0.0034,
+        -0.0035,  0.0034, -0.0035,  0.0034, -0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 2.1514, -2.1867, -0.5559,  1.2960,  0.2161,  1.5748, -2.5633,  1.8323],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(1.6754, device='cuda:0')
+[WandB] Iter 50 | reward=1.80 | loss=397.0191
+[WandB] Iter 51 | reward=0.89 | loss=70.9334
+[WandB] Iter 52 | reward=1.33 | loss=195.5251
+[WandB] Iter 53 | reward=1.46 | loss=226.0731
+[WandB] Iter 54 | reward=1.56 | loss=260.1665
+[WandB] Iter 55 | reward=1.71 | loss=312.8566
+[WandB] Iter 56 | reward=1.78 | loss=342.6353
+[WandB] Iter 57 | reward=1.83 | loss=327.9603
+[WandB] Iter 58 | reward=1.82 | loss=286.9465
+[WandB] Iter 59 | reward=1.82 | loss=287.9383
+[CustomRunner] ✅ Saved checkpoint to logs/dodo-walking/model_stage3.pt
+=== Stage 4: Zielgeschwindigkeit 0.5 m/s ===
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+[DEBUG] Observation (env 0): tensor([-4.9029e-04,  2.2545e-02, -2.0307e-01, -4.1530e-04,  8.5976e-03,
+         2.3317e-02, -4.3307e-04, -4.4028e-04, -4.6167e-04, -4.5144e-04,
+        -4.9589e-04, -4.8981e-04,  5.2745e-04, -5.2657e-04, -2.8872e-03,
+        -2.9352e-03, -3.0778e-03, -3.0096e-03, -3.3059e-03, -3.2654e-03,
+         3.5163e-03, -3.5105e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-1.5581, -0.7230, -1.7141, -1.6940, -0.8656, -1.3420,  0.8040, -0.6051],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(1.5081, device='cuda:0')
+[WandB] Iter 60 | reward=1.25 | loss=264.7508
+[WandB] Iter 61 | reward=0.91 | loss=136.4976
+[WandB] Iter 62 | reward=1.28 | loss=264.9052
+[WandB] Iter 63 | reward=1.50 | loss=353.4207
+[WandB] Iter 64 | reward=1.62 | loss=389.9542
+[WandB] Iter 65 | reward=1.69 | loss=400.2502
+[WandB] Iter 66 | reward=1.72 | loss=404.9329
+[WandB] Iter 67 | reward=1.75 | loss=400.2108
+[WandB] Iter 68 | reward=1.78 | loss=388.6121
+[WandB] Iter 69 | reward=1.79 | loss=382.9403
+[DEBUG] Observation (env 0): tensor([ 8.6558e-03, -6.4393e-03, -1.8339e-01, -7.1904e-04, -1.2563e-02,
+        -6.5158e-03, -4.3542e-04, -4.3627e-04,  5.0247e-04, -5.4511e-04,
+         5.1613e-04,  5.2213e-04,  5.3157e-04,  5.2939e-04, -2.9029e-03,
+        -2.9085e-03,  3.3498e-03, -3.6341e-03,  3.4408e-03,  3.4809e-03,
+         3.5438e-03,  3.5293e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-2.0231, -0.1573,  0.6300, -0.1263,  0.5573,  0.0248,  0.4118,  0.0899],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(1.5486, device='cuda:0')
+[WandB] Iter 70 | reward=1.80 | loss=374.4318
+[WandB] Iter 71 | reward=0.83 | loss=47.2799
+[WandB] Iter 72 | reward=1.10 | loss=114.6900
+[WandB] Iter 73 | reward=1.31 | loss=158.9334
+[WandB] Iter 74 | reward=1.44 | loss=197.6426
+[WandB] Iter 75 | reward=1.57 | loss=237.9037
+[WandB] Iter 76 | reward=1.65 | loss=269.5120
+[WandB] Iter 77 | reward=1.70 | loss=273.6578
+[WandB] Iter 78 | reward=1.72 | loss=273.5470
+[WandB] Iter 79 | reward=1.72 | loss=258.2582
+[DEBUG] Observation (env 0): tensor([-2.6614e-03, -1.3296e-02, -1.9332e-01, -8.8764e-04, -9.0430e-04,
+        -1.3657e-02, -4.3072e-04, -4.3567e-04,  4.8263e-04,  4.6778e-04,
+        -5.4477e-04,  4.9909e-04, -5.2885e-04, -5.3260e-04, -2.8715e-03,
+        -2.9045e-03,  3.2175e-03,  3.1185e-03, -3.6318e-03,  3.3273e-03,
+        -3.5257e-03, -3.5507e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.4754, -0.5148,  1.2339,  1.6837,  0.2050,  0.9474, -1.1285, -0.4459],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(1.5304, device='cuda:0')
+[WandB] Iter 80 | reward=1.76 | loss=259.8167
+[WandB] Iter 81 | reward=1.15 | loss=71.3254
+[WandB] Iter 82 | reward=0.94 | loss=34.1194
+[WandB] Iter 83 | reward=1.35 | loss=112.8407
+[WandB] Iter 84 | reward=1.54 | loss=162.5454
+[WandB] Iter 85 | reward=1.55 | loss=157.0553
+[WandB] Iter 86 | reward=1.63 | loss=176.0931
+[WandB] Iter 87 | reward=1.67 | loss=179.4340
+[WandB] Iter 88 | reward=1.69 | loss=173.5838
+[WandB] Iter 89 | reward=1.70 | loss=164.9979
+[WandB] Iter 90 | reward=1.70 | loss=157.1654
+[DEBUG] Observation (env 0): tensor([ 6.4246e-04, -2.0797e-02, -1.8741e-01, -1.0441e-03, -8.0774e-03,
+        -2.1301e-02, -4.3391e-04, -4.3477e-04,  4.5944e-04,  4.5135e-04,
+         4.9873e-04,  4.9139e-04, -5.2731e-04, -5.3318e-04, -2.8928e-03,
+        -2.8985e-03,  3.0629e-03,  3.0090e-03,  3.3248e-03,  3.2759e-03,
+        -3.5154e-03, -3.5545e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         5.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-2.0131, -2.5002,  1.3392,  1.0947,  1.0070,  1.4122, -1.9546, -0.4408],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(1.5148, device='cuda:0')
+[WandB] Iter 91 | reward=1.56 | loss=123.7208
+[WandB] Iter 92 | reward=0.86 | loss=10.7925
+[WandB] Iter 93 | reward=1.25 | loss=56.4279
+[WandB] Iter 94 | reward=1.48 | loss=99.1266
+[WandB] Iter 95 | reward=1.52 | loss=107.7943
+[WandB] Iter 96 | reward=1.57 | loss=121.0582
+[WandB] Iter 97 | reward=1.65 | loss=145.6216
+[WandB] Iter 98 | reward=1.69 | loss=157.0219
+[WandB] Iter 99 | reward=1.70 | loss=190.2342
+[CustomRunner] ✅ Saved checkpoint to logs/dodo-walking/model_final.pt
+=== Trained model saved at logs/dodo-walking/model_final.pt ===

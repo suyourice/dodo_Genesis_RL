@@ -1,0 +1,15 @@
+{"time":"2025-07-28T14:24:34.497778157+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/wandb/run-20250728_142434-ma5rmfnh/logs/debug-core.log"}
+{"time":"2025-07-28T14:24:34.776589418+02:00","level":"INFO","msg":"created new stream","id":"ma5rmfnh"}
+{"time":"2025-07-28T14:24:34.776622357+02:00","level":"INFO","msg":"stream: started","id":"ma5rmfnh"}
+{"time":"2025-07-28T14:24:34.776639013+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"ma5rmfnh"}
+{"time":"2025-07-28T14:24:34.776644553+02:00","level":"INFO","msg":"handler: started","stream_id":"ma5rmfnh"}
+{"time":"2025-07-28T14:24:34.77668729+02:00","level":"INFO","msg":"sender: started","stream_id":"ma5rmfnh"}
+{"time":"2025-07-28T14:24:35.021618538+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-28T14:24:56.462204996+02:00","level":"INFO","msg":"stream: closing","id":"ma5rmfnh"}
+{"time":"2025-07-28T14:24:56.462229573+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-28T14:24:56.462262238+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-28T14:24:57.072894118+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-28T14:24:57.287735099+02:00","level":"INFO","msg":"handler: closed","stream_id":"ma5rmfnh"}
+{"time":"2025-07-28T14:24:57.28776662+02:00","level":"INFO","msg":"sender: closed","stream_id":"ma5rmfnh"}
+{"time":"2025-07-28T14:24:57.287766173+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ma5rmfnh"}
+{"time":"2025-07-28T14:24:57.287823467+02:00","level":"INFO","msg":"stream: closed","id":"ma5rmfnh"}

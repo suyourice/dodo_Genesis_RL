@@ -1,0 +1,428 @@
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+=== Stage 1: 0.1 m/s ===
+################################################################################
+                       [1m Learning iteration 0/600 [0m
+
+                       Computation: 225461 steps/s (collection: 4.292s, learning 2.684s)
+               Value function loss: 0.1460
+                    Surrogate loss: -0.0038
+             Mean action noise std: 0.99
+                 Mean total reward: -0.50
+               Mean episode length: 54.91
+Mean episode rew_bird_leg_knee_pose: -0.0015
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0043
+        Mean episode rew_flat_feet: 0.0053
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0032
+Mean episode rew_posture_stability: 0.0420
+Mean episode rew_knee_hyperextension: 0.0002
+      Mean episode rew_base_height: -0.0006
+          Mean episode rew_survive: 0.0034
+Mean episode rew_penalize_ankle_height: -0.0021
+Mean episode rew_foot_contact_penalty: -0.0133
+ Mean episode rew_forward_velocity: 0.0767
+Mean episode rew_lateral_drift_penalty: -0.0038
+   Mean episode rew_energy_penalty: -0.0358
+         Mean episode rew_symmetry: 0.0194
+    Mean episode rew_yaw_stability: -0.1041
+       Mean episode rew_gait_phase: 0.0087
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 1572864
+                    Iteration time: 6.98s
+                        Total time: 6.98s
+                               ETA: 4185.7s
+
+Could not find git repository in /home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/rsl_rl/__init__.py. Skipping.
+################################################################################
+                       [1m Learning iteration 1/600 [0m
+
+                       Computation: 234994 steps/s (collection: 4.107s, learning 2.586s)
+               Value function loss: 0.1093
+                    Surrogate loss: -0.0028
+             Mean action noise std: 0.99
+                 Mean total reward: 0.09
+               Mean episode length: 64.49
+Mean episode rew_bird_leg_knee_pose: -0.0021
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0057
+        Mean episode rew_flat_feet: 0.0079
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0042
+Mean episode rew_posture_stability: 0.0517
+Mean episode rew_knee_hyperextension: 0.0003
+      Mean episode rew_base_height: -0.0008
+          Mean episode rew_survive: 0.0046
+Mean episode rew_penalize_ankle_height: -0.0029
+Mean episode rew_foot_contact_penalty: -0.0181
+ Mean episode rew_forward_velocity: 0.0854
+Mean episode rew_lateral_drift_penalty: -0.0053
+   Mean episode rew_energy_penalty: -0.0477
+         Mean episode rew_symmetry: 0.0260
+    Mean episode rew_yaw_stability: -0.1270
+       Mean episode rew_gait_phase: 0.0119
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 3145728
+                    Iteration time: 6.69s
+                        Total time: 13.67s
+                               ETA: 4094.0s
+
+################################################################################
+                       [1m Learning iteration 2/600 [0m
+
+                       Computation: 234915 steps/s (collection: 4.096s, learning 2.599s)
+               Value function loss: 0.1394
+                    Surrogate loss: -0.0042
+             Mean action noise std: 0.98
+                 Mean total reward: 0.26
+               Mean episode length: 59.76
+Mean episode rew_bird_leg_knee_pose: -0.0021
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0059
+        Mean episode rew_flat_feet: 0.0081
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0043
+Mean episode rew_posture_stability: 0.0538
+Mean episode rew_knee_hyperextension: 0.0003
+      Mean episode rew_base_height: -0.0008
+          Mean episode rew_survive: 0.0047
+Mean episode rew_penalize_ankle_height: -0.0030
+Mean episode rew_foot_contact_penalty: -0.0185
+ Mean episode rew_forward_velocity: 0.0878
+Mean episode rew_lateral_drift_penalty: -0.0053
+   Mean episode rew_energy_penalty: -0.0483
+         Mean episode rew_symmetry: 0.0267
+    Mean episode rew_yaw_stability: -0.1201
+       Mean episode rew_gait_phase: 0.0122
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 4718592
+                    Iteration time: 6.70s
+                        Total time: 20.36s
+                               ETA: 4059.4s
+
+################################################################################
+                       [1m Learning iteration 3/600 [0m
+
+                       Computation: 233356 steps/s (collection: 4.144s, learning 2.597s)
+               Value function loss: 0.0816
+                    Surrogate loss: -0.0063
+             Mean action noise std: 0.97
+                 Mean total reward: 0.50
+               Mean episode length: 63.16
+Mean episode rew_bird_leg_knee_pose: -0.0020
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0059
+        Mean episode rew_flat_feet: 0.0082
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0043
+Mean episode rew_posture_stability: 0.0540
+Mean episode rew_knee_hyperextension: 0.0003
+      Mean episode rew_base_height: -0.0008
+          Mean episode rew_survive: 0.0047
+Mean episode rew_penalize_ankle_height: -0.0030
+Mean episode rew_foot_contact_penalty: -0.0185
+ Mean episode rew_forward_velocity: 0.0882
+Mean episode rew_lateral_drift_penalty: -0.0054
+   Mean episode rew_energy_penalty: -0.0474
+         Mean episode rew_symmetry: 0.0268
+    Mean episode rew_yaw_stability: -0.1128
+       Mean episode rew_gait_phase: 0.0123
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 6291456
+                    Iteration time: 6.74s
+                        Total time: 27.11s
+                               ETA: 4045.4s
+
+################################################################################
+                       [1m Learning iteration 4/600 [0m
+
+                       Computation: 233363 steps/s (collection: 4.130s, learning 2.610s)
+               Value function loss: 0.0725
+                    Surrogate loss: -0.0069
+             Mean action noise std: 0.96
+                 Mean total reward: 0.71
+               Mean episode length: 64.13
+Mean episode rew_bird_leg_knee_pose: -0.0019
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0060
+        Mean episode rew_flat_feet: 0.0084
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0043
+Mean episode rew_posture_stability: 0.0552
+Mean episode rew_knee_hyperextension: 0.0003
+      Mean episode rew_base_height: -0.0008
+          Mean episode rew_survive: 0.0047
+Mean episode rew_penalize_ankle_height: -0.0031
+Mean episode rew_foot_contact_penalty: -0.0184
+ Mean episode rew_forward_velocity: 0.0899
+Mean episode rew_lateral_drift_penalty: -0.0054
+   Mean episode rew_energy_penalty: -0.0469
+         Mean episode rew_symmetry: 0.0271
+    Mean episode rew_yaw_stability: -0.1049
+       Mean episode rew_gait_phase: 0.0124
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 7864320
+                    Iteration time: 6.74s
+                        Total time: 33.85s
+                               ETA: 4034.3s
+
+################################################################################
+                       [1m Learning iteration 5/600 [0m
+
+                       Computation: 233541 steps/s (collection: 4.118s, learning 2.617s)
+               Value function loss: 0.0713
+                    Surrogate loss: -0.0061
+             Mean action noise std: 0.95
+                 Mean total reward: 0.78
+               Mean episode length: 62.11
+Mean episode rew_bird_leg_knee_pose: -0.0018
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0062
+        Mean episode rew_flat_feet: 0.0085
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0043
+Mean episode rew_posture_stability: 0.0563
+Mean episode rew_knee_hyperextension: 0.0003
+      Mean episode rew_base_height: -0.0007
+          Mean episode rew_survive: 0.0048
+Mean episode rew_penalize_ankle_height: -0.0031
+Mean episode rew_foot_contact_penalty: -0.0184
+ Mean episode rew_forward_velocity: 0.0912
+Mean episode rew_lateral_drift_penalty: -0.0055
+   Mean episode rew_energy_penalty: -0.0462
+         Mean episode rew_symmetry: 0.0274
+    Mean episode rew_yaw_stability: -0.0983
+       Mean episode rew_gait_phase: 0.0125
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 9437184
+                    Iteration time: 6.73s
+                        Total time: 40.58s
+                               ETA: 4024.2s
+
+################################################################################
+                       [1m Learning iteration 6/600 [0m
+
+                       Computation: 233654 steps/s (collection: 4.114s, learning 2.617s)
+               Value function loss: 0.0643
+                    Surrogate loss: -0.0066
+             Mean action noise std: 0.94
+                 Mean total reward: 1.03
+               Mean episode length: 66.02
+Mean episode rew_bird_leg_knee_pose: -0.0018
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0063
+        Mean episode rew_flat_feet: 0.0086
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0044
+Mean episode rew_posture_stability: 0.0577
+Mean episode rew_knee_hyperextension: 0.0003
+      Mean episode rew_base_height: -0.0008
+          Mean episode rew_survive: 0.0049
+Mean episode rew_penalize_ankle_height: -0.0032
+Mean episode rew_foot_contact_penalty: -0.0184
+ Mean episode rew_forward_velocity: 0.0934
+Mean episode rew_lateral_drift_penalty: -0.0055
+   Mean episode rew_energy_penalty: -0.0456
+         Mean episode rew_symmetry: 0.0278
+    Mean episode rew_yaw_stability: -0.0920
+       Mean episode rew_gait_phase: 0.0125
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 11010048
+                    Iteration time: 6.73s
+                        Total time: 47.31s
+                               ETA: 4014.7s
+
+################################################################################
+                       [1m Learning iteration 7/600 [0m
+
+                       Computation: 234387 steps/s (collection: 4.086s, learning 2.625s)
+               Value function loss: 0.0606
+                    Surrogate loss: -0.0071
+             Mean action noise std: 0.93
+                 Mean total reward: 1.21
+               Mean episode length: 68.45
+Mean episode rew_bird_leg_knee_pose: -0.0018
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0065
+        Mean episode rew_flat_feet: 0.0088
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0045
+Mean episode rew_posture_stability: 0.0598
+Mean episode rew_knee_hyperextension: 0.0003
+      Mean episode rew_base_height: -0.0008
+          Mean episode rew_survive: 0.0050
+Mean episode rew_penalize_ankle_height: -0.0032
+Mean episode rew_foot_contact_penalty: -0.0186
+ Mean episode rew_forward_velocity: 0.0963
+Mean episode rew_lateral_drift_penalty: -0.0057
+   Mean episode rew_energy_penalty: -0.0455
+         Mean episode rew_symmetry: 0.0283
+    Mean episode rew_yaw_stability: -0.0868
+       Mean episode rew_gait_phase: 0.0127
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 12582912
+                    Iteration time: 6.71s
+                        Total time: 54.02s
+                               ETA: 4004.4s
+
+################################################################################
+                       [1m Learning iteration 8/600 [0m
+
+                       Computation: 234579 steps/s (collection: 4.079s, learning 2.626s)
+               Value function loss: 0.0572
+                    Surrogate loss: -0.0067
+             Mean action noise std: 0.92
+                 Mean total reward: 1.55
+               Mean episode length: 70.86
+Mean episode rew_bird_leg_knee_pose: -0.0018
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0069
+        Mean episode rew_flat_feet: 0.0089
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0046
+Mean episode rew_posture_stability: 0.0630
+Mean episode rew_knee_hyperextension: 0.0004
+      Mean episode rew_base_height: -0.0008
+          Mean episode rew_survive: 0.0051
+Mean episode rew_penalize_ankle_height: -0.0033
+Mean episode rew_foot_contact_penalty: -0.0186
+ Mean episode rew_forward_velocity: 0.1000
+Mean episode rew_lateral_drift_penalty: -0.0060
+   Mean episode rew_energy_penalty: -0.0459
+         Mean episode rew_symmetry: 0.0292
+    Mean episode rew_yaw_stability: -0.0836
+       Mean episode rew_gait_phase: 0.0129
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 14155776
+                    Iteration time: 6.71s
+                        Total time: 60.73s
+                               ETA: 3994.5s
+
+################################################################################
+                       [1m Learning iteration 9/600 [0m
+
+                       Computation: 229345 steps/s (collection: 4.182s, learning 2.676s)
+               Value function loss: 0.0541
+                    Surrogate loss: -0.0055
+             Mean action noise std: 0.92
+                 Mean total reward: 1.79
+               Mean episode length: 71.37
+Mean episode rew_bird_leg_knee_pose: -0.0018
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0073
+        Mean episode rew_flat_feet: 0.0091
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0048
+Mean episode rew_posture_stability: 0.0666
+Mean episode rew_knee_hyperextension: 0.0004
+      Mean episode rew_base_height: -0.0009
+          Mean episode rew_survive: 0.0053
+Mean episode rew_penalize_ankle_height: -0.0034
+Mean episode rew_foot_contact_penalty: -0.0186
+ Mean episode rew_forward_velocity: 0.1046
+Mean episode rew_lateral_drift_penalty: -0.0063
+   Mean episode rew_energy_penalty: -0.0463
+         Mean episode rew_symmetry: 0.0302
+    Mean episode rew_yaw_stability: -0.0804
+       Mean episode rew_gait_phase: 0.0131
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 15728640
+                    Iteration time: 6.86s
+                        Total time: 67.59s
+                               ETA: 3994.3s
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 337, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 329, in main
+    runner.learn(num_learning_iterations=iters, init_at_random_ep_len=(i == 1))
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/rsl_rl/runners/on_policy_runner.py", line 208, in learn
+    mean_value_loss, mean_surrogate_loss, mean_entropy, mean_rnd_loss, mean_symmetry_loss = self.alg.update()
+                                                                                            ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/rsl_rl/algorithms/ppo.py", line 353, in update
+    self.optimizer.step()
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/optim/optimizer.py", line 485, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/optim/optimizer.py", line 79, in _use_grad
+    ret = func(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/optim/adam.py", line 246, in step
+    adam(
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/optim/optimizer.py", line 147, in maybe_fallback
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/optim/adam.py", line 933, in adam
+    func(
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/optim/adam.py", line 739, in _multi_tensor_adam
+    1 - beta1 ** _get_value(step) for step in device_state_steps
+                 ^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/optim/optimizer.py", line 94, in _get_value
+    return x.item() if isinstance(x, torch.Tensor) else x
+           ^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/utils/_device.py", line 104, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 337, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 329, in main
+    runner.learn(num_learning_iterations=iters, init_at_random_ep_len=(i == 1))
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/rsl_rl/runners/on_policy_runner.py", line 208, in learn
+    mean_value_loss, mean_surrogate_loss, mean_entropy, mean_rnd_loss, mean_symmetry_loss = self.alg.update()
+                                                                                            ^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/rsl_rl/algorithms/ppo.py", line 353, in update
+    self.optimizer.step()
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/optim/optimizer.py", line 485, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/optim/optimizer.py", line 79, in _use_grad
+    ret = func(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/optim/adam.py", line 246, in step
+    adam(
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/optim/optimizer.py", line 147, in maybe_fallback
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/optim/adam.py", line 933, in adam
+    func(
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/optim/adam.py", line 739, in _multi_tensor_adam
+    1 - beta1 ** _get_value(step) for step in device_state_steps
+                 ^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/optim/optimizer.py", line 94, in _get_value
+    return x.item() if isinstance(x, torch.Tensor) else x
+           ^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/utils/_device.py", line 104, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[38;5;9m[Genesis] [19:35:42] [ERROR] KeyboardInterrupt: [0m

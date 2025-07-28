@@ -1,0 +1,192 @@
+=== Stage 1: Zielgeschwindigkeit 0.1 m/s ===
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+[DEBUG] Observation (env 0): tensor([ 0.0087,  0.0135, -0.1867,  0.0102, -0.0094,  0.0034, -0.0005,  0.0005,
+         0.0005, -0.0005, -0.0005, -0.0005, -0.0005,  0.0005, -0.0034,  0.0034,
+         0.0036, -0.0033, -0.0035, -0.0034, -0.0035,  0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.9913,  0.2978,  0.5312, -0.7863,  0.2084, -1.4054, -1.1009,  0.9978],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(0.0282, device='cuda:0')
+[WandB] Iter 0 | reward=0.02 | loss=0.0107
+[WandB] Iter 0 | reward=0.02 | loss=0.0107
+[Plot] saved to logs/dodo-walking/metrics.png
+[WandB] Iter 1 | reward=0.02 | loss=0.0198
+[WandB] Iter 1 | reward=0.02 | loss=0.0198
+[CustomRunner] ✅ Saved checkpoint to logs/dodo-walking/model_stage1.pt
+=== Stage 2: Zielgeschwindigkeit 0.3 m/s ===
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+[DEBUG] Observation (env 0): tensor([-1.6180e-05,  1.9117e-02, -2.0022e-01,  1.0233e-02,  3.1214e-03,
+         9.2670e-03, -5.1318e-04,  5.1310e-04, -5.0416e-04, -4.9967e-04,
+         5.3927e-04,  5.4382e-04, -5.3054e-04, -5.2905e-04, -3.4212e-03,
+         3.4206e-03, -3.3610e-03, -3.3311e-03,  3.5951e-03,  3.6255e-03,
+        -3.5369e-03, -3.5270e-03,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,  0.0000e+00,
+         3.0000e-01,  0.0000e+00,  0.0000e+00], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([-0.3667,  0.7744, -0.4078, -0.9374,  0.7526,  1.8878, -0.5603, -0.5461],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(0.0002, device='cuda:0')
+[WandB] Iter 2 | reward=0.00 | loss=0.0016
+[WandB] Iter 2 | reward=0.00 | loss=0.0016
+[WandB] Iter 3 | reward=0.00 | loss=0.0041
+[WandB] Iter 3 | reward=0.00 | loss=0.0041
+[CustomRunner] ✅ Saved checkpoint to logs/dodo-walking/model_stage2.pt
+=== Stage 3: Zielgeschwindigkeit 0.4 m/s ===
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+[DEBUG] Observation (env 0): tensor([-0.0004,  0.0202, -0.2044,  0.0010,  0.0075,  0.0207,  0.0004,  0.0004,
+        -0.0005, -0.0005, -0.0005, -0.0005, -0.0005,  0.0005,  0.0029,  0.0029,
+        -0.0031, -0.0030, -0.0033, -0.0033, -0.0036,  0.0036,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.4000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 3.0677,  2.2999, -0.8015, -2.3580, -0.3871, -1.0506, -0.1213,  1.4781],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(1.4473e-06, device='cuda:0')
+[WandB] Iter 4 | reward=0.00 | loss=0.0018
+[WandB] Iter 4 | reward=0.00 | loss=0.0018
+[WandB] Iter 5 | reward=0.00 | loss=0.0188
+[WandB] Iter 5 | reward=0.00 | loss=0.0188
+[CustomRunner] ✅ Saved checkpoint to logs/dodo-walking/model_stage3.pt
+=== Stage 4: Zielgeschwindigkeit 0.5 m/s ===
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 341, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 313, in main
+    env = DodoEnv(
+          ^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 89, in __init__
+    self.scene.build(n_envs=num_envs)
+  File "/home/hoan/Genesis/genesis/utils/misc.py", line 91, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/scene.py", line 595, in build
+    self._sim.build()
+  File "/home/hoan/Genesis/genesis/engine/simulator.py", line 190, in build
+    solver.build()
+  File "/home/hoan/Genesis/genesis/engine/solvers/rigid/rigid_solver_decomp.py", line 221, in build
+    self._init_constraint_solver()
+  File "/home/hoan/Genesis/genesis/engine/solvers/rigid/rigid_solver_decomp.py", line 1314, in _init_constraint_solver
+    self.constraint_solver = ConstraintSolver(self)
+                             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/solvers/rigid/constraint_solver_decomp.py", line 99, in __init__
+    self.reset()
+  File "/home/hoan/Genesis/genesis/engine/solvers/rigid/constraint_solver_decomp.py", line 726, in reset
+    self._kernel_reset(envs_idx)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 1174, in __call__
+    return self._primal(self._kernel_owner, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 1043, in __call__
+    key = self.ensure_compiled(*args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 1011, in ensure_compiled
+    self.materialize(key=key, args=args, arg_features=arg_features)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 637, in materialize
+    self.runtime.materialize()
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/impl.py", line 471, in materialize
+    self.materialize_root_fb(not self.materialized)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/impl.py", line 406, in materialize_root_fb
+    root.finalize(raise_warning=not is_first_call)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/_snode/fields_builder.py", line 170, in finalize
+    return self._finalize(raise_warning, compile_only=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/_snode/fields_builder.py", line 182, in _finalize
+    return SNodeTree(_ti_core.finalize_snode_tree(_snode_registry, self.ptr, impl.get_runtime().prog, compile_only))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: [cuda_driver.h:operator()@92] CUDA Error CUDA_ERROR_OUT_OF_MEMORY: out of memory while calling malloc_async_impl (cuMemAllocAsync)
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 341, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 313, in main
+    env = DodoEnv(
+          ^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 89, in __init__
+    self.scene.build(n_envs=num_envs)
+  File "/home/hoan/Genesis/genesis/utils/misc.py", line 91, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/scene.py", line 595, in build
+    self._sim.build()
+  File "/home/hoan/Genesis/genesis/engine/simulator.py", line 190, in build
+    solver.build()
+  File "/home/hoan/Genesis/genesis/engine/solvers/rigid/rigid_solver_decomp.py", line 221, in build
+    self._init_constraint_solver()
+  File "/home/hoan/Genesis/genesis/engine/solvers/rigid/rigid_solver_decomp.py", line 1314, in _init_constraint_solver
+    self.constraint_solver = ConstraintSolver(self)
+                             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Genesis/genesis/engine/solvers/rigid/constraint_solver_decomp.py", line 99, in __init__
+    self.reset()
+  File "/home/hoan/Genesis/genesis/engine/solvers/rigid/constraint_solver_decomp.py", line 726, in reset
+    self._kernel_reset(envs_idx)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 1174, in __call__
+    return self._primal(self._kernel_owner, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 1043, in __call__
+    key = self.ensure_compiled(*args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 1011, in ensure_compiled
+    self.materialize(key=key, args=args, arg_features=arg_features)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/kernel_impl.py", line 637, in materialize
+    self.runtime.materialize()
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/impl.py", line 471, in materialize
+    self.materialize_root_fb(not self.materialized)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/lang/impl.py", line 406, in materialize_root_fb
+    root.finalize(raise_warning=not is_first_call)
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/_snode/fields_builder.py", line 170, in finalize
+    return self._finalize(raise_warning, compile_only=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/taichi/_snode/fields_builder.py", line 182, in _finalize
+    return SNodeTree(_ti_core.finalize_snode_tree(_snode_registry, self.ptr, impl.get_runtime().prog, compile_only))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: [cuda_driver.h:operator()@92] CUDA Error CUDA_ERROR_OUT_OF_MEMORY: out of memory while calling malloc_async_impl (cuMemAllocAsync)
+
+[38;5;9m[Genesis] [15:46:46] [ERROR] RuntimeError: [cuda_driver.h:operator()@92] CUDA Error CUDA_ERROR_OUT_OF_MEMORY: out of memory while calling malloc_async_impl (cuMemAllocAsync)[0m

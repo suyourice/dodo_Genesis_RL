@@ -1,0 +1,53 @@
+=== Stage 1: Zielgeschwindigkeit 0.1 m/s ===
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+[DEBUG] Observation (env 0): tensor([ 0.0121, -0.0131, -0.1805, -0.0102, -0.0164, -0.0030,  0.0005, -0.0005,
+         0.0005, -0.0005,  0.0005, -0.0005, -0.0005, -0.0005,  0.0034, -0.0034,
+         0.0035, -0.0034,  0.0035, -0.0035, -0.0035, -0.0035,  0.0000,  0.0000,
+         0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.0000,  0.1000,  0.0000,
+         0.0000], device='cuda:0')
+[DEBUG] Action      (env 0): tensor([ 0.4441, -0.3318,  0.2589, -0.0776,  0.8551, -1.3303, -0.2994, -1.3937],
+       device='cuda:0')
+[DEBUG] Reward      (env 0): tensor(2.3586, device='cuda:0')
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 354, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 343, in main
+    runner.learn(
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 315, in learn
+    mean_logs.setdefault(k, []).append(v.cpu().item())
+                                       ^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/utils/_device.py", line 104, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: a Tensor with 1024 elements cannot be converted to Scalar
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 354, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 343, in main
+    runner.learn(
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 315, in learn
+    mean_logs.setdefault(k, []).append(v.cpu().item())
+                                       ^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/utils/_device.py", line 104, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: a Tensor with 1024 elements cannot be converted to Scalar
+
+[38;5;9m[Genesis] [20:19:46] [ERROR] RuntimeError: a Tensor with 1024 elements cannot be converted to Scalar[0m

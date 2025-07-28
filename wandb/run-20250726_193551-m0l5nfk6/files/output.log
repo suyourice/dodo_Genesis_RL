@@ -1,0 +1,3086 @@
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+=== Stage 1: 0.1 m/s ===
+################################################################################
+                       [1m Learning iteration 0/600 [0m
+
+                       Computation: 224180 steps/s (collection: 4.319s, learning 2.697s)
+               Value function loss: 0.1489
+                    Surrogate loss: -0.0039
+             Mean action noise std: 0.99
+                 Mean total reward: -0.51
+               Mean episode length: 53.53
+Mean episode rew_bird_leg_knee_pose: -0.0014
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0043
+        Mean episode rew_flat_feet: 0.0053
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0032
+Mean episode rew_posture_stability: 0.0419
+Mean episode rew_knee_hyperextension: 0.0001
+      Mean episode rew_base_height: -0.0006
+          Mean episode rew_survive: 0.0034
+Mean episode rew_penalize_ankle_height: -0.0021
+Mean episode rew_foot_contact_penalty: -0.0131
+ Mean episode rew_forward_velocity: 0.0764
+Mean episode rew_lateral_drift_penalty: -0.0039
+   Mean episode rew_energy_penalty: -0.0358
+         Mean episode rew_symmetry: 0.0194
+    Mean episode rew_yaw_stability: -0.1040
+       Mean episode rew_gait_phase: 0.0087
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 1572864
+                    Iteration time: 7.02s
+                        Total time: 7.02s
+                               ETA: 4209.6s
+
+Could not find git repository in /home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/rsl_rl/__init__.py. Skipping.
+################################################################################
+                       [1m Learning iteration 1/600 [0m
+
+                       Computation: 233372 steps/s (collection: 4.133s, learning 2.607s)
+               Value function loss: 0.1123
+                    Surrogate loss: -0.0023
+             Mean action noise std: 0.99
+                 Mean total reward: -0.21
+               Mean episode length: 62.80
+Mean episode rew_bird_leg_knee_pose: -0.0018
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0056
+        Mean episode rew_flat_feet: 0.0079
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0042
+Mean episode rew_posture_stability: 0.0516
+Mean episode rew_knee_hyperextension: 0.0002
+      Mean episode rew_base_height: -0.0008
+          Mean episode rew_survive: 0.0045
+Mean episode rew_penalize_ankle_height: -0.0029
+Mean episode rew_foot_contact_penalty: -0.0179
+ Mean episode rew_forward_velocity: 0.0851
+Mean episode rew_lateral_drift_penalty: -0.0054
+   Mean episode rew_energy_penalty: -0.0475
+         Mean episode rew_symmetry: 0.0260
+    Mean episode rew_yaw_stability: -0.1261
+       Mean episode rew_gait_phase: 0.0116
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 3145728
+                    Iteration time: 6.74s
+                        Total time: 13.76s
+                               ETA: 4119.9s
+
+################################################################################
+                       [1m Learning iteration 2/600 [0m
+
+                       Computation: 233240 steps/s (collection: 4.137s, learning 2.607s)
+               Value function loss: 0.0943
+                    Surrogate loss: -0.0068
+             Mean action noise std: 0.98
+                 Mean total reward: -0.13
+               Mean episode length: 59.80
+Mean episode rew_bird_leg_knee_pose: -0.0018
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0058
+        Mean episode rew_flat_feet: 0.0082
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0043
+Mean episode rew_posture_stability: 0.0534
+Mean episode rew_knee_hyperextension: 0.0002
+      Mean episode rew_base_height: -0.0008
+          Mean episode rew_survive: 0.0046
+Mean episode rew_penalize_ankle_height: -0.0030
+Mean episode rew_foot_contact_penalty: -0.0183
+ Mean episode rew_forward_velocity: 0.0867
+Mean episode rew_lateral_drift_penalty: -0.0055
+   Mean episode rew_energy_penalty: -0.0479
+         Mean episode rew_symmetry: 0.0267
+    Mean episode rew_yaw_stability: -0.1201
+       Mean episode rew_gait_phase: 0.0120
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 4718592
+                    Iteration time: 6.74s
+                        Total time: 20.50s
+                               ETA: 4086.2s
+
+################################################################################
+                       [1m Learning iteration 3/600 [0m
+
+                       Computation: 231451 steps/s (collection: 4.168s, learning 2.628s)
+               Value function loss: 0.0727
+                    Surrogate loss: -0.0070
+             Mean action noise std: 0.97
+                 Mean total reward: 0.37
+               Mean episode length: 63.45
+Mean episode rew_bird_leg_knee_pose: -0.0018
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0059
+        Mean episode rew_flat_feet: 0.0083
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0043
+Mean episode rew_posture_stability: 0.0542
+Mean episode rew_knee_hyperextension: 0.0002
+      Mean episode rew_base_height: -0.0008
+          Mean episode rew_survive: 0.0047
+Mean episode rew_penalize_ankle_height: -0.0030
+Mean episode rew_foot_contact_penalty: -0.0183
+ Mean episode rew_forward_velocity: 0.0878
+Mean episode rew_lateral_drift_penalty: -0.0055
+   Mean episode rew_energy_penalty: -0.0473
+         Mean episode rew_symmetry: 0.0268
+    Mean episode rew_yaw_stability: -0.1114
+       Mean episode rew_gait_phase: 0.0122
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 6291456
+                    Iteration time: 6.80s
+                        Total time: 27.29s
+                               ETA: 4073.8s
+
+################################################################################
+                       [1m Learning iteration 4/600 [0m
+
+                       Computation: 229092 steps/s (collection: 4.229s, learning 2.637s)
+               Value function loss: 0.0676
+                    Surrogate loss: -0.0068
+             Mean action noise std: 0.96
+                 Mean total reward: 0.57
+               Mean episode length: 62.32
+Mean episode rew_bird_leg_knee_pose: -0.0017
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0060
+        Mean episode rew_flat_feet: 0.0084
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0043
+Mean episode rew_posture_stability: 0.0551
+Mean episode rew_knee_hyperextension: 0.0002
+      Mean episode rew_base_height: -0.0008
+          Mean episode rew_survive: 0.0047
+Mean episode rew_penalize_ankle_height: -0.0030
+Mean episode rew_foot_contact_penalty: -0.0183
+ Mean episode rew_forward_velocity: 0.0891
+Mean episode rew_lateral_drift_penalty: -0.0055
+   Mean episode rew_energy_penalty: -0.0464
+         Mean episode rew_symmetry: 0.0270
+    Mean episode rew_yaw_stability: -0.1031
+       Mean episode rew_gait_phase: 0.0123
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 7864320
+                    Iteration time: 6.87s
+                        Total time: 34.16s
+                               ETA: 4071.9s
+
+################################################################################
+                       [1m Learning iteration 5/600 [0m
+
+                       Computation: 229657 steps/s (collection: 4.214s, learning 2.634s)
+               Value function loss: 0.0662
+                    Surrogate loss: -0.0066
+             Mean action noise std: 0.95
+                 Mean total reward: 0.84
+               Mean episode length: 63.40
+Mean episode rew_bird_leg_knee_pose: -0.0017
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0061
+        Mean episode rew_flat_feet: 0.0086
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0043
+Mean episode rew_posture_stability: 0.0566
+Mean episode rew_knee_hyperextension: 0.0002
+      Mean episode rew_base_height: -0.0008
+          Mean episode rew_survive: 0.0048
+Mean episode rew_penalize_ankle_height: -0.0031
+Mean episode rew_foot_contact_penalty: -0.0183
+ Mean episode rew_forward_velocity: 0.0905
+Mean episode rew_lateral_drift_penalty: -0.0056
+   Mean episode rew_energy_penalty: -0.0459
+         Mean episode rew_symmetry: 0.0274
+    Mean episode rew_yaw_stability: -0.0965
+       Mean episode rew_gait_phase: 0.0124
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 9437184
+                    Iteration time: 6.85s
+                        Total time: 41.01s
+                               ETA: 4066.8s
+
+################################################################################
+                       [1m Learning iteration 6/600 [0m
+
+                       Computation: 231133 steps/s (collection: 4.165s, learning 2.640s)
+               Value function loss: 0.0588
+                    Surrogate loss: -0.0068
+             Mean action noise std: 0.94
+                 Mean total reward: 1.20
+               Mean episode length: 67.49
+Mean episode rew_bird_leg_knee_pose: -0.0017
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0063
+        Mean episode rew_flat_feet: 0.0088
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0044
+Mean episode rew_posture_stability: 0.0586
+Mean episode rew_knee_hyperextension: 0.0002
+      Mean episode rew_base_height: -0.0008
+          Mean episode rew_survive: 0.0049
+Mean episode rew_penalize_ankle_height: -0.0031
+Mean episode rew_foot_contact_penalty: -0.0185
+ Mean episode rew_forward_velocity: 0.0934
+Mean episode rew_lateral_drift_penalty: -0.0057
+   Mean episode rew_energy_penalty: -0.0456
+         Mean episode rew_symmetry: 0.0280
+    Mean episode rew_yaw_stability: -0.0912
+       Mean episode rew_gait_phase: 0.0126
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 11010048
+                    Iteration time: 6.81s
+                        Total time: 47.81s
+                               ETA: 4057.4s
+
+################################################################################
+                       [1m Learning iteration 7/600 [0m
+
+                       Computation: 230924 steps/s (collection: 4.170s, learning 2.641s)
+               Value function loss: 0.0603
+                    Surrogate loss: -0.0062
+             Mean action noise std: 0.93
+                 Mean total reward: 1.41
+               Mean episode length: 66.29
+Mean episode rew_bird_leg_knee_pose: -0.0017
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0066
+        Mean episode rew_flat_feet: 0.0089
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0046
+Mean episode rew_posture_stability: 0.0611
+Mean episode rew_knee_hyperextension: 0.0003
+      Mean episode rew_base_height: -0.0008
+          Mean episode rew_survive: 0.0050
+Mean episode rew_penalize_ankle_height: -0.0032
+Mean episode rew_foot_contact_penalty: -0.0186
+ Mean episode rew_forward_velocity: 0.0967
+Mean episode rew_lateral_drift_penalty: -0.0060
+   Mean episode rew_energy_penalty: -0.0455
+         Mean episode rew_symmetry: 0.0286
+    Mean episode rew_yaw_stability: -0.0872
+       Mean episode rew_gait_phase: 0.0127
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 12582912
+                    Iteration time: 6.81s
+                        Total time: 54.63s
+                               ETA: 4049.1s
+
+################################################################################
+                       [1m Learning iteration 8/600 [0m
+
+                       Computation: 231221 steps/s (collection: 4.160s, learning 2.643s)
+               Value function loss: 0.0598
+                    Surrogate loss: -0.0071
+             Mean action noise std: 0.92
+                 Mean total reward: 1.45
+               Mean episode length: 67.32
+Mean episode rew_bird_leg_knee_pose: -0.0017
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0068
+        Mean episode rew_flat_feet: 0.0090
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0047
+Mean episode rew_posture_stability: 0.0636
+Mean episode rew_knee_hyperextension: 0.0003
+      Mean episode rew_base_height: -0.0009
+          Mean episode rew_survive: 0.0051
+Mean episode rew_penalize_ankle_height: -0.0032
+Mean episode rew_foot_contact_penalty: -0.0187
+ Mean episode rew_forward_velocity: 0.1003
+Mean episode rew_lateral_drift_penalty: -0.0062
+   Mean episode rew_energy_penalty: -0.0453
+         Mean episode rew_symmetry: 0.0291
+    Mean episode rew_yaw_stability: -0.0837
+       Mean episode rew_gait_phase: 0.0128
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 14155776
+                    Iteration time: 6.80s
+                        Total time: 61.43s
+                               ETA: 4040.6s
+
+################################################################################
+                       [1m Learning iteration 9/600 [0m
+
+                       Computation: 231761 steps/s (collection: 4.147s, learning 2.640s)
+               Value function loss: 0.0576
+                    Surrogate loss: -0.0059
+             Mean action noise std: 0.91
+                 Mean total reward: 1.83
+               Mean episode length: 70.26
+Mean episode rew_bird_leg_knee_pose: -0.0017
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0071
+        Mean episode rew_flat_feet: 0.0090
+Mean episode rew_foot_contact_switch: 0.0000
+Mean episode rew_step_height_consistency: 0.0048
+Mean episode rew_posture_stability: 0.0662
+Mean episode rew_knee_hyperextension: 0.0003
+      Mean episode rew_base_height: -0.0009
+          Mean episode rew_survive: 0.0052
+Mean episode rew_penalize_ankle_height: -0.0033
+Mean episode rew_foot_contact_penalty: -0.0185
+ Mean episode rew_forward_velocity: 0.1042
+Mean episode rew_lateral_drift_penalty: -0.0065
+   Mean episode rew_energy_penalty: -0.0452
+         Mean episode rew_symmetry: 0.0297
+    Mean episode rew_yaw_stability: -0.0804
+       Mean episode rew_gait_phase: 0.0129
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 15728640
+                    Iteration time: 6.79s
+                        Total time: 68.21s
+                               ETA: 4031.5s
+
+################################################################################
+                      [1m Learning iteration 10/600 [0m
+
+                       Computation: 231660 steps/s (collection: 4.141s, learning 2.648s)
+               Value function loss: 0.0580
+                    Surrogate loss: -0.0036
+             Mean action noise std: 0.91
+                 Mean total reward: 1.98
+               Mean episode length: 73.80
+Mean episode rew_bird_leg_knee_pose: -0.0017
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0075
+        Mean episode rew_flat_feet: 0.0092
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0050
+Mean episode rew_posture_stability: 0.0700
+Mean episode rew_knee_hyperextension: 0.0003
+      Mean episode rew_base_height: -0.0010
+          Mean episode rew_survive: 0.0053
+Mean episode rew_penalize_ankle_height: -0.0033
+Mean episode rew_foot_contact_penalty: -0.0185
+ Mean episode rew_forward_velocity: 0.1090
+Mean episode rew_lateral_drift_penalty: -0.0069
+   Mean episode rew_energy_penalty: -0.0456
+         Mean episode rew_symmetry: 0.0306
+    Mean episode rew_yaw_stability: -0.0774
+       Mean episode rew_gait_phase: 0.0131
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 17301504
+                    Iteration time: 6.79s
+                        Total time: 75.00s
+                               ETA: 4022.9s
+
+################################################################################
+                      [1m Learning iteration 11/600 [0m
+
+                       Computation: 230945 steps/s (collection: 4.170s, learning 2.641s)
+               Value function loss: 0.0674
+                    Surrogate loss: -0.0036
+             Mean action noise std: 0.90
+                 Mean total reward: 2.35
+               Mean episode length: 76.96
+Mean episode rew_bird_leg_knee_pose: -0.0018
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0081
+        Mean episode rew_flat_feet: 0.0092
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0053
+Mean episode rew_posture_stability: 0.0751
+Mean episode rew_knee_hyperextension: 0.0003
+      Mean episode rew_base_height: -0.0011
+          Mean episode rew_survive: 0.0055
+Mean episode rew_penalize_ankle_height: -0.0034
+Mean episode rew_foot_contact_penalty: -0.0185
+ Mean episode rew_forward_velocity: 0.1162
+Mean episode rew_lateral_drift_penalty: -0.0075
+   Mean episode rew_energy_penalty: -0.0467
+         Mean episode rew_symmetry: 0.0319
+    Mean episode rew_yaw_stability: -0.0766
+       Mean episode rew_gait_phase: 0.0135
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 18874368
+                    Iteration time: 6.81s
+                        Total time: 81.81s
+                               ETA: 4015.7s
+
+################################################################################
+                      [1m Learning iteration 12/600 [0m
+
+                       Computation: 230925 steps/s (collection: 4.161s, learning 2.650s)
+               Value function loss: 0.0618
+                    Surrogate loss: -0.0054
+             Mean action noise std: 0.89
+                 Mean total reward: 2.67
+               Mean episode length: 79.58
+Mean episode rew_bird_leg_knee_pose: -0.0018
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0087
+        Mean episode rew_flat_feet: 0.0092
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0055
+Mean episode rew_posture_stability: 0.0801
+Mean episode rew_knee_hyperextension: 0.0004
+      Mean episode rew_base_height: -0.0012
+          Mean episode rew_survive: 0.0058
+Mean episode rew_penalize_ankle_height: -0.0036
+Mean episode rew_foot_contact_penalty: -0.0187
+ Mean episode rew_forward_velocity: 0.1245
+Mean episode rew_lateral_drift_penalty: -0.0081
+   Mean episode rew_energy_penalty: -0.0477
+         Mean episode rew_symmetry: 0.0333
+    Mean episode rew_yaw_stability: -0.0758
+       Mean episode rew_gait_phase: 0.0140
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 20447232
+                    Iteration time: 6.81s
+                        Total time: 88.63s
+                               ETA: 4008.6s
+
+################################################################################
+                      [1m Learning iteration 13/600 [0m
+
+                       Computation: 226957 steps/s (collection: 4.186s, learning 2.744s)
+               Value function loss: 0.0754
+                    Surrogate loss: -0.0042
+             Mean action noise std: 0.89
+                 Mean total reward: 2.98
+               Mean episode length: 83.19
+Mean episode rew_bird_leg_knee_pose: -0.0019
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0094
+        Mean episode rew_flat_feet: 0.0090
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0058
+Mean episode rew_posture_stability: 0.0850
+Mean episode rew_knee_hyperextension: 0.0005
+      Mean episode rew_base_height: -0.0014
+          Mean episode rew_survive: 0.0060
+Mean episode rew_penalize_ankle_height: -0.0037
+Mean episode rew_foot_contact_penalty: -0.0187
+ Mean episode rew_forward_velocity: 0.1336
+Mean episode rew_lateral_drift_penalty: -0.0087
+   Mean episode rew_energy_penalty: -0.0489
+         Mean episode rew_symmetry: 0.0348
+    Mean episode rew_yaw_stability: -0.0755
+       Mean episode rew_gait_phase: 0.0144
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 22020096
+                    Iteration time: 6.93s
+                        Total time: 95.56s
+                               ETA: 4006.5s
+
+################################################################################
+                      [1m Learning iteration 14/600 [0m
+
+                       Computation: 230314 steps/s (collection: 4.172s, learning 2.657s)
+               Value function loss: 0.0906
+                    Surrogate loss: 0.0007
+             Mean action noise std: 0.88
+                 Mean total reward: 3.06
+               Mean episode length: 84.14
+Mean episode rew_bird_leg_knee_pose: -0.0021
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0103
+        Mean episode rew_flat_feet: 0.0089
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0062
+Mean episode rew_posture_stability: 0.0915
+Mean episode rew_knee_hyperextension: 0.0005
+      Mean episode rew_base_height: -0.0015
+          Mean episode rew_survive: 0.0063
+Mean episode rew_penalize_ankle_height: -0.0038
+Mean episode rew_foot_contact_penalty: -0.0190
+ Mean episode rew_forward_velocity: 0.1447
+Mean episode rew_lateral_drift_penalty: -0.0096
+   Mean episode rew_energy_penalty: -0.0509
+         Mean episode rew_symmetry: 0.0368
+    Mean episode rew_yaw_stability: -0.0761
+       Mean episode rew_gait_phase: 0.0152
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 23592960
+                    Iteration time: 6.83s
+                        Total time: 102.39s
+                               ETA: 3999.8s
+
+################################################################################
+                      [1m Learning iteration 15/600 [0m
+
+                       Computation: 231314 steps/s (collection: 4.158s, learning 2.641s)
+               Value function loss: 0.0703
+                    Surrogate loss: -0.0034
+             Mean action noise std: 0.88
+                 Mean total reward: 3.58
+               Mean episode length: 91.54
+Mean episode rew_bird_leg_knee_pose: -0.0021
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0110
+        Mean episode rew_flat_feet: 0.0088
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0064
+Mean episode rew_posture_stability: 0.0963
+Mean episode rew_knee_hyperextension: 0.0005
+      Mean episode rew_base_height: -0.0016
+          Mean episode rew_survive: 0.0066
+Mean episode rew_penalize_ankle_height: -0.0039
+Mean episode rew_foot_contact_penalty: -0.0190
+ Mean episode rew_forward_velocity: 0.1526
+Mean episode rew_lateral_drift_penalty: -0.0104
+   Mean episode rew_energy_penalty: -0.0525
+         Mean episode rew_symmetry: 0.0382
+    Mean episode rew_yaw_stability: -0.0764
+       Mean episode rew_gait_phase: 0.0157
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 25165824
+                    Iteration time: 6.80s
+                        Total time: 109.18s
+                               ETA: 3992.1s
+
+################################################################################
+                      [1m Learning iteration 16/600 [0m
+
+                       Computation: 232123 steps/s (collection: 4.132s, learning 2.644s)
+               Value function loss: 0.0694
+                    Surrogate loss: -0.0040
+             Mean action noise std: 0.87
+                 Mean total reward: 3.73
+               Mean episode length: 92.30
+Mean episode rew_bird_leg_knee_pose: -0.0023
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0117
+        Mean episode rew_flat_feet: 0.0087
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0067
+Mean episode rew_posture_stability: 0.1020
+Mean episode rew_knee_hyperextension: 0.0006
+      Mean episode rew_base_height: -0.0017
+          Mean episode rew_survive: 0.0068
+Mean episode rew_penalize_ankle_height: -0.0041
+Mean episode rew_foot_contact_penalty: -0.0193
+ Mean episode rew_forward_velocity: 0.1633
+Mean episode rew_lateral_drift_penalty: -0.0114
+   Mean episode rew_energy_penalty: -0.0543
+         Mean episode rew_symmetry: 0.0398
+    Mean episode rew_yaw_stability: -0.0770
+       Mean episode rew_gait_phase: 0.0164
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 26738688
+                    Iteration time: 6.78s
+                        Total time: 115.96s
+                               ETA: 3983.6s
+
+################################################################################
+                      [1m Learning iteration 17/600 [0m
+
+                       Computation: 232437 steps/s (collection: 4.126s, learning 2.641s)
+               Value function loss: 0.0778
+                    Surrogate loss: -0.0034
+             Mean action noise std: 0.87
+                 Mean total reward: 4.35
+               Mean episode length: 98.38
+Mean episode rew_bird_leg_knee_pose: -0.0024
+     Mean episode rew_leg_symmetry: -0.0002
+Mean episode rew_foot_contact_phase_based: 0.0126
+        Mean episode rew_flat_feet: 0.0086
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0070
+Mean episode rew_posture_stability: 0.1092
+Mean episode rew_knee_hyperextension: 0.0006
+      Mean episode rew_base_height: -0.0018
+          Mean episode rew_survive: 0.0072
+Mean episode rew_penalize_ankle_height: -0.0043
+Mean episode rew_foot_contact_penalty: -0.0199
+ Mean episode rew_forward_velocity: 0.1762
+Mean episode rew_lateral_drift_penalty: -0.0127
+   Mean episode rew_energy_penalty: -0.0567
+         Mean episode rew_symmetry: 0.0420
+    Mean episode rew_yaw_stability: -0.0789
+       Mean episode rew_gait_phase: 0.0173
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 28311552
+                    Iteration time: 6.77s
+                        Total time: 122.73s
+                               ETA: 3975.0s
+
+################################################################################
+                      [1m Learning iteration 18/600 [0m
+
+                       Computation: 232381 steps/s (collection: 4.122s, learning 2.647s)
+               Value function loss: 0.0842
+                    Surrogate loss: -0.0031
+             Mean action noise std: 0.86
+                 Mean total reward: 4.44
+               Mean episode length: 101.01
+Mean episode rew_bird_leg_knee_pose: -0.0025
+     Mean episode rew_leg_symmetry: -0.0003
+Mean episode rew_foot_contact_phase_based: 0.0135
+        Mean episode rew_flat_feet: 0.0086
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0074
+Mean episode rew_posture_stability: 0.1173
+Mean episode rew_knee_hyperextension: 0.0006
+      Mean episode rew_base_height: -0.0018
+          Mean episode rew_survive: 0.0076
+Mean episode rew_penalize_ankle_height: -0.0045
+Mean episode rew_foot_contact_penalty: -0.0208
+ Mean episode rew_forward_velocity: 0.1904
+Mean episode rew_lateral_drift_penalty: -0.0140
+   Mean episode rew_energy_penalty: -0.0598
+         Mean episode rew_symmetry: 0.0446
+    Mean episode rew_yaw_stability: -0.0814
+       Mean episode rew_gait_phase: 0.0185
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 29884416
+                    Iteration time: 6.77s
+                        Total time: 129.50s
+                               ETA: 3966.7s
+
+################################################################################
+                      [1m Learning iteration 19/600 [0m
+
+                       Computation: 233338 steps/s (collection: 4.092s, learning 2.649s)
+               Value function loss: 0.0882
+                    Surrogate loss: -0.0026
+             Mean action noise std: 0.86
+                 Mean total reward: 5.46
+               Mean episode length: 115.84
+Mean episode rew_bird_leg_knee_pose: -0.0026
+     Mean episode rew_leg_symmetry: -0.0003
+Mean episode rew_foot_contact_phase_based: 0.0147
+        Mean episode rew_flat_feet: 0.0086
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0078
+Mean episode rew_posture_stability: 0.1275
+Mean episode rew_knee_hyperextension: 0.0006
+      Mean episode rew_base_height: -0.0018
+          Mean episode rew_survive: 0.0081
+Mean episode rew_penalize_ankle_height: -0.0048
+Mean episode rew_foot_contact_penalty: -0.0215
+ Mean episode rew_forward_velocity: 0.2056
+Mean episode rew_lateral_drift_penalty: -0.0159
+   Mean episode rew_energy_penalty: -0.0636
+         Mean episode rew_symmetry: 0.0478
+    Mean episode rew_yaw_stability: -0.0855
+       Mean episode rew_gait_phase: 0.0198
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 31457280
+                    Iteration time: 6.74s
+                        Total time: 136.24s
+                               ETA: 3957.7s
+
+################################################################################
+                      [1m Learning iteration 20/600 [0m
+
+                       Computation: 234423 steps/s (collection: 4.062s, learning 2.648s)
+               Value function loss: 0.0937
+                    Surrogate loss: -0.0043
+             Mean action noise std: 0.86
+                 Mean total reward: 6.21
+               Mean episode length: 130.00
+Mean episode rew_bird_leg_knee_pose: -0.0028
+     Mean episode rew_leg_symmetry: -0.0003
+Mean episode rew_foot_contact_phase_based: 0.0162
+        Mean episode rew_flat_feet: 0.0087
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0085
+Mean episode rew_posture_stability: 0.1414
+Mean episode rew_knee_hyperextension: 0.0006
+      Mean episode rew_base_height: -0.0019
+          Mean episode rew_survive: 0.0088
+Mean episode rew_penalize_ankle_height: -0.0052
+Mean episode rew_foot_contact_penalty: -0.0228
+ Mean episode rew_forward_velocity: 0.2260
+Mean episode rew_lateral_drift_penalty: -0.0183
+   Mean episode rew_energy_penalty: -0.0691
+         Mean episode rew_symmetry: 0.0523
+    Mean episode rew_yaw_stability: -0.0917
+       Mean episode rew_gait_phase: 0.0218
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 33030144
+                    Iteration time: 6.71s
+                        Total time: 142.95s
+                               ETA: 3948.0s
+
+################################################################################
+                      [1m Learning iteration 21/600 [0m
+
+                       Computation: 234309 steps/s (collection: 4.066s, learning 2.647s)
+               Value function loss: 0.1015
+                    Surrogate loss: -0.0053
+             Mean action noise std: 0.85
+                 Mean total reward: 6.41
+               Mean episode length: 132.30
+Mean episode rew_bird_leg_knee_pose: -0.0030
+     Mean episode rew_leg_symmetry: -0.0003
+Mean episode rew_foot_contact_phase_based: 0.0179
+        Mean episode rew_flat_feet: 0.0086
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0092
+Mean episode rew_posture_stability: 0.1558
+Mean episode rew_knee_hyperextension: 0.0006
+      Mean episode rew_base_height: -0.0019
+          Mean episode rew_survive: 0.0096
+Mean episode rew_penalize_ankle_height: -0.0057
+Mean episode rew_foot_contact_penalty: -0.0244
+ Mean episode rew_forward_velocity: 0.2481
+Mean episode rew_lateral_drift_penalty: -0.0211
+   Mean episode rew_energy_penalty: -0.0752
+         Mean episode rew_symmetry: 0.0570
+    Mean episode rew_yaw_stability: -0.0975
+       Mean episode rew_gait_phase: 0.0238
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 34603008
+                    Iteration time: 6.71s
+                        Total time: 149.66s
+                               ETA: 3938.8s
+
+################################################################################
+                      [1m Learning iteration 22/600 [0m
+
+                       Computation: 233427 steps/s (collection: 4.093s, learning 2.645s)
+               Value function loss: 0.0946
+                    Surrogate loss: 0.0001
+             Mean action noise std: 0.85
+                 Mean total reward: 6.90
+               Mean episode length: 141.80
+Mean episode rew_bird_leg_knee_pose: -0.0033
+     Mean episode rew_leg_symmetry: -0.0004
+Mean episode rew_foot_contact_phase_based: 0.0197
+        Mean episode rew_flat_feet: 0.0087
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0101
+Mean episode rew_posture_stability: 0.1728
+Mean episode rew_knee_hyperextension: 0.0006
+      Mean episode rew_base_height: -0.0020
+          Mean episode rew_survive: 0.0104
+Mean episode rew_penalize_ankle_height: -0.0062
+Mean episode rew_foot_contact_penalty: -0.0260
+ Mean episode rew_forward_velocity: 0.2734
+Mean episode rew_lateral_drift_penalty: -0.0245
+   Mean episode rew_energy_penalty: -0.0823
+         Mean episode rew_symmetry: 0.0623
+    Mean episode rew_yaw_stability: -0.1047
+       Mean episode rew_gait_phase: 0.0260
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 36175872
+                    Iteration time: 6.74s
+                        Total time: 156.40s
+                               ETA: 3930.3s
+
+################################################################################
+                      [1m Learning iteration 23/600 [0m
+
+                       Computation: 236532 steps/s (collection: 4.003s, learning 2.647s)
+               Value function loss: 0.1015
+                    Surrogate loss: 0.0006
+             Mean action noise std: 0.85
+                 Mean total reward: 8.17
+               Mean episode length: 164.26
+Mean episode rew_bird_leg_knee_pose: -0.0036
+     Mean episode rew_leg_symmetry: -0.0004
+Mean episode rew_foot_contact_phase_based: 0.0217
+        Mean episode rew_flat_feet: 0.0089
+Mean episode rew_foot_contact_switch: 0.0001
+Mean episode rew_step_height_consistency: 0.0109
+Mean episode rew_posture_stability: 0.1902
+Mean episode rew_knee_hyperextension: 0.0007
+      Mean episode rew_base_height: -0.0020
+          Mean episode rew_survive: 0.0114
+Mean episode rew_penalize_ankle_height: -0.0067
+Mean episode rew_foot_contact_penalty: -0.0276
+ Mean episode rew_forward_velocity: 0.2990
+Mean episode rew_lateral_drift_penalty: -0.0279
+   Mean episode rew_energy_penalty: -0.0893
+         Mean episode rew_symmetry: 0.0678
+    Mean episode rew_yaw_stability: -0.1121
+       Mean episode rew_gait_phase: 0.0283
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 37748736
+                    Iteration time: 6.65s
+                        Total time: 163.05s
+                               ETA: 3919.9s
+
+################################################################################
+                      [1m Learning iteration 24/600 [0m
+
+                       Computation: 235562 steps/s (collection: 4.028s, learning 2.649s)
+               Value function loss: 0.1014
+                    Surrogate loss: -0.0024
+             Mean action noise std: 0.84
+                 Mean total reward: 9.11
+               Mean episode length: 179.77
+Mean episode rew_bird_leg_knee_pose: -0.0040
+     Mean episode rew_leg_symmetry: -0.0005
+Mean episode rew_foot_contact_phase_based: 0.0242
+        Mean episode rew_flat_feet: 0.0088
+Mean episode rew_foot_contact_switch: 0.0002
+Mean episode rew_step_height_consistency: 0.0120
+Mean episode rew_posture_stability: 0.2113
+Mean episode rew_knee_hyperextension: 0.0007
+      Mean episode rew_base_height: -0.0021
+          Mean episode rew_survive: 0.0125
+Mean episode rew_penalize_ankle_height: -0.0073
+Mean episode rew_foot_contact_penalty: -0.0298
+ Mean episode rew_forward_velocity: 0.3317
+Mean episode rew_lateral_drift_penalty: -0.0324
+   Mean episode rew_energy_penalty: -0.0986
+         Mean episode rew_symmetry: 0.0748
+    Mean episode rew_yaw_stability: -0.1225
+       Mean episode rew_gait_phase: 0.0313
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 39321600
+                    Iteration time: 6.68s
+                        Total time: 169.72s
+                               ETA: 3910.4s
+
+################################################################################
+                      [1m Learning iteration 25/600 [0m
+
+                       Computation: 238726 steps/s (collection: 3.940s, learning 2.649s)
+               Value function loss: 0.1005
+                    Surrogate loss: -0.0004
+             Mean action noise std: 0.84
+                 Mean total reward: 9.21
+               Mean episode length: 186.21
+Mean episode rew_bird_leg_knee_pose: -0.0045
+     Mean episode rew_leg_symmetry: -0.0005
+Mean episode rew_foot_contact_phase_based: 0.0264
+        Mean episode rew_flat_feet: 0.0088
+Mean episode rew_foot_contact_switch: 0.0002
+Mean episode rew_step_height_consistency: 0.0130
+Mean episode rew_posture_stability: 0.2306
+Mean episode rew_knee_hyperextension: 0.0008
+      Mean episode rew_base_height: -0.0023
+          Mean episode rew_survive: 0.0136
+Mean episode rew_penalize_ankle_height: -0.0080
+Mean episode rew_foot_contact_penalty: -0.0325
+ Mean episode rew_forward_velocity: 0.3629
+Mean episode rew_lateral_drift_penalty: -0.0369
+   Mean episode rew_energy_penalty: -0.1074
+         Mean episode rew_symmetry: 0.0815
+    Mean episode rew_yaw_stability: -0.1325
+       Mean episode rew_gait_phase: 0.0341
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 40894464
+                    Iteration time: 6.59s
+                        Total time: 176.31s
+                               ETA: 3899.2s
+
+################################################################################
+                      [1m Learning iteration 26/600 [0m
+
+                       Computation: 238450 steps/s (collection: 3.943s, learning 2.653s)
+               Value function loss: 0.0957
+                    Surrogate loss: -0.0036
+             Mean action noise std: 0.84
+                 Mean total reward: 10.17
+               Mean episode length: 210.67
+Mean episode rew_bird_leg_knee_pose: -0.0050
+     Mean episode rew_leg_symmetry: -0.0006
+Mean episode rew_foot_contact_phase_based: 0.0293
+        Mean episode rew_flat_feet: 0.0087
+Mean episode rew_foot_contact_switch: 0.0002
+Mean episode rew_step_height_consistency: 0.0143
+Mean episode rew_posture_stability: 0.2561
+Mean episode rew_knee_hyperextension: 0.0008
+      Mean episode rew_base_height: -0.0025
+          Mean episode rew_survive: 0.0151
+Mean episode rew_penalize_ankle_height: -0.0088
+Mean episode rew_foot_contact_penalty: -0.0353
+ Mean episode rew_forward_velocity: 0.3993
+Mean episode rew_lateral_drift_penalty: -0.0424
+   Mean episode rew_energy_penalty: -0.1186
+         Mean episode rew_symmetry: 0.0902
+    Mean episode rew_yaw_stability: -0.1432
+       Mean episode rew_gait_phase: 0.0377
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 42467328
+                    Iteration time: 6.60s
+                        Total time: 182.91s
+                               ETA: 3888.5s
+
+################################################################################
+                      [1m Learning iteration 27/600 [0m
+
+                       Computation: 240635 steps/s (collection: 3.886s, learning 2.651s)
+               Value function loss: 0.0926
+                    Surrogate loss: 0.0002
+             Mean action noise std: 0.83
+                 Mean total reward: 12.01
+               Mean episode length: 238.10
+Mean episode rew_bird_leg_knee_pose: -0.0055
+     Mean episode rew_leg_symmetry: -0.0006
+Mean episode rew_foot_contact_phase_based: 0.0327
+        Mean episode rew_flat_feet: 0.0085
+Mean episode rew_foot_contact_switch: 0.0003
+Mean episode rew_step_height_consistency: 0.0159
+Mean episode rew_posture_stability: 0.2881
+Mean episode rew_knee_hyperextension: 0.0009
+      Mean episode rew_base_height: -0.0027
+          Mean episode rew_survive: 0.0168
+Mean episode rew_penalize_ankle_height: -0.0099
+Mean episode rew_foot_contact_penalty: -0.0394
+ Mean episode rew_forward_velocity: 0.4483
+Mean episode rew_lateral_drift_penalty: -0.0493
+   Mean episode rew_energy_penalty: -0.1326
+         Mean episode rew_symmetry: 0.1010
+    Mean episode rew_yaw_stability: -0.1583
+       Mean episode rew_gait_phase: 0.0422
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 44040192
+                    Iteration time: 6.54s
+                        Total time: 189.44s
+                               ETA: 3876.9s
+
+################################################################################
+                      [1m Learning iteration 28/600 [0m
+
+                       Computation: 241926 steps/s (collection: 3.850s, learning 2.651s)
+               Value function loss: 0.0803
+                    Surrogate loss: -0.0026
+             Mean action noise std: 0.83
+                 Mean total reward: 12.96
+               Mean episode length: 261.07
+Mean episode rew_bird_leg_knee_pose: -0.0062
+     Mean episode rew_leg_symmetry: -0.0007
+Mean episode rew_foot_contact_phase_based: 0.0379
+        Mean episode rew_flat_feet: 0.0088
+Mean episode rew_foot_contact_switch: 0.0004
+Mean episode rew_step_height_consistency: 0.0180
+Mean episode rew_posture_stability: 0.3336
+Mean episode rew_knee_hyperextension: 0.0011
+      Mean episode rew_base_height: -0.0028
+          Mean episode rew_survive: 0.0193
+Mean episode rew_penalize_ankle_height: -0.0113
+Mean episode rew_foot_contact_penalty: -0.0438
+ Mean episode rew_forward_velocity: 0.5098
+Mean episode rew_lateral_drift_penalty: -0.0585
+   Mean episode rew_energy_penalty: -0.1514
+         Mean episode rew_symmetry: 0.1155
+    Mean episode rew_yaw_stability: -0.1778
+       Mean episode rew_gait_phase: 0.0483
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 45613056
+                    Iteration time: 6.50s
+                        Total time: 195.95s
+                               ETA: 3864.9s
+
+################################################################################
+                      [1m Learning iteration 29/600 [0m
+
+                       Computation: 240679 steps/s (collection: 3.884s, learning 2.651s)
+               Value function loss: 0.0851
+                    Surrogate loss: -0.0005
+             Mean action noise std: 0.82
+                 Mean total reward: 14.78
+               Mean episode length: 293.84
+Mean episode rew_bird_leg_knee_pose: -0.0069
+     Mean episode rew_leg_symmetry: -0.0008
+Mean episode rew_foot_contact_phase_based: 0.0432
+        Mean episode rew_flat_feet: 0.0090
+Mean episode rew_foot_contact_switch: 0.0004
+Mean episode rew_step_height_consistency: 0.0203
+Mean episode rew_posture_stability: 0.3812
+Mean episode rew_knee_hyperextension: 0.0013
+      Mean episode rew_base_height: -0.0031
+          Mean episode rew_survive: 0.0218
+Mean episode rew_penalize_ankle_height: -0.0128
+Mean episode rew_foot_contact_penalty: -0.0488
+ Mean episode rew_forward_velocity: 0.5798
+Mean episode rew_lateral_drift_penalty: -0.0681
+   Mean episode rew_energy_penalty: -0.1706
+         Mean episode rew_symmetry: 0.1311
+    Mean episode rew_yaw_stability: -0.1997
+       Mean episode rew_gait_phase: 0.0547
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 47185920
+                    Iteration time: 6.54s
+                        Total time: 202.48s
+                               ETA: 3853.9s
+
+################################################################################
+                      [1m Learning iteration 30/600 [0m
+
+                       Computation: 240645 steps/s (collection: 3.882s, learning 2.654s)
+               Value function loss: 0.0684
+                    Surrogate loss: 0.0022
+             Mean action noise std: 0.82
+                 Mean total reward: 18.33
+               Mean episode length: 361.46
+Mean episode rew_bird_leg_knee_pose: -0.0079
+     Mean episode rew_leg_symmetry: -0.0010
+Mean episode rew_foot_contact_phase_based: 0.0500
+        Mean episode rew_flat_feet: 0.0088
+Mean episode rew_foot_contact_switch: 0.0005
+Mean episode rew_step_height_consistency: 0.0232
+Mean episode rew_posture_stability: 0.4389
+Mean episode rew_knee_hyperextension: 0.0015
+      Mean episode rew_base_height: -0.0036
+          Mean episode rew_survive: 0.0250
+Mean episode rew_penalize_ankle_height: -0.0146
+Mean episode rew_foot_contact_penalty: -0.0545
+ Mean episode rew_forward_velocity: 0.6640
+Mean episode rew_lateral_drift_penalty: -0.0799
+   Mean episode rew_energy_penalty: -0.1951
+         Mean episode rew_symmetry: 0.1504
+    Mean episode rew_yaw_stability: -0.2272
+       Mean episode rew_gait_phase: 0.0628
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 48758784
+                    Iteration time: 6.54s
+                        Total time: 209.02s
+                               ETA: 3843.2s
+
+################################################################################
+                      [1m Learning iteration 31/600 [0m
+
+                       Computation: 240423 steps/s (collection: 3.890s, learning 2.652s)
+               Value function loss: 0.0591
+                    Surrogate loss: -0.0007
+             Mean action noise std: 0.81
+                 Mean total reward: 20.15
+               Mean episode length: 399.46
+Mean episode rew_bird_leg_knee_pose: -0.0089
+     Mean episode rew_leg_symmetry: -0.0011
+Mean episode rew_foot_contact_phase_based: 0.0568
+        Mean episode rew_flat_feet: 0.0082
+Mean episode rew_foot_contact_switch: 0.0006
+Mean episode rew_step_height_consistency: 0.0261
+Mean episode rew_posture_stability: 0.4967
+Mean episode rew_knee_hyperextension: 0.0016
+      Mean episode rew_base_height: -0.0040
+          Mean episode rew_survive: 0.0283
+Mean episode rew_penalize_ankle_height: -0.0165
+Mean episode rew_foot_contact_penalty: -0.0610
+ Mean episode rew_forward_velocity: 0.7531
+Mean episode rew_lateral_drift_penalty: -0.0914
+   Mean episode rew_energy_penalty: -0.2193
+         Mean episode rew_symmetry: 0.1700
+    Mean episode rew_yaw_stability: -0.2531
+       Mean episode rew_gait_phase: 0.0710
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 50331648
+                    Iteration time: 6.54s
+                        Total time: 215.56s
+                               ETA: 3832.9s
+
+################################################################################
+                      [1m Learning iteration 32/600 [0m
+
+                       Computation: 241028 steps/s (collection: 3.875s, learning 2.651s)
+               Value function loss: 0.0528
+                    Surrogate loss: -0.0005
+             Mean action noise std: 0.80
+                 Mean total reward: 24.67
+               Mean episode length: 484.06
+Mean episode rew_bird_leg_knee_pose: -0.0103
+     Mean episode rew_leg_symmetry: -0.0014
+Mean episode rew_foot_contact_phase_based: 0.0662
+        Mean episode rew_flat_feet: 0.0076
+Mean episode rew_foot_contact_switch: 0.0008
+Mean episode rew_step_height_consistency: 0.0298
+Mean episode rew_posture_stability: 0.5696
+Mean episode rew_knee_hyperextension: 0.0017
+      Mean episode rew_base_height: -0.0046
+          Mean episode rew_survive: 0.0324
+Mean episode rew_penalize_ankle_height: -0.0188
+Mean episode rew_foot_contact_penalty: -0.0673
+ Mean episode rew_forward_velocity: 0.8654
+Mean episode rew_lateral_drift_penalty: -0.1051
+   Mean episode rew_energy_penalty: -0.2493
+         Mean episode rew_symmetry: 0.1945
+    Mean episode rew_yaw_stability: -0.2856
+       Mean episode rew_gait_phase: 0.0813
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 51904512
+                    Iteration time: 6.53s
+                        Total time: 222.09s
+                               ETA: 3822.6s
+
+################################################################################
+                      [1m Learning iteration 33/600 [0m
+
+                       Computation: 242064 steps/s (collection: 3.838s, learning 2.659s)
+               Value function loss: 0.0414
+                    Surrogate loss: -0.0027
+             Mean action noise std: 0.79
+                 Mean total reward: 26.80
+               Mean episode length: 515.24
+Mean episode rew_bird_leg_knee_pose: -0.0117
+     Mean episode rew_leg_symmetry: -0.0016
+Mean episode rew_foot_contact_phase_based: 0.0741
+        Mean episode rew_flat_feet: 0.0064
+Mean episode rew_foot_contact_switch: 0.0008
+Mean episode rew_step_height_consistency: 0.0328
+Mean episode rew_posture_stability: 0.6293
+Mean episode rew_knee_hyperextension: 0.0020
+      Mean episode rew_base_height: -0.0051
+          Mean episode rew_survive: 0.0358
+Mean episode rew_penalize_ankle_height: -0.0208
+Mean episode rew_foot_contact_penalty: -0.0726
+ Mean episode rew_forward_velocity: 0.9575
+Mean episode rew_lateral_drift_penalty: -0.1156
+   Mean episode rew_energy_penalty: -0.2726
+         Mean episode rew_symmetry: 0.2152
+    Mean episode rew_yaw_stability: -0.3108
+       Mean episode rew_gait_phase: 0.0899
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 53477376
+                    Iteration time: 6.50s
+                        Total time: 228.58s
+                               ETA: 3812.0s
+
+################################################################################
+                      [1m Learning iteration 34/600 [0m
+
+                       Computation: 242216 steps/s (collection: 3.842s, learning 2.652s)
+               Value function loss: 0.0431
+                    Surrogate loss: -0.0005
+             Mean action noise std: 0.78
+                 Mean total reward: 27.99
+               Mean episode length: 520.45
+Mean episode rew_bird_leg_knee_pose: -0.0133
+     Mean episode rew_leg_symmetry: -0.0018
+Mean episode rew_foot_contact_phase_based: 0.0860
+        Mean episode rew_flat_feet: 0.0055
+Mean episode rew_foot_contact_switch: 0.0010
+Mean episode rew_step_height_consistency: 0.0370
+Mean episode rew_posture_stability: 0.7157
+Mean episode rew_knee_hyperextension: 0.0023
+      Mean episode rew_base_height: -0.0055
+          Mean episode rew_survive: 0.0406
+Mean episode rew_penalize_ankle_height: -0.0234
+Mean episode rew_foot_contact_penalty: -0.0770
+ Mean episode rew_forward_velocity: 1.0991
+Mean episode rew_lateral_drift_penalty: -0.1283
+   Mean episode rew_energy_penalty: -0.3050
+         Mean episode rew_symmetry: 0.2438
+    Mean episode rew_yaw_stability: -0.3429
+       Mean episode rew_gait_phase: 0.1019
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 55050240
+                    Iteration time: 6.49s
+                        Total time: 235.08s
+                               ETA: 3801.5s
+
+################################################################################
+                      [1m Learning iteration 35/600 [0m
+
+                       Computation: 244330 steps/s (collection: 3.785s, learning 2.652s)
+               Value function loss: 0.0302
+                    Surrogate loss: 0.0014
+             Mean action noise std: 0.77
+                 Mean total reward: 36.72
+               Mean episode length: 673.74
+Mean episode rew_bird_leg_knee_pose: -0.0156
+     Mean episode rew_leg_symmetry: -0.0022
+Mean episode rew_foot_contact_phase_based: 0.1023
+        Mean episode rew_flat_feet: 0.0045
+Mean episode rew_foot_contact_switch: 0.0012
+Mean episode rew_step_height_consistency: 0.0432
+Mean episode rew_posture_stability: 0.8448
+Mean episode rew_knee_hyperextension: 0.0024
+      Mean episode rew_base_height: -0.0062
+          Mean episode rew_survive: 0.0476
+Mean episode rew_penalize_ankle_height: -0.0273
+Mean episode rew_foot_contact_penalty: -0.0863
+ Mean episode rew_forward_velocity: 1.2981
+Mean episode rew_lateral_drift_penalty: -0.1503
+   Mean episode rew_energy_penalty: -0.3547
+         Mean episode rew_symmetry: 0.2863
+    Mean episode rew_yaw_stability: -0.3944
+       Mean episode rew_gait_phase: 0.1197
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 56623104
+                    Iteration time: 6.44s
+                        Total time: 241.51s
+                               ETA: 3790.4s
+
+################################################################################
+                      [1m Learning iteration 36/600 [0m
+
+                       Computation: 245432 steps/s (collection: 3.753s, learning 2.655s)
+               Value function loss: 0.0285
+                    Surrogate loss: -0.0016
+             Mean action noise std: 0.76
+                 Mean total reward: 39.51
+               Mean episode length: 709.84
+Mean episode rew_bird_leg_knee_pose: -0.0167
+     Mean episode rew_leg_symmetry: -0.0024
+Mean episode rew_foot_contact_phase_based: 0.1103
+        Mean episode rew_flat_feet: 0.0031
+Mean episode rew_foot_contact_switch: 0.0011
+Mean episode rew_step_height_consistency: 0.0455
+Mean episode rew_posture_stability: 0.8866
+Mean episode rew_knee_hyperextension: 0.0023
+      Mean episode rew_base_height: -0.0063
+          Mean episode rew_survive: 0.0501
+Mean episode rew_penalize_ankle_height: -0.0286
+Mean episode rew_foot_contact_penalty: -0.0848
+ Mean episode rew_forward_velocity: 1.3704
+Mean episode rew_lateral_drift_penalty: -0.1510
+   Mean episode rew_energy_penalty: -0.3663
+         Mean episode rew_symmetry: 0.3017
+    Mean episode rew_yaw_stability: -0.4075
+       Mean episode rew_gait_phase: 0.1258
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 58195968
+                    Iteration time: 6.41s
+                        Total time: 247.92s
+                               ETA: 3779.1s
+
+################################################################################
+                      [1m Learning iteration 37/600 [0m
+
+                       Computation: 248841 steps/s (collection: 3.669s, learning 2.651s)
+               Value function loss: 0.0263
+                    Surrogate loss: -0.0027
+             Mean action noise std: 0.75
+                 Mean total reward: 43.52
+               Mean episode length: 766.89
+Mean episode rew_bird_leg_knee_pose: -0.0190
+     Mean episode rew_leg_symmetry: -0.0027
+Mean episode rew_foot_contact_phase_based: 0.1284
+        Mean episode rew_flat_feet: 0.0017
+Mean episode rew_foot_contact_switch: 0.0013
+Mean episode rew_step_height_consistency: 0.0516
+Mean episode rew_posture_stability: 1.0202
+Mean episode rew_knee_hyperextension: 0.0027
+      Mean episode rew_base_height: -0.0070
+          Mean episode rew_survive: 0.0571
+Mean episode rew_penalize_ankle_height: -0.0325
+Mean episode rew_foot_contact_penalty: -0.0902
+ Mean episode rew_forward_velocity: 1.5938
+Mean episode rew_lateral_drift_penalty: -0.1719
+   Mean episode rew_energy_penalty: -0.4119
+         Mean episode rew_symmetry: 0.3438
+    Mean episode rew_yaw_stability: -0.4522
+       Mean episode rew_gait_phase: 0.1434
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 59768832
+                    Iteration time: 6.32s
+                        Total time: 254.24s
+                               ETA: 3766.8s
+
+################################################################################
+                      [1m Learning iteration 38/600 [0m
+
+                       Computation: 248259 steps/s (collection: 3.683s, learning 2.653s)
+               Value function loss: 0.0231
+                    Surrogate loss: -0.0033
+             Mean action noise std: 0.74
+                 Mean total reward: 49.96
+               Mean episode length: 876.53
+Mean episode rew_bird_leg_knee_pose: -0.0205
+     Mean episode rew_leg_symmetry: -0.0031
+Mean episode rew_foot_contact_phase_based: 0.1386
+        Mean episode rew_flat_feet: 0.0008
+Mean episode rew_foot_contact_switch: 0.0014
+Mean episode rew_step_height_consistency: 0.0552
+Mean episode rew_posture_stability: 1.0940
+Mean episode rew_knee_hyperextension: 0.0026
+      Mean episode rew_base_height: -0.0075
+          Mean episode rew_survive: 0.0612
+Mean episode rew_penalize_ankle_height: -0.0348
+Mean episode rew_foot_contact_penalty: -0.0940
+ Mean episode rew_forward_velocity: 1.7087
+Mean episode rew_lateral_drift_penalty: -0.1812
+   Mean episode rew_energy_penalty: -0.4365
+         Mean episode rew_symmetry: 0.3694
+    Mean episode rew_yaw_stability: -0.4794
+       Mean episode rew_gait_phase: 0.1546
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 61341696
+                    Iteration time: 6.34s
+                        Total time: 260.58s
+                               ETA: 3755.0s
+
+################################################################################
+                      [1m Learning iteration 39/600 [0m
+
+                       Computation: 249414 steps/s (collection: 3.652s, learning 2.654s)
+               Value function loss: 0.0223
+                    Surrogate loss: -0.0019
+             Mean action noise std: 0.73
+                 Mean total reward: 54.51
+               Mean episode length: 938.25
+Mean episode rew_bird_leg_knee_pose: -0.0223
+     Mean episode rew_leg_symmetry: -0.0035
+Mean episode rew_foot_contact_phase_based: 0.1542
+        Mean episode rew_flat_feet: 0.0008
+Mean episode rew_foot_contact_switch: 0.0015
+Mean episode rew_step_height_consistency: 0.0608
+Mean episode rew_posture_stability: 1.2101
+Mean episode rew_knee_hyperextension: 0.0031
+      Mean episode rew_base_height: -0.0076
+          Mean episode rew_survive: 0.0673
+Mean episode rew_penalize_ankle_height: -0.0380
+Mean episode rew_foot_contact_penalty: -0.0974
+ Mean episode rew_forward_velocity: 1.8854
+Mean episode rew_lateral_drift_penalty: -0.1936
+   Mean episode rew_energy_penalty: -0.4743
+         Mean episode rew_symmetry: 0.4070
+    Mean episode rew_yaw_stability: -0.5104
+       Mean episode rew_gait_phase: 0.1695
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 62914560
+                    Iteration time: 6.31s
+                        Total time: 266.88s
+                               ETA: 3743.1s
+
+################################################################################
+                      [1m Learning iteration 40/600 [0m
+
+                       Computation: 253007 steps/s (collection: 3.563s, learning 2.654s)
+               Value function loss: 0.0175
+                    Surrogate loss: -0.0006
+             Mean action noise std: 0.71
+                 Mean total reward: 57.67
+               Mean episode length: 965.42
+Mean episode rew_bird_leg_knee_pose: -0.0252
+     Mean episode rew_leg_symmetry: -0.0039
+Mean episode rew_foot_contact_phase_based: 0.1734
+        Mean episode rew_flat_feet: -0.0031
+Mean episode rew_foot_contact_switch: 0.0015
+Mean episode rew_step_height_consistency: 0.0668
+Mean episode rew_posture_stability: 1.3323
+Mean episode rew_knee_hyperextension: 0.0030
+      Mean episode rew_base_height: -0.0083
+          Mean episode rew_survive: 0.0740
+Mean episode rew_penalize_ankle_height: -0.0414
+Mean episode rew_foot_contact_penalty: -0.0968
+ Mean episode rew_forward_velocity: 2.0814
+Mean episode rew_lateral_drift_penalty: -0.2061
+   Mean episode rew_energy_penalty: -0.5074
+         Mean episode rew_symmetry: 0.4489
+    Mean episode rew_yaw_stability: -0.5305
+       Mean episode rew_gait_phase: 0.1870
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 64487424
+                    Iteration time: 6.22s
+                        Total time: 273.10s
+                               ETA: 3730.2s
+
+################################################################################
+                      [1m Learning iteration 41/600 [0m
+
+                       Computation: 255433 steps/s (collection: 3.502s, learning 2.656s)
+               Value function loss: 0.0183
+                    Surrogate loss: -0.0046
+             Mean action noise std: 0.70
+                 Mean total reward: 65.57
+               Mean episode length: 1096.48
+Mean episode rew_bird_leg_knee_pose: -0.0275
+     Mean episode rew_leg_symmetry: -0.0044
+Mean episode rew_foot_contact_phase_based: 0.1963
+        Mean episode rew_flat_feet: -0.0021
+Mean episode rew_foot_contact_switch: 0.0019
+Mean episode rew_step_height_consistency: 0.0764
+Mean episode rew_posture_stability: 1.5205
+Mean episode rew_knee_hyperextension: 0.0034
+      Mean episode rew_base_height: -0.0091
+          Mean episode rew_survive: 0.0841
+Mean episode rew_penalize_ankle_height: -0.0468
+Mean episode rew_foot_contact_penalty: -0.1094
+ Mean episode rew_forward_velocity: 2.3750
+Mean episode rew_lateral_drift_penalty: -0.2333
+   Mean episode rew_energy_penalty: -0.5739
+         Mean episode rew_symmetry: 0.5096
+    Mean episode rew_yaw_stability: -0.6062
+       Mean episode rew_gait_phase: 0.2134
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 66060288
+                    Iteration time: 6.16s
+                        Total time: 279.26s
+                               ETA: 3716.8s
+
+################################################################################
+                      [1m Learning iteration 42/600 [0m
+
+                       Computation: 256893 steps/s (collection: 3.461s, learning 2.662s)
+               Value function loss: 0.0144
+                    Surrogate loss: -0.0039
+             Mean action noise std: 0.69
+                 Mean total reward: 74.86
+               Mean episode length: 1248.21
+Mean episode rew_bird_leg_knee_pose: -0.0313
+     Mean episode rew_leg_symmetry: -0.0051
+Mean episode rew_foot_contact_phase_based: 0.2233
+        Mean episode rew_flat_feet: -0.0056
+Mean episode rew_foot_contact_switch: 0.0020
+Mean episode rew_step_height_consistency: 0.0864
+Mean episode rew_posture_stability: 1.7140
+Mean episode rew_knee_hyperextension: 0.0035
+      Mean episode rew_base_height: -0.0105
+          Mean episode rew_survive: 0.0950
+Mean episode rew_penalize_ankle_height: -0.0527
+Mean episode rew_foot_contact_penalty: -0.1189
+ Mean episode rew_forward_velocity: 2.6640
+Mean episode rew_lateral_drift_penalty: -0.2585
+   Mean episode rew_energy_penalty: -0.6444
+         Mean episode rew_symmetry: 0.5762
+    Mean episode rew_yaw_stability: -0.6815
+       Mean episode rew_gait_phase: 0.2385
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 67633152
+                    Iteration time: 6.12s
+                        Total time: 285.38s
+                               ETA: 3703.3s
+
+################################################################################
+                      [1m Learning iteration 43/600 [0m
+
+                       Computation: 255785 steps/s (collection: 3.492s, learning 2.657s)
+               Value function loss: 0.0140
+                    Surrogate loss: -0.0024
+             Mean action noise std: 0.68
+                 Mean total reward: 83.19
+               Mean episode length: 1363.35
+Mean episode rew_bird_leg_knee_pose: -0.0334
+     Mean episode rew_leg_symmetry: -0.0055
+Mean episode rew_foot_contact_phase_based: 0.2370
+        Mean episode rew_flat_feet: -0.0050
+Mean episode rew_foot_contact_switch: 0.0020
+Mean episode rew_step_height_consistency: 0.0914
+Mean episode rew_posture_stability: 1.8315
+Mean episode rew_knee_hyperextension: 0.0037
+      Mean episode rew_base_height: -0.0104
+          Mean episode rew_survive: 0.1008
+Mean episode rew_penalize_ankle_height: -0.0559
+Mean episode rew_foot_contact_penalty: -0.1256
+ Mean episode rew_forward_velocity: 2.8704
+Mean episode rew_lateral_drift_penalty: -0.2795
+   Mean episode rew_energy_penalty: -0.6709
+         Mean episode rew_symmetry: 0.6122
+    Mean episode rew_yaw_stability: -0.7140
+       Mean episode rew_gait_phase: 0.2548
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 69206016
+                    Iteration time: 6.15s
+                        Total time: 291.53s
+                               ETA: 3690.5s
+
+################################################################################
+                      [1m Learning iteration 44/600 [0m
+
+                       Computation: 249504 steps/s (collection: 3.647s, learning 2.656s)
+               Value function loss: 0.0175
+                    Surrogate loss: -0.0001
+             Mean action noise std: 0.67
+                 Mean total reward: 116.33
+               Mean episode length: 1856.72
+Mean episode rew_bird_leg_knee_pose: -0.0414
+     Mean episode rew_leg_symmetry: -0.0067
+Mean episode rew_foot_contact_phase_based: 0.3050
+        Mean episode rew_flat_feet: -0.0052
+Mean episode rew_foot_contact_switch: 0.0030
+Mean episode rew_step_height_consistency: 0.1200
+Mean episode rew_posture_stability: 2.4282
+Mean episode rew_knee_hyperextension: 0.0048
+      Mean episode rew_base_height: -0.0128
+          Mean episode rew_survive: 0.1315
+Mean episode rew_penalize_ankle_height: -0.0728
+Mean episode rew_foot_contact_penalty: -0.1719
+ Mean episode rew_forward_velocity: 3.7782
+Mean episode rew_lateral_drift_penalty: -0.3810
+   Mean episode rew_energy_penalty: -0.8926
+         Mean episode rew_symmetry: 0.8013
+    Mean episode rew_yaw_stability: -0.9062
+       Mean episode rew_gait_phase: 0.3333
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 70778880
+                    Iteration time: 6.30s
+                        Total time: 297.83s
+                               ETA: 3679.9s
+
+################################################################################
+                      [1m Learning iteration 45/600 [0m
+
+                       Computation: 247435 steps/s (collection: 3.703s, learning 2.654s)
+               Value function loss: 0.0318
+                    Surrogate loss: -0.0008
+             Mean action noise std: 0.67
+                 Mean total reward: 125.58
+               Mean episode length: 1953.16
+Mean episode rew_bird_leg_knee_pose: -0.0444
+     Mean episode rew_leg_symmetry: -0.0077
+Mean episode rew_foot_contact_phase_based: 0.3454
+        Mean episode rew_flat_feet: -0.0094
+Mean episode rew_foot_contact_switch: 0.0030
+Mean episode rew_step_height_consistency: 0.1334
+Mean episode rew_posture_stability: 2.7258
+Mean episode rew_knee_hyperextension: 0.0043
+      Mean episode rew_base_height: -0.0135
+          Mean episode rew_survive: 0.1462
+Mean episode rew_penalize_ankle_height: -0.0804
+Mean episode rew_foot_contact_penalty: -0.1779
+ Mean episode rew_forward_velocity: 4.3174
+Mean episode rew_lateral_drift_penalty: -0.4182
+   Mean episode rew_energy_penalty: -0.9841
+         Mean episode rew_symmetry: 0.8909
+    Mean episode rew_yaw_stability: -0.9923
+       Mean episode rew_gait_phase: 0.3704
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 72351744
+                    Iteration time: 6.36s
+                        Total time: 304.19s
+                               ETA: 3670.1s
+
+################################################################################
+                      [1m Learning iteration 46/600 [0m
+
+                       Computation: 247924 steps/s (collection: 3.688s, learning 2.656s)
+               Value function loss: 0.0623
+                    Surrogate loss: 0.0023
+             Mean action noise std: 0.68
+                 Mean total reward: 130.61
+               Mean episode length: 1994.22
+Mean episode rew_bird_leg_knee_pose: -0.0444
+     Mean episode rew_leg_symmetry: -0.0080
+Mean episode rew_foot_contact_phase_based: 0.3592
+        Mean episode rew_flat_feet: -0.0118
+Mean episode rew_foot_contact_switch: 0.0030
+Mean episode rew_step_height_consistency: 0.1360
+Mean episode rew_posture_stability: 2.7973
+Mean episode rew_knee_hyperextension: 0.0042
+      Mean episode rew_base_height: -0.0132
+          Mean episode rew_survive: 0.1494
+Mean episode rew_penalize_ankle_height: -0.0818
+Mean episode rew_foot_contact_penalty: -0.1667
+ Mean episode rew_forward_velocity: 4.4398
+Mean episode rew_lateral_drift_penalty: -0.4203
+   Mean episode rew_energy_penalty: -0.9876
+         Mean episode rew_symmetry: 0.9127
+    Mean episode rew_yaw_stability: -0.9769
+       Mean episode rew_gait_phase: 0.3790
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 73924608
+                    Iteration time: 6.34s
+                        Total time: 310.54s
+                               ETA: 3660.4s
+
+################################################################################
+                      [1m Learning iteration 47/600 [0m
+
+                       Computation: 246450 steps/s (collection: 3.729s, learning 2.654s)
+               Value function loss: 0.0946
+                    Surrogate loss: 0.0010
+             Mean action noise std: 0.68
+                 Mean total reward: 132.44
+               Mean episode length: 1997.83
+Mean episode rew_bird_leg_knee_pose: -0.0438
+     Mean episode rew_leg_symmetry: -0.0083
+Mean episode rew_foot_contact_phase_based: 0.3659
+        Mean episode rew_flat_feet: -0.0134
+Mean episode rew_foot_contact_switch: 0.0029
+Mean episode rew_step_height_consistency: 0.1359
+Mean episode rew_posture_stability: 2.8050
+Mean episode rew_knee_hyperextension: 0.0041
+      Mean episode rew_base_height: -0.0126
+          Mean episode rew_survive: 0.1495
+Mean episode rew_penalize_ankle_height: -0.0814
+Mean episode rew_foot_contact_penalty: -0.1502
+ Mean episode rew_forward_velocity: 4.4616
+Mean episode rew_lateral_drift_penalty: -0.4068
+   Mean episode rew_energy_penalty: -0.9660
+         Mean episode rew_symmetry: 0.9141
+    Mean episode rew_yaw_stability: -0.9473
+       Mean episode rew_gait_phase: 0.3795
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 75497472
+                    Iteration time: 6.38s
+                        Total time: 316.92s
+                               ETA: 3651.2s
+
+################################################################################
+                      [1m Learning iteration 48/600 [0m
+
+                       Computation: 244488 steps/s (collection: 3.778s, learning 2.656s)
+               Value function loss: 0.1294
+                    Surrogate loss: 0.0029
+             Mean action noise std: 0.69
+                 Mean total reward: 135.53
+               Mean episode length: 2001.00
+Mean episode rew_bird_leg_knee_pose: -0.0433
+     Mean episode rew_leg_symmetry: -0.0085
+Mean episode rew_foot_contact_phase_based: 0.3725
+        Mean episode rew_flat_feet: -0.0145
+Mean episode rew_foot_contact_switch: 0.0028
+Mean episode rew_step_height_consistency: 0.1362
+Mean episode rew_posture_stability: 2.8172
+Mean episode rew_knee_hyperextension: 0.0040
+      Mean episode rew_base_height: -0.0120
+          Mean episode rew_survive: 0.1498
+Mean episode rew_penalize_ankle_height: -0.0810
+Mean episode rew_foot_contact_penalty: -0.1358
+ Mean episode rew_forward_velocity: 4.4918
+Mean episode rew_lateral_drift_penalty: -0.3938
+   Mean episode rew_energy_penalty: -0.9469
+         Mean episode rew_symmetry: 0.9168
+    Mean episode rew_yaw_stability: -0.9156
+       Mean episode rew_gait_phase: 0.3806
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 77070336
+                    Iteration time: 6.43s
+                        Total time: 323.35s
+                               ETA: 3642.6s
+
+################################################################################
+                      [1m Learning iteration 49/600 [0m
+
+                       Computation: 244139 steps/s (collection: 3.786s, learning 2.656s)
+               Value function loss: 0.1364
+                    Surrogate loss: 0.0019
+             Mean action noise std: 0.71
+                 Mean total reward: 138.40
+               Mean episode length: 2001.00
+Mean episode rew_bird_leg_knee_pose: -0.0428
+     Mean episode rew_leg_symmetry: -0.0087
+Mean episode rew_foot_contact_phase_based: 0.3785
+        Mean episode rew_flat_feet: -0.0155
+Mean episode rew_foot_contact_switch: 0.0027
+Mean episode rew_step_height_consistency: 0.1361
+Mean episode rew_posture_stability: 2.8233
+Mean episode rew_knee_hyperextension: 0.0038
+      Mean episode rew_base_height: -0.0113
+          Mean episode rew_survive: 0.1497
+Mean episode rew_penalize_ankle_height: -0.0805
+Mean episode rew_foot_contact_penalty: -0.1203
+ Mean episode rew_forward_velocity: 4.5117
+Mean episode rew_lateral_drift_penalty: -0.3797
+   Mean episode rew_energy_penalty: -0.9259
+         Mean episode rew_symmetry: 0.9175
+    Mean episode rew_yaw_stability: -0.8839
+       Mean episode rew_gait_phase: 0.3807
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 78643200
+                    Iteration time: 6.44s
+                        Total time: 329.79s
+                               ETA: 3634.3s
+
+################################################################################
+                      [1m Learning iteration 50/600 [0m
+
+                       Computation: 244069 steps/s (collection: 3.789s, learning 2.655s)
+               Value function loss: 0.1230
+                    Surrogate loss: 0.0029
+             Mean action noise std: 0.71
+                 Mean total reward: 140.70
+               Mean episode length: 2001.00
+Mean episode rew_bird_leg_knee_pose: -0.0422
+     Mean episode rew_leg_symmetry: -0.0089
+Mean episode rew_foot_contact_phase_based: 0.3824
+        Mean episode rew_flat_feet: -0.0157
+Mean episode rew_foot_contact_switch: 0.0026
+Mean episode rew_step_height_consistency: 0.1361
+Mean episode rew_posture_stability: 2.8263
+Mean episode rew_knee_hyperextension: 0.0038
+      Mean episode rew_base_height: -0.0106
+          Mean episode rew_survive: 0.1495
+Mean episode rew_penalize_ankle_height: -0.0799
+Mean episode rew_foot_contact_penalty: -0.1085
+ Mean episode rew_forward_velocity: 4.5294
+Mean episode rew_lateral_drift_penalty: -0.3654
+   Mean episode rew_energy_penalty: -0.9059
+         Mean episode rew_symmetry: 0.9172
+    Mean episode rew_yaw_stability: -0.8555
+       Mean episode rew_gait_phase: 0.3804
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 80216064
+                    Iteration time: 6.44s
+                        Total time: 336.24s
+                               ETA: 3626.1s
+
+################################################################################
+                      [1m Learning iteration 51/600 [0m
+
+                       Computation: 245644 steps/s (collection: 3.750s, learning 2.653s)
+               Value function loss: 0.0983
+                    Surrogate loss: 0.0023
+             Mean action noise std: 0.72
+                 Mean total reward: 141.66
+               Mean episode length: 2001.00
+Mean episode rew_bird_leg_knee_pose: -0.0417
+     Mean episode rew_leg_symmetry: -0.0091
+Mean episode rew_foot_contact_phase_based: 0.3863
+        Mean episode rew_flat_feet: -0.0158
+Mean episode rew_foot_contact_switch: 0.0025
+Mean episode rew_step_height_consistency: 0.1360
+Mean episode rew_posture_stability: 2.8262
+Mean episode rew_knee_hyperextension: 0.0037
+      Mean episode rew_base_height: -0.0100
+          Mean episode rew_survive: 0.1492
+Mean episode rew_penalize_ankle_height: -0.0794
+Mean episode rew_foot_contact_penalty: -0.0972
+ Mean episode rew_forward_velocity: 4.5314
+Mean episode rew_lateral_drift_penalty: -0.3520
+   Mean episode rew_energy_penalty: -0.8879
+         Mean episode rew_symmetry: 0.9164
+    Mean episode rew_yaw_stability: -0.8286
+       Mean episode rew_gait_phase: 0.3804
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 81788928
+                    Iteration time: 6.40s
+                        Total time: 342.64s
+                               ETA: 3617.5s
+
+################################################################################
+                      [1m Learning iteration 52/600 [0m
+
+                       Computation: 248772 steps/s (collection: 3.670s, learning 2.652s)
+               Value function loss: 0.0819
+                    Surrogate loss: 0.0009
+             Mean action noise std: 0.73
+                 Mean total reward: 140.46
+               Mean episode length: 1956.71
+Mean episode rew_bird_leg_knee_pose: -0.0409
+     Mean episode rew_leg_symmetry: -0.0092
+Mean episode rew_foot_contact_phase_based: 0.3872
+        Mean episode rew_flat_feet: -0.0152
+Mean episode rew_foot_contact_switch: 0.0024
+Mean episode rew_step_height_consistency: 0.1357
+Mean episode rew_posture_stability: 2.8188
+Mean episode rew_knee_hyperextension: 0.0037
+      Mean episode rew_base_height: -0.0095
+          Mean episode rew_survive: 0.1485
+Mean episode rew_penalize_ankle_height: -0.0786
+Mean episode rew_foot_contact_penalty: -0.0892
+ Mean episode rew_forward_velocity: 4.5305
+Mean episode rew_lateral_drift_penalty: -0.3391
+   Mean episode rew_energy_penalty: -0.8685
+         Mean episode rew_symmetry: 0.9128
+    Mean episode rew_yaw_stability: -0.8034
+       Mean episode rew_gait_phase: 0.3784
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 83361792
+                    Iteration time: 6.32s
+                        Total time: 348.96s
+                               ETA: 3608.2s
+
+################################################################################
+                      [1m Learning iteration 53/600 [0m
+
+                       Computation: 245656 steps/s (collection: 3.747s, learning 2.655s)
+               Value function loss: 0.0627
+                    Surrogate loss: -0.0001
+             Mean action noise std: 0.73
+                 Mean total reward: 142.03
+               Mean episode length: 1961.30
+Mean episode rew_bird_leg_knee_pose: -0.0405
+     Mean episode rew_leg_symmetry: -0.0092
+Mean episode rew_foot_contact_phase_based: 0.3903
+        Mean episode rew_flat_feet: -0.0148
+Mean episode rew_foot_contact_switch: 0.0023
+Mean episode rew_step_height_consistency: 0.1359
+Mean episode rew_posture_stability: 2.8241
+Mean episode rew_knee_hyperextension: 0.0037
+      Mean episode rew_base_height: -0.0090
+          Mean episode rew_survive: 0.1485
+Mean episode rew_penalize_ankle_height: -0.0783
+Mean episode rew_foot_contact_penalty: -0.0813
+ Mean episode rew_forward_velocity: 4.5513
+Mean episode rew_lateral_drift_penalty: -0.3276
+   Mean episode rew_energy_penalty: -0.8553
+         Mean episode rew_symmetry: 0.9135
+    Mean episode rew_yaw_stability: -0.7811
+       Mean episode rew_gait_phase: 0.3790
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 84934656
+                    Iteration time: 6.40s
+                        Total time: 355.37s
+                               ETA: 3599.7s
+
+################################################################################
+                      [1m Learning iteration 54/600 [0m
+
+                       Computation: 246061 steps/s (collection: 3.737s, learning 2.655s)
+               Value function loss: 0.0501
+                    Surrogate loss: 0.0028
+             Mean action noise std: 0.73
+                 Mean total reward: 139.90
+               Mean episode length: 1918.68
+Mean episode rew_bird_leg_knee_pose: -0.0398
+     Mean episode rew_leg_symmetry: -0.0092
+Mean episode rew_foot_contact_phase_based: 0.3866
+        Mean episode rew_flat_feet: -0.0138
+Mean episode rew_foot_contact_switch: 0.0022
+Mean episode rew_step_height_consistency: 0.1345
+Mean episode rew_posture_stability: 2.7923
+Mean episode rew_knee_hyperextension: 0.0037
+      Mean episode rew_base_height: -0.0087
+          Mean episode rew_survive: 0.1467
+Mean episode rew_penalize_ankle_height: -0.0771
+Mean episode rew_foot_contact_penalty: -0.0761
+ Mean episode rew_forward_velocity: 4.4983
+Mean episode rew_lateral_drift_penalty: -0.3158
+   Mean episode rew_energy_penalty: -0.8347
+         Mean episode rew_symmetry: 0.9036
+    Mean episode rew_yaw_stability: -0.7535
+       Mean episode rew_gait_phase: 0.3752
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 86507520
+                    Iteration time: 6.39s
+                        Total time: 361.76s
+                               ETA: 3591.3s
+
+################################################################################
+                      [1m Learning iteration 55/600 [0m
+
+                       Computation: 245648 steps/s (collection: 3.747s, learning 2.656s)
+               Value function loss: 0.0406
+                    Surrogate loss: -0.0011
+             Mean action noise std: 0.73
+                 Mean total reward: 140.74
+               Mean episode length: 1921.88
+Mean episode rew_bird_leg_knee_pose: -0.0387
+     Mean episode rew_leg_symmetry: -0.0091
+Mean episode rew_foot_contact_phase_based: 0.3838
+        Mean episode rew_flat_feet: -0.0122
+Mean episode rew_foot_contact_switch: 0.0021
+Mean episode rew_step_height_consistency: 0.1337
+Mean episode rew_posture_stability: 2.7663
+Mean episode rew_knee_hyperextension: 0.0038
+      Mean episode rew_base_height: -0.0083
+          Mean episode rew_survive: 0.1452
+Mean episode rew_penalize_ankle_height: -0.0759
+Mean episode rew_foot_contact_penalty: -0.0705
+ Mean episode rew_forward_velocity: 4.4517
+Mean episode rew_lateral_drift_penalty: -0.3015
+   Mean episode rew_energy_penalty: -0.8152
+         Mean episode rew_symmetry: 0.8946
+    Mean episode rew_yaw_stability: -0.7288
+       Mean episode rew_gait_phase: 0.3710
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 88080384
+                    Iteration time: 6.40s
+                        Total time: 368.16s
+                               ETA: 3583.0s
+
+################################################################################
+                      [1m Learning iteration 56/600 [0m
+
+                       Computation: 241942 steps/s (collection: 3.857s, learning 2.644s)
+               Value function loss: 0.0282
+                    Surrogate loss: 0.0014
+             Mean action noise std: 0.72
+                 Mean total reward: 139.59
+               Mean episode length: 1892.91
+Mean episode rew_bird_leg_knee_pose: -0.0367
+     Mean episode rew_leg_symmetry: -0.0086
+Mean episode rew_foot_contact_phase_based: 0.3707
+        Mean episode rew_flat_feet: -0.0107
+Mean episode rew_foot_contact_switch: 0.0020
+Mean episode rew_step_height_consistency: 0.1290
+Mean episode rew_posture_stability: 2.6664
+Mean episode rew_knee_hyperextension: 0.0040
+      Mean episode rew_base_height: -0.0080
+          Mean episode rew_survive: 0.1399
+Mean episode rew_penalize_ankle_height: -0.0730
+Mean episode rew_foot_contact_penalty: -0.0655
+ Mean episode rew_forward_velocity: 4.2930
+Mean episode rew_lateral_drift_penalty: -0.2870
+   Mean episode rew_energy_penalty: -0.7773
+         Mean episode rew_symmetry: 0.8631
+    Mean episode rew_yaw_stability: -0.6846
+       Mean episode rew_gait_phase: 0.3576
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 89653248
+                    Iteration time: 6.50s
+                        Total time: 374.66s
+                               ETA: 3575.7s
+
+################################################################################
+                      [1m Learning iteration 57/600 [0m
+
+                       Computation: 247188 steps/s (collection: 3.713s, learning 2.650s)
+               Value function loss: 0.0254
+                    Surrogate loss: 0.0022
+             Mean action noise std: 0.72
+                 Mean total reward: 135.92
+               Mean episode length: 1830.52
+Mean episode rew_bird_leg_knee_pose: -0.0361
+     Mean episode rew_leg_symmetry: -0.0085
+Mean episode rew_foot_contact_phase_based: 0.3684
+        Mean episode rew_flat_feet: -0.0089
+Mean episode rew_foot_contact_switch: 0.0019
+Mean episode rew_step_height_consistency: 0.1283
+Mean episode rew_posture_stability: 2.6465
+Mean episode rew_knee_hyperextension: 0.0041
+      Mean episode rew_base_height: -0.0077
+          Mean episode rew_survive: 0.1387
+Mean episode rew_penalize_ankle_height: -0.0721
+Mean episode rew_foot_contact_penalty: -0.0627
+ Mean episode rew_forward_velocity: 4.2613
+Mean episode rew_lateral_drift_penalty: -0.2750
+   Mean episode rew_energy_penalty: -0.7638
+         Mean episode rew_symmetry: 0.8555
+    Mean episode rew_yaw_stability: -0.6716
+       Mean episode rew_gait_phase: 0.3553
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 91226112
+                    Iteration time: 6.36s
+                        Total time: 381.03s
+                               ETA: 3567.2s
+
+################################################################################
+                      [1m Learning iteration 58/600 [0m
+
+                       Computation: 247074 steps/s (collection: 3.717s, learning 2.648s)
+               Value function loss: 0.0226
+                    Surrogate loss: -0.0016
+             Mean action noise std: 0.71
+                 Mean total reward: 134.51
+               Mean episode length: 1801.56
+Mean episode rew_bird_leg_knee_pose: -0.0344
+     Mean episode rew_leg_symmetry: -0.0082
+Mean episode rew_foot_contact_phase_based: 0.3623
+        Mean episode rew_flat_feet: -0.0072
+Mean episode rew_foot_contact_switch: 0.0018
+Mean episode rew_step_height_consistency: 0.1266
+Mean episode rew_posture_stability: 2.6098
+Mean episode rew_knee_hyperextension: 0.0042
+      Mean episode rew_base_height: -0.0077
+          Mean episode rew_survive: 0.1367
+Mean episode rew_penalize_ankle_height: -0.0709
+Mean episode rew_foot_contact_penalty: -0.0617
+ Mean episode rew_forward_velocity: 4.1991
+Mean episode rew_lateral_drift_penalty: -0.2687
+   Mean episode rew_energy_penalty: -0.7479
+         Mean episode rew_symmetry: 0.8436
+    Mean episode rew_yaw_stability: -0.6524
+       Mean episode rew_gait_phase: 0.3496
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 92798976
+                    Iteration time: 6.37s
+                        Total time: 387.39s
+                               ETA: 3558.7s
+
+################################################################################
+                      [1m Learning iteration 59/600 [0m
+
+                       Computation: 250587 steps/s (collection: 3.631s, learning 2.646s)
+               Value function loss: 0.0197
+                    Surrogate loss: -0.0020
+             Mean action noise std: 0.70
+                 Mean total reward: 142.33
+               Mean episode length: 1898.49
+Mean episode rew_bird_leg_knee_pose: -0.0355
+     Mean episode rew_leg_symmetry: -0.0087
+Mean episode rew_foot_contact_phase_based: 0.3797
+        Mean episode rew_flat_feet: -0.0076
+Mean episode rew_foot_contact_switch: 0.0019
+Mean episode rew_step_height_consistency: 0.1318
+Mean episode rew_posture_stability: 2.7207
+Mean episode rew_knee_hyperextension: 0.0041
+      Mean episode rew_base_height: -0.0078
+          Mean episode rew_survive: 0.1422
+Mean episode rew_penalize_ankle_height: -0.0736
+Mean episode rew_foot_contact_penalty: -0.0589
+ Mean episode rew_forward_velocity: 4.3912
+Mean episode rew_lateral_drift_penalty: -0.2748
+   Mean episode rew_energy_penalty: -0.7712
+         Mean episode rew_symmetry: 0.8777
+    Mean episode rew_yaw_stability: -0.6679
+       Mean episode rew_gait_phase: 0.3637
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 94371840
+                    Iteration time: 6.28s
+                        Total time: 393.67s
+                               ETA: 3549.6s
+
+################################################################################
+                      [1m Learning iteration 60/600 [0m
+
+                       Computation: 253152 steps/s (collection: 3.568s, learning 2.645s)
+               Value function loss: 0.0171
+                    Surrogate loss: -0.0036
+             Mean action noise std: 0.70
+                 Mean total reward: 139.00
+               Mean episode length: 1844.84
+Mean episode rew_bird_leg_knee_pose: -0.0338
+     Mean episode rew_leg_symmetry: -0.0084
+Mean episode rew_foot_contact_phase_based: 0.3671
+        Mean episode rew_flat_feet: -0.0051
+Mean episode rew_foot_contact_switch: 0.0018
+Mean episode rew_step_height_consistency: 0.1288
+Mean episode rew_posture_stability: 2.6462
+Mean episode rew_knee_hyperextension: 0.0041
+      Mean episode rew_base_height: -0.0077
+          Mean episode rew_survive: 0.1383
+Mean episode rew_penalize_ankle_height: -0.0714
+Mean episode rew_foot_contact_penalty: -0.0597
+ Mean episode rew_forward_velocity: 4.2549
+Mean episode rew_lateral_drift_penalty: -0.2628
+   Mean episode rew_energy_penalty: -0.7449
+         Mean episode rew_symmetry: 0.8547
+    Mean episode rew_yaw_stability: -0.6404
+       Mean episode rew_gait_phase: 0.3539
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 95944704
+                    Iteration time: 6.21s
+                        Total time: 399.88s
+                               ETA: 3539.9s
+
+################################################################################
+                      [1m Learning iteration 61/600 [0m
+
+                       Computation: 258089 steps/s (collection: 3.451s, learning 2.643s)
+               Value function loss: 0.0138
+                    Surrogate loss: -0.0009
+             Mean action noise std: 0.69
+                 Mean total reward: 144.32
+               Mean episode length: 1919.34
+Mean episode rew_bird_leg_knee_pose: -0.0343
+     Mean episode rew_leg_symmetry: -0.0086
+Mean episode rew_foot_contact_phase_based: 0.3810
+        Mean episode rew_flat_feet: -0.0055
+Mean episode rew_foot_contact_switch: 0.0019
+Mean episode rew_step_height_consistency: 0.1327
+Mean episode rew_posture_stability: 2.7303
+Mean episode rew_knee_hyperextension: 0.0048
+      Mean episode rew_base_height: -0.0078
+          Mean episode rew_survive: 0.1427
+Mean episode rew_penalize_ankle_height: -0.0736
+Mean episode rew_foot_contact_penalty: -0.0593
+ Mean episode rew_forward_velocity: 4.3640
+Mean episode rew_lateral_drift_penalty: -0.2692
+   Mean episode rew_energy_penalty: -0.7662
+         Mean episode rew_symmetry: 0.8823
+    Mean episode rew_yaw_stability: -0.6540
+       Mean episode rew_gait_phase: 0.3649
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 97517568
+                    Iteration time: 6.09s
+                        Total time: 405.98s
+                               ETA: 3529.4s
+
+################################################################################
+                      [1m Learning iteration 62/600 [0m
+
+                       Computation: 258126 steps/s (collection: 3.446s, learning 2.648s)
+               Value function loss: 0.0144
+                    Surrogate loss: -0.0018
+             Mean action noise std: 0.68
+                 Mean total reward: 143.54
+               Mean episode length: 1901.24
+Mean episode rew_bird_leg_knee_pose: -0.0339
+     Mean episode rew_leg_symmetry: -0.0088
+Mean episode rew_foot_contact_phase_based: 0.3805
+        Mean episode rew_flat_feet: -0.0047
+Mean episode rew_foot_contact_switch: 0.0017
+Mean episode rew_step_height_consistency: 0.1321
+Mean episode rew_posture_stability: 2.7204
+Mean episode rew_knee_hyperextension: 0.0043
+      Mean episode rew_base_height: -0.0079
+          Mean episode rew_survive: 0.1420
+Mean episode rew_penalize_ankle_height: -0.0730
+Mean episode rew_foot_contact_penalty: -0.0542
+ Mean episode rew_forward_velocity: 4.3752
+Mean episode rew_lateral_drift_penalty: -0.2580
+   Mean episode rew_energy_penalty: -0.7539
+         Mean episode rew_symmetry: 0.8782
+    Mean episode rew_yaw_stability: -0.6393
+       Mean episode rew_gait_phase: 0.3632
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 99090432
+                    Iteration time: 6.09s
+                        Total time: 412.07s
+                               ETA: 3518.9s
+
+################################################################################
+                      [1m Learning iteration 63/600 [0m
+
+                       Computation: 260998 steps/s (collection: 3.381s, learning 2.646s)
+               Value function loss: 0.0117
+                    Surrogate loss: -0.0036
+             Mean action noise std: 0.67
+                 Mean total reward: 144.02
+               Mean episode length: 1897.50
+Mean episode rew_bird_leg_knee_pose: -0.0313
+     Mean episode rew_leg_symmetry: -0.0080
+Mean episode rew_foot_contact_phase_based: 0.3747
+        Mean episode rew_flat_feet: -0.0023
+Mean episode rew_foot_contact_switch: 0.0017
+Mean episode rew_step_height_consistency: 0.1299
+Mean episode rew_posture_stability: 2.6683
+Mean episode rew_knee_hyperextension: 0.0048
+      Mean episode rew_base_height: -0.0082
+          Mean episode rew_survive: 0.1393
+Mean episode rew_penalize_ankle_height: -0.0715
+Mean episode rew_foot_contact_penalty: -0.0539
+ Mean episode rew_forward_velocity: 4.2809
+Mean episode rew_lateral_drift_penalty: -0.2464
+   Mean episode rew_energy_penalty: -0.7380
+         Mean episode rew_symmetry: 0.8613
+    Mean episode rew_yaw_stability: -0.6198
+       Mean episode rew_gait_phase: 0.3560
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 100663296
+                    Iteration time: 6.03s
+                        Total time: 418.09s
+                               ETA: 3508.1s
+
+################################################################################
+                      [1m Learning iteration 64/600 [0m
+
+                       Computation: 256679 steps/s (collection: 3.418s, learning 2.710s)
+               Value function loss: 0.0135
+                    Surrogate loss: 0.0020
+             Mean action noise std: 0.66
+                 Mean total reward: 148.81
+               Mean episode length: 1951.18
+Mean episode rew_bird_leg_knee_pose: -0.0340
+     Mean episode rew_leg_symmetry: -0.0087
+Mean episode rew_foot_contact_phase_based: 0.3989
+        Mean episode rew_flat_feet: -0.0047
+Mean episode rew_foot_contact_switch: 0.0018
+Mean episode rew_step_height_consistency: 0.1378
+Mean episode rew_posture_stability: 2.8448
+Mean episode rew_knee_hyperextension: 0.0048
+      Mean episode rew_base_height: -0.0084
+          Mean episode rew_survive: 0.1480
+Mean episode rew_penalize_ankle_height: -0.0759
+Mean episode rew_foot_contact_penalty: -0.0552
+ Mean episode rew_forward_velocity: 4.6028
+Mean episode rew_lateral_drift_penalty: -0.2618
+   Mean episode rew_energy_penalty: -0.7818
+         Mean episode rew_symmetry: 0.9163
+    Mean episode rew_yaw_stability: -0.6451
+       Mean episode rew_gait_phase: 0.3791
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 102236160
+                    Iteration time: 6.13s
+                        Total time: 424.22s
+                               ETA: 3498.2s
+
+################################################################################
+                      [1m Learning iteration 65/600 [0m
+
+                       Computation: 242605 steps/s (collection: 3.803s, learning 2.680s)
+               Value function loss: 0.0181
+                    Surrogate loss: -0.0015
+             Mean action noise std: 0.66
+                 Mean total reward: 151.33
+               Mean episode length: 1977.68
+Mean episode rew_bird_leg_knee_pose: -0.0336
+     Mean episode rew_leg_symmetry: -0.0088
+Mean episode rew_foot_contact_phase_based: 0.3978
+        Mean episode rew_flat_feet: -0.0033
+Mean episode rew_foot_contact_switch: 0.0016
+Mean episode rew_step_height_consistency: 0.1373
+Mean episode rew_posture_stability: 2.8240
+Mean episode rew_knee_hyperextension: 0.0049
+      Mean episode rew_base_height: -0.0088
+          Mean episode rew_survive: 0.1473
+Mean episode rew_penalize_ankle_height: -0.0754
+Mean episode rew_foot_contact_penalty: -0.0536
+ Mean episode rew_forward_velocity: 4.5503
+Mean episode rew_lateral_drift_penalty: -0.2556
+   Mean episode rew_energy_penalty: -0.7750
+         Mean episode rew_symmetry: 0.9109
+    Mean episode rew_yaw_stability: -0.6471
+       Mean episode rew_gait_phase: 0.3765
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 103809024
+                    Iteration time: 6.48s
+                        Total time: 430.71s
+                               ETA: 3491.3s
+
+################################################################################
+                      [1m Learning iteration 66/600 [0m
+
+                       Computation: 241182 steps/s (collection: 3.826s, learning 2.696s)
+               Value function loss: 0.0456
+                    Surrogate loss: 0.0018
+             Mean action noise std: 0.66
+                 Mean total reward: 153.31
+               Mean episode length: 1993.36
+Mean episode rew_bird_leg_knee_pose: -0.0336
+     Mean episode rew_leg_symmetry: -0.0089
+Mean episode rew_foot_contact_phase_based: 0.4054
+        Mean episode rew_flat_feet: -0.0039
+Mean episode rew_foot_contact_switch: 0.0017
+Mean episode rew_step_height_consistency: 0.1398
+Mean episode rew_posture_stability: 2.8785
+Mean episode rew_knee_hyperextension: 0.0047
+      Mean episode rew_base_height: -0.0091
+          Mean episode rew_survive: 0.1499
+Mean episode rew_penalize_ankle_height: -0.0766
+Mean episode rew_foot_contact_penalty: -0.0539
+ Mean episode rew_forward_velocity: 4.6390
+Mean episode rew_lateral_drift_penalty: -0.2529
+   Mean episode rew_energy_penalty: -0.7832
+         Mean episode rew_symmetry: 0.9280
+    Mean episode rew_yaw_stability: -0.6462
+       Mean episode rew_gait_phase: 0.3838
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 105381888
+                    Iteration time: 6.52s
+                        Total time: 437.23s
+                               ETA: 3484.8s
+
+################################################################################
+                      [1m Learning iteration 67/600 [0m
+
+                       Computation: 239233 steps/s (collection: 3.871s, learning 2.704s)
+               Value function loss: 0.0743
+                    Surrogate loss: 0.0025
+             Mean action noise std: 0.67
+                 Mean total reward: 153.82
+               Mean episode length: 2001.00
+Mean episode rew_bird_leg_knee_pose: -0.0332
+     Mean episode rew_leg_symmetry: -0.0089
+Mean episode rew_foot_contact_phase_based: 0.4075
+        Mean episode rew_flat_feet: -0.0032
+Mean episode rew_foot_contact_switch: 0.0017
+Mean episode rew_step_height_consistency: 0.1400
+Mean episode rew_posture_stability: 2.8812
+Mean episode rew_knee_hyperextension: 0.0047
+      Mean episode rew_base_height: -0.0094
+          Mean episode rew_survive: 0.1500
+Mean episode rew_penalize_ankle_height: -0.0766
+Mean episode rew_foot_contact_penalty: -0.0518
+ Mean episode rew_forward_velocity: 4.6470
+Mean episode rew_lateral_drift_penalty: -0.2466
+   Mean episode rew_energy_penalty: -0.7817
+         Mean episode rew_symmetry: 0.9287
+    Mean episode rew_yaw_stability: -0.6430
+       Mean episode rew_gait_phase: 0.3842
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 106954752
+                    Iteration time: 6.57s
+                        Total time: 443.80s
+                               ETA: 3478.6s
+
+################################################################################
+                      [1m Learning iteration 68/600 [0m
+
+                       Computation: 241998 steps/s (collection: 3.786s, learning 2.713s)
+               Value function loss: 0.1220
+                    Surrogate loss: 0.0034
+             Mean action noise std: 0.68
+                 Mean total reward: 154.98
+               Mean episode length: 2001.00
+Mean episode rew_bird_leg_knee_pose: -0.0329
+     Mean episode rew_leg_symmetry: -0.0087
+Mean episode rew_foot_contact_phase_based: 0.4086
+        Mean episode rew_flat_feet: -0.0027
+Mean episode rew_foot_contact_switch: 0.0016
+Mean episode rew_step_height_consistency: 0.1402
+Mean episode rew_posture_stability: 2.8823
+Mean episode rew_knee_hyperextension: 0.0047
+      Mean episode rew_base_height: -0.0097
+          Mean episode rew_survive: 0.1500
+Mean episode rew_penalize_ankle_height: -0.0764
+Mean episode rew_foot_contact_penalty: -0.0507
+ Mean episode rew_forward_velocity: 4.6502
+Mean episode rew_lateral_drift_penalty: -0.2394
+   Mean episode rew_energy_penalty: -0.7784
+         Mean episode rew_symmetry: 0.9291
+    Mean episode rew_yaw_stability: -0.6344
+       Mean episode rew_gait_phase: 0.3842
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 108527616
+                    Iteration time: 6.50s
+                        Total time: 450.30s
+                               ETA: 3471.9s
+
+################################################################################
+                      [1m Learning iteration 69/600 [0m
+
+                       Computation: 242060 steps/s (collection: 3.827s, learning 2.671s)
+               Value function loss: 0.1517
+                    Surrogate loss: 0.0017
+             Mean action noise std: 0.69
+                 Mean total reward: 154.94
+               Mean episode length: 2001.00
+Mean episode rew_bird_leg_knee_pose: -0.0327
+     Mean episode rew_leg_symmetry: -0.0086
+Mean episode rew_foot_contact_phase_based: 0.4096
+        Mean episode rew_flat_feet: -0.0023
+Mean episode rew_foot_contact_switch: 0.0016
+Mean episode rew_step_height_consistency: 0.1404
+Mean episode rew_posture_stability: 2.8840
+Mean episode rew_knee_hyperextension: 0.0048
+      Mean episode rew_base_height: -0.0100
+          Mean episode rew_survive: 0.1501
+Mean episode rew_penalize_ankle_height: -0.0763
+Mean episode rew_foot_contact_penalty: -0.0494
+ Mean episode rew_forward_velocity: 4.6580
+Mean episode rew_lateral_drift_penalty: -0.2322
+   Mean episode rew_energy_penalty: -0.7762
+         Mean episode rew_symmetry: 0.9297
+    Mean episode rew_yaw_stability: -0.6303
+       Mean episode rew_gait_phase: 0.3845
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 110100480
+                    Iteration time: 6.50s
+                        Total time: 456.80s
+                               ETA: 3465.1s
+
+################################################################################
+                      [1m Learning iteration 70/600 [0m
+
+                       Computation: 246407 steps/s (collection: 3.713s, learning 2.670s)
+               Value function loss: 0.1476
+                    Surrogate loss: 0.0022
+             Mean action noise std: 0.70
+                 Mean total reward: 155.42
+               Mean episode length: 2001.00
+Mean episode rew_bird_leg_knee_pose: -0.0324
+     Mean episode rew_leg_symmetry: -0.0087
+Mean episode rew_foot_contact_phase_based: 0.4100
+        Mean episode rew_flat_feet: -0.0019
+Mean episode rew_foot_contact_switch: 0.0015
+Mean episode rew_step_height_consistency: 0.1404
+Mean episode rew_posture_stability: 2.8818
+Mean episode rew_knee_hyperextension: 0.0049
+      Mean episode rew_base_height: -0.0104
+          Mean episode rew_survive: 0.1499
+Mean episode rew_penalize_ankle_height: -0.0761
+Mean episode rew_foot_contact_penalty: -0.0487
+ Mean episode rew_forward_velocity: 4.6559
+Mean episode rew_lateral_drift_penalty: -0.2251
+   Mean episode rew_energy_penalty: -0.7730
+         Mean episode rew_symmetry: 0.9287
+    Mean episode rew_yaw_stability: -0.6241
+       Mean episode rew_gait_phase: 0.3839
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 111673344
+                    Iteration time: 6.38s
+                        Total time: 463.18s
+                               ETA: 3457.6s
+
+################################################################################
+                      [1m Learning iteration 71/600 [0m
+
+                       Computation: 247026 steps/s (collection: 3.702s, learning 2.665s)
+               Value function loss: 0.1271
+                    Surrogate loss: 0.0016
+             Mean action noise std: 0.71
+                 Mean total reward: 154.72
+               Mean episode length: 1984.31
+Mean episode rew_bird_leg_knee_pose: -0.0322
+     Mean episode rew_leg_symmetry: -0.0086
+Mean episode rew_foot_contact_phase_based: 0.4109
+        Mean episode rew_flat_feet: -0.0015
+Mean episode rew_foot_contact_switch: 0.0015
+Mean episode rew_step_height_consistency: 0.1406
+Mean episode rew_posture_stability: 2.8836
+Mean episode rew_knee_hyperextension: 0.0048
+      Mean episode rew_base_height: -0.0107
+          Mean episode rew_survive: 0.1500
+Mean episode rew_penalize_ankle_height: -0.0759
+Mean episode rew_foot_contact_penalty: -0.0474
+ Mean episode rew_forward_velocity: 4.6564
+Mean episode rew_lateral_drift_penalty: -0.2176
+   Mean episode rew_energy_penalty: -0.7710
+         Mean episode rew_symmetry: 0.9294
+    Mean episode rew_yaw_stability: -0.6184
+       Mean episode rew_gait_phase: 0.3840
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 113246208
+                    Iteration time: 6.37s
+                        Total time: 469.55s
+                               ETA: 3449.9s
+
+################################################################################
+                      [1m Learning iteration 72/600 [0m
+
+                       Computation: 246783 steps/s (collection: 3.710s, learning 2.663s)
+               Value function loss: 0.1041
+                    Surrogate loss: 0.0013
+             Mean action noise std: 0.72
+                 Mean total reward: 156.48
+               Mean episode length: 2001.00
+Mean episode rew_bird_leg_knee_pose: -0.0319
+     Mean episode rew_leg_symmetry: -0.0086
+Mean episode rew_foot_contact_phase_based: 0.4108
+        Mean episode rew_flat_feet: -0.0010
+Mean episode rew_foot_contact_switch: 0.0015
+Mean episode rew_step_height_consistency: 0.1405
+Mean episode rew_posture_stability: 2.8780
+Mean episode rew_knee_hyperextension: 0.0049
+      Mean episode rew_base_height: -0.0110
+          Mean episode rew_survive: 0.1496
+Mean episode rew_penalize_ankle_height: -0.0756
+Mean episode rew_foot_contact_penalty: -0.0461
+ Mean episode rew_forward_velocity: 4.6450
+Mean episode rew_lateral_drift_penalty: -0.2102
+   Mean episode rew_energy_penalty: -0.7666
+         Mean episode rew_symmetry: 0.9276
+    Mean episode rew_yaw_stability: -0.6120
+       Mean episode rew_gait_phase: 0.3835
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 114819072
+                    Iteration time: 6.37s
+                        Total time: 475.92s
+                               ETA: 3442.3s
+
+################################################################################
+                      [1m Learning iteration 73/600 [0m
+
+                       Computation: 246991 steps/s (collection: 3.705s, learning 2.663s)
+               Value function loss: 0.0840
+                    Surrogate loss: 0.0028
+             Mean action noise std: 0.73
+                 Mean total reward: 156.16
+               Mean episode length: 1997.62
+Mean episode rew_bird_leg_knee_pose: -0.0317
+     Mean episode rew_leg_symmetry: -0.0086
+Mean episode rew_foot_contact_phase_based: 0.4121
+        Mean episode rew_flat_feet: -0.0006
+Mean episode rew_foot_contact_switch: 0.0015
+Mean episode rew_step_height_consistency: 0.1409
+Mean episode rew_posture_stability: 2.8842
+Mean episode rew_knee_hyperextension: 0.0050
+      Mean episode rew_base_height: -0.0114
+          Mean episode rew_survive: 0.1499
+Mean episode rew_penalize_ankle_height: -0.0756
+Mean episode rew_foot_contact_penalty: -0.0460
+ Mean episode rew_forward_velocity: 4.6516
+Mean episode rew_lateral_drift_penalty: -0.2047
+   Mean episode rew_energy_penalty: -0.7664
+         Mean episode rew_symmetry: 0.9296
+    Mean episode rew_yaw_stability: -0.6100
+       Mean episode rew_gait_phase: 0.3842
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 116391936
+                    Iteration time: 6.37s
+                        Total time: 482.29s
+                               ETA: 3434.7s
+
+################################################################################
+                      [1m Learning iteration 74/600 [0m
+
+                       Computation: 246325 steps/s (collection: 3.719s, learning 2.666s)
+               Value function loss: 0.0636
+                    Surrogate loss: 0.0017
+             Mean action noise std: 0.74
+                 Mean total reward: 154.08
+               Mean episode length: 1971.43
+Mean episode rew_bird_leg_knee_pose: -0.0315
+     Mean episode rew_leg_symmetry: -0.0086
+Mean episode rew_foot_contact_phase_based: 0.4104
+        Mean episode rew_flat_feet: -0.0005
+Mean episode rew_foot_contact_switch: 0.0015
+Mean episode rew_step_height_consistency: 0.1402
+Mean episode rew_posture_stability: 2.8702
+Mean episode rew_knee_hyperextension: 0.0051
+      Mean episode rew_base_height: -0.0118
+          Mean episode rew_survive: 0.1491
+Mean episode rew_penalize_ankle_height: -0.0752
+Mean episode rew_foot_contact_penalty: -0.0451
+ Mean episode rew_forward_velocity: 4.6300
+Mean episode rew_lateral_drift_penalty: -0.1982
+   Mean episode rew_energy_penalty: -0.7612
+         Mean episode rew_symmetry: 0.9251
+    Mean episode rew_yaw_stability: -0.6036
+       Mean episode rew_gait_phase: 0.3822
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 117964800
+                    Iteration time: 6.39s
+                        Total time: 488.68s
+                               ETA: 3427.3s
+
+################################################################################
+                      [1m Learning iteration 75/600 [0m
+
+                       Computation: 247473 steps/s (collection: 3.692s, learning 2.663s)
+               Value function loss: 0.0492
+                    Surrogate loss: 0.0013
+             Mean action noise std: 0.74
+                 Mean total reward: 156.99
+               Mean episode length: 1992.32
+Mean episode rew_bird_leg_knee_pose: -0.0312
+     Mean episode rew_leg_symmetry: -0.0086
+Mean episode rew_foot_contact_phase_based: 0.4096
+        Mean episode rew_flat_feet: -0.0004
+Mean episode rew_foot_contact_switch: 0.0014
+Mean episode rew_step_height_consistency: 0.1395
+Mean episode rew_posture_stability: 2.8582
+Mean episode rew_knee_hyperextension: 0.0051
+      Mean episode rew_base_height: -0.0122
+          Mean episode rew_survive: 0.1485
+Mean episode rew_penalize_ankle_height: -0.0747
+Mean episode rew_foot_contact_penalty: -0.0432
+ Mean episode rew_forward_velocity: 4.6193
+Mean episode rew_lateral_drift_penalty: -0.1908
+   Mean episode rew_energy_penalty: -0.7563
+         Mean episode rew_symmetry: 0.9211
+    Mean episode rew_yaw_stability: -0.5963
+       Mean episode rew_gait_phase: 0.3807
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 119537664
+                    Iteration time: 6.36s
+                        Total time: 495.03s
+                               ETA: 3419.6s
+
+################################################################################
+                      [1m Learning iteration 76/600 [0m
+
+                       Computation: 245303 steps/s (collection: 3.713s, learning 2.699s)
+               Value function loss: 0.0413
+                    Surrogate loss: -0.0002
+             Mean action noise std: 0.74
+                 Mean total reward: 156.28
+               Mean episode length: 1984.67
+Mean episode rew_bird_leg_knee_pose: -0.0310
+     Mean episode rew_leg_symmetry: -0.0087
+Mean episode rew_foot_contact_phase_based: 0.4127
+        Mean episode rew_flat_feet: -0.0003
+Mean episode rew_foot_contact_switch: 0.0014
+Mean episode rew_step_height_consistency: 0.1402
+Mean episode rew_posture_stability: 2.8742
+Mean episode rew_knee_hyperextension: 0.0053
+      Mean episode rew_base_height: -0.0127
+          Mean episode rew_survive: 0.1493
+Mean episode rew_penalize_ankle_height: -0.0751
+Mean episode rew_foot_contact_penalty: -0.0433
+ Mean episode rew_forward_velocity: 4.6329
+Mean episode rew_lateral_drift_penalty: -0.1886
+   Mean episode rew_energy_penalty: -0.7604
+         Mean episode rew_symmetry: 0.9267
+    Mean episode rew_yaw_stability: -0.5977
+       Mean episode rew_gait_phase: 0.3825
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 121110528
+                    Iteration time: 6.41s
+                        Total time: 501.44s
+                               ETA: 3412.4s
+
+################################################################################
+                      [1m Learning iteration 77/600 [0m
+
+                       Computation: 246936 steps/s (collection: 3.698s, learning 2.671s)
+               Value function loss: 0.0272
+                    Surrogate loss: 0.0002
+             Mean action noise std: 0.73
+                 Mean total reward: 154.90
+               Mean episode length: 1975.10
+Mean episode rew_bird_leg_knee_pose: -0.0307
+     Mean episode rew_leg_symmetry: -0.0086
+Mean episode rew_foot_contact_phase_based: 0.4089
+        Mean episode rew_flat_feet: 0.0001
+Mean episode rew_foot_contact_switch: 0.0014
+Mean episode rew_step_height_consistency: 0.1388
+Mean episode rew_posture_stability: 2.8457
+Mean episode rew_knee_hyperextension: 0.0054
+      Mean episode rew_base_height: -0.0130
+          Mean episode rew_survive: 0.1478
+Mean episode rew_penalize_ankle_height: -0.0743
+Mean episode rew_foot_contact_penalty: -0.0423
+ Mean episode rew_forward_velocity: 4.5957
+Mean episode rew_lateral_drift_penalty: -0.1819
+   Mean episode rew_energy_penalty: -0.7539
+         Mean episode rew_symmetry: 0.9180
+    Mean episode rew_yaw_stability: -0.5870
+       Mean episode rew_gait_phase: 0.3800
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 122683392
+                    Iteration time: 6.37s
+                        Total time: 507.81s
+                               ETA: 3405.0s
+
+################################################################################
+                      [1m Learning iteration 78/600 [0m
+
+                       Computation: 242893 steps/s (collection: 3.757s, learning 2.719s)
+               Value function loss: 0.0258
+                    Surrogate loss: -0.0012
+             Mean action noise std: 0.73
+                 Mean total reward: 154.05
+               Mean episode length: 1957.76
+Mean episode rew_bird_leg_knee_pose: -0.0301
+     Mean episode rew_leg_symmetry: -0.0086
+Mean episode rew_foot_contact_phase_based: 0.4032
+        Mean episode rew_flat_feet: -0.0000
+Mean episode rew_foot_contact_switch: 0.0014
+Mean episode rew_step_height_consistency: 0.1368
+Mean episode rew_posture_stability: 2.8036
+Mean episode rew_knee_hyperextension: 0.0054
+      Mean episode rew_base_height: -0.0137
+          Mean episode rew_survive: 0.1456
+Mean episode rew_penalize_ankle_height: -0.0731
+Mean episode rew_foot_contact_penalty: -0.0408
+ Mean episode rew_forward_velocity: 4.5221
+Mean episode rew_lateral_drift_penalty: -0.1751
+   Mean episode rew_energy_penalty: -0.7438
+         Mean episode rew_symmetry: 0.9045
+    Mean episode rew_yaw_stability: -0.5793
+       Mean episode rew_gait_phase: 0.3736
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 124256256
+                    Iteration time: 6.48s
+                        Total time: 514.29s
+                               ETA: 3398.2s
+
+################################################################################
+                      [1m Learning iteration 79/600 [0m
+
+                       Computation: 245391 steps/s (collection: 3.739s, learning 2.671s)
+               Value function loss: 0.0231
+                    Surrogate loss: -0.0018
+             Mean action noise std: 0.72
+                 Mean total reward: 155.36
+               Mean episode length: 1966.58
+Mean episode rew_bird_leg_knee_pose: -0.0302
+     Mean episode rew_leg_symmetry: -0.0087
+Mean episode rew_foot_contact_phase_based: 0.4054
+        Mean episode rew_flat_feet: -0.0002
+Mean episode rew_foot_contact_switch: 0.0013
+Mean episode rew_step_height_consistency: 0.1374
+Mean episode rew_posture_stability: 2.8166
+Mean episode rew_knee_hyperextension: 0.0054
+      Mean episode rew_base_height: -0.0143
+          Mean episode rew_survive: 0.1462
+Mean episode rew_penalize_ankle_height: -0.0733
+Mean episode rew_foot_contact_penalty: -0.0406
+ Mean episode rew_forward_velocity: 4.5496
+Mean episode rew_lateral_drift_penalty: -0.1671
+   Mean episode rew_energy_penalty: -0.7450
+         Mean episode rew_symmetry: 0.9085
+    Mean episode rew_yaw_stability: -0.5748
+       Mean episode rew_gait_phase: 0.3757
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 125829120
+                    Iteration time: 6.41s
+                        Total time: 520.70s
+                               ETA: 3391.1s
+
+################################################################################
+                      [1m Learning iteration 80/600 [0m
+
+                       Computation: 245998 steps/s (collection: 3.702s, learning 2.691s)
+               Value function loss: 0.0184
+                    Surrogate loss: -0.0017
+             Mean action noise std: 0.71
+                 Mean total reward: 157.47
+               Mean episode length: 1991.74
+Mean episode rew_bird_leg_knee_pose: -0.0306
+     Mean episode rew_leg_symmetry: -0.0088
+Mean episode rew_foot_contact_phase_based: 0.4139
+        Mean episode rew_flat_feet: -0.0010
+Mean episode rew_foot_contact_switch: 0.0013
+Mean episode rew_step_height_consistency: 0.1393
+Mean episode rew_posture_stability: 2.8620
+Mean episode rew_knee_hyperextension: 0.0055
+      Mean episode rew_base_height: -0.0152
+          Mean episode rew_survive: 0.1486
+Mean episode rew_penalize_ankle_height: -0.0745
+Mean episode rew_foot_contact_penalty: -0.0409
+ Mean episode rew_forward_velocity: 4.6209
+Mean episode rew_lateral_drift_penalty: -0.1681
+   Mean episode rew_energy_penalty: -0.7585
+         Mean episode rew_symmetry: 0.9231
+    Mean episode rew_yaw_stability: -0.5850
+       Mean episode rew_gait_phase: 0.3814
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 127401984
+                    Iteration time: 6.39s
+                        Total time: 527.09s
+                               ETA: 3383.8s
+
+################################################################################
+                      [1m Learning iteration 81/600 [0m
+
+                       Computation: 247185 steps/s (collection: 3.664s, learning 2.700s)
+               Value function loss: 0.0170
+                    Surrogate loss: -0.0025
+             Mean action noise std: 0.70
+                 Mean total reward: 155.39
+               Mean episode length: 1970.99
+Mean episode rew_bird_leg_knee_pose: -0.0301
+     Mean episode rew_leg_symmetry: -0.0088
+Mean episode rew_foot_contact_phase_based: 0.4120
+        Mean episode rew_flat_feet: -0.0011
+Mean episode rew_foot_contact_switch: 0.0012
+Mean episode rew_step_height_consistency: 0.1388
+Mean episode rew_posture_stability: 2.8514
+Mean episode rew_knee_hyperextension: 0.0056
+      Mean episode rew_base_height: -0.0168
+          Mean episode rew_survive: 0.1480
+Mean episode rew_penalize_ankle_height: -0.0741
+Mean episode rew_foot_contact_penalty: -0.0405
+ Mean episode rew_forward_velocity: 4.6022
+Mean episode rew_lateral_drift_penalty: -0.1559
+   Mean episode rew_energy_penalty: -0.7544
+         Mean episode rew_symmetry: 0.9201
+    Mean episode rew_yaw_stability: -0.5790
+       Mean episode rew_gait_phase: 0.3787
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 128974848
+                    Iteration time: 6.36s
+                        Total time: 533.46s
+                               ETA: 3376.4s
+
+################################################################################
+                      [1m Learning iteration 82/600 [0m
+
+                       Computation: 254308 steps/s (collection: 3.511s, learning 2.674s)
+               Value function loss: 0.0120
+                    Surrogate loss: -0.0022
+             Mean action noise std: 0.69
+                 Mean total reward: 157.97
+               Mean episode length: 1991.71
+Mean episode rew_bird_leg_knee_pose: -0.0304
+     Mean episode rew_leg_symmetry: -0.0091
+Mean episode rew_foot_contact_phase_based: 0.4172
+        Mean episode rew_flat_feet: -0.0015
+Mean episode rew_foot_contact_switch: 0.0012
+Mean episode rew_step_height_consistency: 0.1406
+Mean episode rew_posture_stability: 2.8905
+Mean episode rew_knee_hyperextension: 0.0058
+      Mean episode rew_base_height: -0.0179
+          Mean episode rew_survive: 0.1498
+Mean episode rew_penalize_ankle_height: -0.0748
+Mean episode rew_foot_contact_penalty: -0.0401
+ Mean episode rew_forward_velocity: 4.6829
+Mean episode rew_lateral_drift_penalty: -0.1534
+   Mean episode rew_energy_penalty: -0.7603
+         Mean episode rew_symmetry: 0.9321
+    Mean episode rew_yaw_stability: -0.5798
+       Mean episode rew_gait_phase: 0.3852
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 130547712
+                    Iteration time: 6.18s
+                        Total time: 539.64s
+                               ETA: 3367.9s
+
+################################################################################
+                      [1m Learning iteration 83/600 [0m
+
+                       Computation: 257666 steps/s (collection: 3.438s, learning 2.667s)
+               Value function loss: 0.0131
+                    Surrogate loss: -0.0015
+             Mean action noise std: 0.68
+                 Mean total reward: 158.08
+               Mean episode length: 1989.13
+Mean episode rew_bird_leg_knee_pose: -0.0304
+     Mean episode rew_leg_symmetry: -0.0090
+Mean episode rew_foot_contact_phase_based: 0.4187
+        Mean episode rew_flat_feet: -0.0014
+Mean episode rew_foot_contact_switch: 0.0013
+Mean episode rew_step_height_consistency: 0.1407
+Mean episode rew_posture_stability: 2.8884
+Mean episode rew_knee_hyperextension: 0.0059
+      Mean episode rew_base_height: -0.0195
+          Mean episode rew_survive: 0.1498
+Mean episode rew_penalize_ankle_height: -0.0746
+Mean episode rew_foot_contact_penalty: -0.0368
+ Mean episode rew_forward_velocity: 4.6752
+Mean episode rew_lateral_drift_penalty: -0.1479
+   Mean episode rew_energy_penalty: -0.7621
+         Mean episode rew_symmetry: 0.9319
+    Mean episode rew_yaw_stability: -0.5735
+       Mean episode rew_gait_phase: 0.3841
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 132120576
+                    Iteration time: 6.10s
+                        Total time: 545.74s
+                               ETA: 3358.9s
+
+################################################################################
+                      [1m Learning iteration 84/600 [0m
+
+                       Computation: 263610 steps/s (collection: 3.300s, learning 2.667s)
+               Value function loss: 0.0095
+                    Surrogate loss: 0.0004
+             Mean action noise std: 0.67
+                 Mean total reward: 157.19
+               Mean episode length: 1980.46
+Mean episode rew_bird_leg_knee_pose: -0.0296
+     Mean episode rew_leg_symmetry: -0.0090
+Mean episode rew_foot_contact_phase_based: 0.4163
+        Mean episode rew_flat_feet: -0.0018
+Mean episode rew_foot_contact_switch: 0.0012
+Mean episode rew_step_height_consistency: 0.1394
+Mean episode rew_posture_stability: 2.8707
+Mean episode rew_knee_hyperextension: 0.0060
+      Mean episode rew_base_height: -0.0201
+          Mean episode rew_survive: 0.1488
+Mean episode rew_penalize_ankle_height: -0.0742
+Mean episode rew_foot_contact_penalty: -0.0387
+ Mean episode rew_forward_velocity: 4.6566
+Mean episode rew_lateral_drift_penalty: -0.1432
+   Mean episode rew_energy_penalty: -0.7549
+         Mean episode rew_symmetry: 0.9262
+    Mean episode rew_yaw_stability: -0.5661
+       Mean episode rew_gait_phase: 0.3819
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 133693440
+                    Iteration time: 5.97s
+                        Total time: 551.71s
+                               ETA: 3349.2s
+
+################################################################################
+                      [1m Learning iteration 85/600 [0m
+
+                       Computation: 262989 steps/s (collection: 3.311s, learning 2.670s)
+               Value function loss: 0.0104
+                    Surrogate loss: -0.0023
+             Mean action noise std: 0.66
+                 Mean total reward: 158.26
+               Mean episode length: 1985.64
+Mean episode rew_bird_leg_knee_pose: -0.0292
+     Mean episode rew_leg_symmetry: -0.0088
+Mean episode rew_foot_contact_phase_based: 0.4161
+        Mean episode rew_flat_feet: -0.0008
+Mean episode rew_foot_contact_switch: 0.0010
+Mean episode rew_step_height_consistency: 0.1398
+Mean episode rew_posture_stability: 2.8688
+Mean episode rew_knee_hyperextension: 0.0062
+      Mean episode rew_base_height: -0.0222
+          Mean episode rew_survive: 0.1488
+Mean episode rew_penalize_ankle_height: -0.0738
+Mean episode rew_foot_contact_penalty: -0.0370
+ Mean episode rew_forward_velocity: 4.6383
+Mean episode rew_lateral_drift_penalty: -0.1355
+   Mean episode rew_energy_penalty: -0.7553
+         Mean episode rew_symmetry: 0.9275
+    Mean episode rew_yaw_stability: -0.5601
+       Mean episode rew_gait_phase: 0.3835
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 135266304
+                    Iteration time: 5.98s
+                        Total time: 557.69s
+                               ETA: 3339.7s
+
+################################################################################
+                      [1m Learning iteration 86/600 [0m
+
+                       Computation: 253928 steps/s (collection: 3.526s, learning 2.668s)
+               Value function loss: 0.0161
+                    Surrogate loss: 0.0004
+             Mean action noise std: 0.66
+                 Mean total reward: 158.48
+               Mean episode length: 1983.09
+Mean episode rew_bird_leg_knee_pose: -0.0291
+     Mean episode rew_leg_symmetry: -0.0088
+Mean episode rew_foot_contact_phase_based: 0.4181
+        Mean episode rew_flat_feet: -0.0011
+Mean episode rew_foot_contact_switch: 0.0012
+Mean episode rew_step_height_consistency: 0.1401
+Mean episode rew_posture_stability: 2.8828
+Mean episode rew_knee_hyperextension: 0.0066
+      Mean episode rew_base_height: -0.0228
+          Mean episode rew_survive: 0.1492
+Mean episode rew_penalize_ankle_height: -0.0741
+Mean episode rew_foot_contact_penalty: -0.0383
+ Mean episode rew_forward_velocity: 4.6698
+Mean episode rew_lateral_drift_penalty: -0.1374
+   Mean episode rew_energy_penalty: -0.7535
+         Mean episode rew_symmetry: 0.9301
+    Mean episode rew_yaw_stability: -0.5545
+       Mean episode rew_gait_phase: 0.3838
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 136839168
+                    Iteration time: 6.19s
+                        Total time: 563.89s
+                               ETA: 3331.5s
+
+################################################################################
+                      [1m Learning iteration 87/600 [0m
+
+                       Computation: 252874 steps/s (collection: 3.552s, learning 2.668s)
+               Value function loss: 0.0432
+                    Surrogate loss: 0.0015
+             Mean action noise std: 0.66
+                 Mean total reward: 160.45
+               Mean episode length: 2001.00
+Mean episode rew_bird_leg_knee_pose: -0.0290
+     Mean episode rew_leg_symmetry: -0.0089
+Mean episode rew_foot_contact_phase_based: 0.4206
+        Mean episode rew_flat_feet: -0.0014
+Mean episode rew_foot_contact_switch: 0.0012
+Mean episode rew_step_height_consistency: 0.1408
+Mean episode rew_posture_stability: 2.8992
+Mean episode rew_knee_hyperextension: 0.0067
+      Mean episode rew_base_height: -0.0240
+          Mean episode rew_survive: 0.1500
+Mean episode rew_penalize_ankle_height: -0.0744
+Mean episode rew_foot_contact_penalty: -0.0378
+ Mean episode rew_forward_velocity: 4.6969
+Mean episode rew_lateral_drift_penalty: -0.1330
+   Mean episode rew_energy_penalty: -0.7582
+         Mean episode rew_symmetry: 0.9355
+    Mean episode rew_yaw_stability: -0.5564
+       Mean episode rew_gait_phase: 0.3858
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 138412032
+                    Iteration time: 6.22s
+                        Total time: 570.11s
+                               ETA: 3323.5s
+
+################################################################################
+                      [1m Learning iteration 88/600 [0m
+
+                       Computation: 244483 steps/s (collection: 3.674s, learning 2.759s)
+               Value function loss: 0.0801
+                    Surrogate loss: 0.0020
+             Mean action noise std: 0.68
+                 Mean total reward: 160.60
+               Mean episode length: 2001.00
+Mean episode rew_bird_leg_knee_pose: -0.0289
+     Mean episode rew_leg_symmetry: -0.0090
+Mean episode rew_foot_contact_phase_based: 0.4227
+        Mean episode rew_flat_feet: -0.0018
+Mean episode rew_foot_contact_switch: 0.0012
+Mean episode rew_step_height_consistency: 0.1406
+Mean episode rew_posture_stability: 2.9001
+Mean episode rew_knee_hyperextension: 0.0068
+      Mean episode rew_base_height: -0.0248
+          Mean episode rew_survive: 0.1501
+Mean episode rew_penalize_ankle_height: -0.0744
+Mean episode rew_foot_contact_penalty: -0.0375
+ Mean episode rew_forward_velocity: 4.6980
+Mean episode rew_lateral_drift_penalty: -0.1309
+   Mean episode rew_energy_penalty: -0.7577
+         Mean episode rew_symmetry: 0.9361
+    Mean episode rew_yaw_stability: -0.5541
+       Mean episode rew_gait_phase: 0.3858
+Mean episode rew_gait_phased_leg_control: 0.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 139984896
+                    Iteration time: 6.43s
+                        Total time: 576.54s
+                               ETA: 3316.7s
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 337, in <module>
+    # Curriculum Learning: verschiedene Zielgeschwindigkeiten
+    ^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 329, in main
+    self.iteration = num_learning_iterations
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/rsl_rl/runners/on_policy_runner.py", line 151, in learn
+    obs, rewards, dones, infos = self.env.step(actions.to(self.env.device))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 415, in step
+    r = fn() * self.reward_scales[name]
+        ^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 610, in _reward_foot_contact_penalty
+    flight = (contact.sum(dim=1) == 0).float()
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/utils/_device.py", line 104, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 337, in <module>
+    # Curriculum Learning: verschiedene Zielgeschwindigkeiten
+    ^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 329, in main
+    self.iteration = num_learning_iterations
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/rsl_rl/runners/on_policy_runner.py", line 151, in learn
+    obs, rewards, dones, infos = self.env.step(actions.to(self.env.device))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 415, in step
+    r = fn() * self.reward_scales[name]
+        ^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 610, in _reward_foot_contact_penalty
+    flight = (contact.sum(dim=1) == 0).float()
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/torch/utils/_device.py", line 104, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[38;5;9m[Genesis] [19:45:56] [ERROR] KeyboardInterrupt: [0m

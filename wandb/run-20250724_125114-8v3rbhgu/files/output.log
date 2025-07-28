@@ -1,0 +1,51 @@
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+=== Stage 1: 0.1 m/s ===
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 328, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 321, in main
+    runner.learn(num_learning_iterations=iters, init_at_random_ep_len=(i == 1))
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/rsl_rl/runners/on_policy_runner.py", line 151, in learn
+    obs, rewards, dones, infos = self.env.step(actions.to(self.env.device))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 410, in step
+    r = fn() * self.reward_scales[name]
+        ^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 822, in _reward_foot_contact_phase_based
+    left_foot_contact = self.foot_contact[:, self.feet_indices["Left_FOOT"]]
+                        ^^^^^^^^^^^^^^^^^
+AttributeError: 'DodoEnv' object has no attribute 'foot_contact'. Did you mean: 'prev_contact'?
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 328, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 321, in main
+    runner.learn(num_learning_iterations=iters, init_at_random_ep_len=(i == 1))
+  File "/home/hoan/miniconda3/envs/dodolab/lib/python3.12/site-packages/rsl_rl/runners/on_policy_runner.py", line 151, in learn
+    obs, rewards, dones, infos = self.env.step(actions.to(self.env.device))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 410, in step
+    r = fn() * self.reward_scales[name]
+        ^^^^
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_env.py", line 822, in _reward_foot_contact_phase_based
+    left_foot_contact = self.foot_contact[:, self.feet_indices["Left_FOOT"]]
+                        ^^^^^^^^^^^^^^^^^
+AttributeError: 'DodoEnv' object has no attribute 'foot_contact'. Did you mean: 'prev_contact'?
+
+[38;5;9m[Genesis] [12:51:36] [ERROR] AttributeError: 'DodoEnv' object has no attribute 'foot_contact'[0m

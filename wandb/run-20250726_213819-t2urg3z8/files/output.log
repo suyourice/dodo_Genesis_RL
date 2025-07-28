@@ -1,0 +1,44 @@
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+=== Stage 1: 0.1 m/s ===
+[WandB] Iter 0 | reward=0.00 | loss=0.1625
+[WandB] Iter 0 | reward=0.00 | loss=0.1625
+[Plot] saved to logs/test_logging/metrics.png
+[WandB] Iter 1 | reward=-0.00 | loss=0.1365
+[WandB] Iter 1 | reward=-0.00 | loss=0.1365
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 307, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 302, in main
+    runner.save(os.path.join(log_dir, fname))
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 227, in save
+    "iter": self.iteration,
+            ^^^^^^^^^^^^^^
+AttributeError: 'CustomRunner' object has no attribute 'iteration'
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 307, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 302, in main
+    runner.save(os.path.join(log_dir, fname))
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 227, in save
+    "iter": self.iteration,
+            ^^^^^^^^^^^^^^
+AttributeError: 'CustomRunner' object has no attribute 'iteration'
+
+[38;5;9m[Genesis] [21:38:55] [ERROR] AttributeError: 'CustomRunner' object has no attribute 'iteration'[0m

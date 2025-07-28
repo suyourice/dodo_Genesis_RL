@@ -1,0 +1,15 @@
+{"time":"2025-07-26T21:14:52.948197617+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/wandb/run-20250726_211452-boep4fpu/logs/debug-core.log"}
+{"time":"2025-07-26T21:14:53.217197813+02:00","level":"INFO","msg":"created new stream","id":"boep4fpu"}
+{"time":"2025-07-26T21:14:53.217224219+02:00","level":"INFO","msg":"stream: started","id":"boep4fpu"}
+{"time":"2025-07-26T21:14:53.217281435+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"boep4fpu"}
+{"time":"2025-07-26T21:14:53.217309621+02:00","level":"INFO","msg":"handler: started","stream_id":"boep4fpu"}
+{"time":"2025-07-26T21:14:53.217318915+02:00","level":"INFO","msg":"sender: started","stream_id":"boep4fpu"}
+{"time":"2025-07-26T21:14:53.46855182+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-26T21:17:32.01683845+02:00","level":"INFO","msg":"stream: closing","id":"boep4fpu"}
+{"time":"2025-07-26T21:17:32.016862753+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-26T21:17:32.016884149+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-26T21:17:32.697845112+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-26T21:17:32.919837716+02:00","level":"INFO","msg":"handler: closed","stream_id":"boep4fpu"}
+{"time":"2025-07-26T21:17:32.91987424+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"boep4fpu"}
+{"time":"2025-07-26T21:17:32.919901272+02:00","level":"INFO","msg":"sender: closed","stream_id":"boep4fpu"}
+{"time":"2025-07-26T21:17:32.920056126+02:00","level":"INFO","msg":"stream: closed","id":"boep4fpu"}

@@ -1,0 +1,39 @@
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+=== Stage 1: 0.1 m/s ===
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 348, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 340, in main
+    runner.learn(num_learning_iterations=iters, init_at_random_ep_len=(i == 1))
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 314, in learn
+    self.init_storage(init_at_random_ep_len)
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'CustomRunner' object has no attribute 'init_storage'
+Traceback (most recent call last):
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 348, in <module>
+    main()
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 340, in main
+    runner.learn(num_learning_iterations=iters, init_at_random_ep_len=(i == 1))
+  File "/home/hoan/Desktop/Malte/MalteVSC/dodo_Genesis_RL/dodo_train.py", line 314, in learn
+    self.init_storage(init_at_random_ep_len)
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'CustomRunner' object has no attribute 'init_storage'
+
+[38;5;9m[Genesis] [15:05:58] [ERROR] AttributeError: 'CustomRunner' object has no attribute 'init_storage'[0m

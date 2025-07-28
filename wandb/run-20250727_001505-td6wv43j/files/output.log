@@ -1,0 +1,112 @@
+Actor MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=8, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=33, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+=== Stage 1: 0.1 m/s ===
+[WandB] Iter 0 | reward=-0.00 | loss=0.1584
+[WandB] Iter 0 | reward=-0.00 | loss=0.1584
+[Plot] saved to logs/test_logging/metrics.png
+[WandB] Iter 1 | reward=-0.01 | loss=0.1222
+[WandB] Iter 1 | reward=-0.01 | loss=0.1222
+[WandB] Iter 2 | reward=-0.00 | loss=0.1098
+[WandB] Iter 2 | reward=-0.00 | loss=0.1098
+[WandB] Iter 3 | reward=0.00 | loss=0.0799
+[WandB] Iter 3 | reward=0.00 | loss=0.0799
+[WandB] Iter 4 | reward=0.01 | loss=0.0665
+[WandB] Iter 4 | reward=0.01 | loss=0.0665
+[WandB] Iter 5 | reward=0.01 | loss=0.0629
+[WandB] Iter 5 | reward=0.01 | loss=0.0629
+[WandB] Iter 6 | reward=0.01 | loss=0.0627
+[WandB] Iter 6 | reward=0.01 | loss=0.0627
+[WandB] Iter 7 | reward=0.01 | loss=0.0598
+[WandB] Iter 7 | reward=0.01 | loss=0.0598
+[WandB] Iter 8 | reward=0.02 | loss=0.0594
+[WandB] Iter 8 | reward=0.02 | loss=0.0594
+[WandB] Iter 9 | reward=0.02 | loss=0.0542
+[WandB] Iter 9 | reward=0.02 | loss=0.0542
+[WandB] Iter 10 | reward=0.02 | loss=0.0581
+[WandB] Iter 10 | reward=0.02 | loss=0.0581
+[WandB] Iter 11 | reward=0.03 | loss=0.0608
+[WandB] Iter 11 | reward=0.03 | loss=0.0608
+[WandB] Iter 12 | reward=0.03 | loss=0.0593
+[WandB] Iter 12 | reward=0.03 | loss=0.0593
+[WandB] Iter 13 | reward=0.03 | loss=0.0662
+[WandB] Iter 13 | reward=0.03 | loss=0.0662
+[WandB] Iter 14 | reward=0.03 | loss=0.0631
+[WandB] Iter 14 | reward=0.03 | loss=0.0631
+[WandB] Iter 15 | reward=0.03 | loss=0.0776
+[WandB] Iter 15 | reward=0.03 | loss=0.0776
+[WandB] Iter 16 | reward=0.04 | loss=0.0672
+[WandB] Iter 16 | reward=0.04 | loss=0.0672
+[WandB] Iter 17 | reward=0.04 | loss=0.0805
+[WandB] Iter 17 | reward=0.04 | loss=0.0805
+[WandB] Iter 18 | reward=0.04 | loss=0.0813
+[WandB] Iter 18 | reward=0.04 | loss=0.0813
+[WandB] Iter 19 | reward=0.04 | loss=0.0837
+[WandB] Iter 19 | reward=0.04 | loss=0.0837
+[CustomRunner] ✅ Saved full checkpoint to logs/test_logging/model_stage1.pt
+=== Stage 2: 0.3 m/s ===
+[WandB] Iter 19 | reward=0.03 | loss=0.0818
+[WandB] Iter 19 | reward=0.03 | loss=0.0818
+[CustomRunner] ✅ Saved full checkpoint to logs/test_logging/model_stage2.pt
+=== Stage 3: 0.4 m/s ===
+[WandB] Iter 19 | reward=0.02 | loss=0.0652
+[WandB] Iter 19 | reward=0.02 | loss=0.0652
+[CustomRunner] ✅ Saved full checkpoint to logs/test_logging/model_stage3.pt
+=== Stage 4: 0.5 m/s ===
+[WandB] Iter 19 | reward=0.02 | loss=0.0574
+[WandB] Iter 19 | reward=0.02 | loss=0.0574
+[WandB] Iter 20 | reward=0.02 | loss=0.0432
+[WandB] Iter 20 | reward=0.02 | loss=0.0432
+[WandB] Iter 21 | reward=0.02 | loss=0.0369
+[WandB] Iter 21 | reward=0.02 | loss=0.0369
+[WandB] Iter 22 | reward=0.02 | loss=0.0329
+[WandB] Iter 22 | reward=0.02 | loss=0.0329
+[WandB] Iter 23 | reward=0.02 | loss=0.0299
+[WandB] Iter 23 | reward=0.02 | loss=0.0299
+[WandB] Iter 24 | reward=0.02 | loss=0.0290
+[WandB] Iter 24 | reward=0.02 | loss=0.0290
+[WandB] Iter 25 | reward=0.02 | loss=0.0289
+[WandB] Iter 25 | reward=0.02 | loss=0.0289
+[WandB] Iter 26 | reward=0.03 | loss=0.0288
+[WandB] Iter 26 | reward=0.03 | loss=0.0288
+[WandB] Iter 27 | reward=0.03 | loss=0.0284
+[WandB] Iter 27 | reward=0.03 | loss=0.0284
+[WandB] Iter 28 | reward=0.03 | loss=0.0303
+[WandB] Iter 28 | reward=0.03 | loss=0.0303
+[WandB] Iter 29 | reward=0.03 | loss=0.0330
+[WandB] Iter 29 | reward=0.03 | loss=0.0330
+[WandB] Iter 30 | reward=0.03 | loss=0.0352
+[WandB] Iter 30 | reward=0.03 | loss=0.0352
+[WandB] Iter 31 | reward=0.03 | loss=0.0348
+[WandB] Iter 31 | reward=0.03 | loss=0.0348
+[WandB] Iter 32 | reward=0.04 | loss=0.0376
+[WandB] Iter 32 | reward=0.04 | loss=0.0376
+[WandB] Iter 33 | reward=0.04 | loss=0.0413
+[WandB] Iter 33 | reward=0.04 | loss=0.0413
+[WandB] Iter 34 | reward=0.04 | loss=0.0463
+[WandB] Iter 34 | reward=0.04 | loss=0.0463
+[WandB] Iter 35 | reward=0.04 | loss=0.0510
+[WandB] Iter 35 | reward=0.04 | loss=0.0510
+[WandB] Iter 36 | reward=0.04 | loss=0.0513
+[WandB] Iter 36 | reward=0.04 | loss=0.0513
+[WandB] Iter 37 | reward=0.04 | loss=0.0578
+[WandB] Iter 37 | reward=0.04 | loss=0.0578
+[WandB] Iter 38 | reward=0.04 | loss=0.0583
+[WandB] Iter 38 | reward=0.04 | loss=0.0583
+[CustomRunner] ✅ Saved full checkpoint to logs/test_logging/model_final.pt
+=== Trained model saved at logs/test_logging/model_final.pt ===

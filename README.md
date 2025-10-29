@@ -275,8 +275,6 @@ logs/dodo-walking/
 
 ## 🧩 Project Flow Summary
 
-## 🧩 Project Flow Summary
-
 ```mermaid
 flowchart TD
     A[dodo_train.py] --> B[get_cfgs and get_train_cfg]

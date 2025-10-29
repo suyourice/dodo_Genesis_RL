@@ -275,16 +275,18 @@ logs/dodo-walking/
 
 ## 🧩 Project Flow Summary
 
+## 🧩 Project Flow Summary
+
 ```mermaid
 flowchart TD
-    A[dodo_train.py] -->|calls| B[get_cfgs() & get_train_cfg()]
-    B -->|init| C[DodoEnv (from dodo_env.py)]
-    C -->|loads| D[dodo_robot/dodo.xml]
-    A --> E[CustomRunner (PPO)]
-    E -->|uses| F[OnPolicyRunner (rsl_rl)]
-    E -->|logs| G[Weights & Biases]
-    E -->|saves| H[logs/dodo-walking/model_final.pt]
-    H -->|visualized by| I[dodo_eval.py / dodo_eval_step.py]
+    A[dodo_train.py] --> B[get_cfgs and get_train_cfg]
+    B --> C[DodoEnv from dodo_env.py]
+    C --> D[dodo_robot/dodo.xml]
+    A --> E[CustomRunner using PPO]
+    E --> F[OnPolicyRunner from rsl_rl]
+    E --> G[Weights and Biases]
+    E --> H[logs/dodo-walking/model_final.pt]
+    H --> I[dodo_eval.py and dodo_eval_step.py]
 ```
 
 ---

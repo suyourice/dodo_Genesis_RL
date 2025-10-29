@@ -13,6 +13,7 @@ from rsl_rl.runners.on_policy_runner import OnPolicyRunner
 from dodo_env import DodoEnv
 import wandb
 import copy
+import sys
 
 # -----------------------------------------------------------------------------
 # Global logs (alle wichtigen Reward‑Terme)
@@ -250,6 +251,13 @@ def main():
     if os.path.exists(log_dir):
         shutil.rmtree(log_dir)
     os.makedirs(log_dir, exist_ok=True)
+    
+    # --- Save terminal output to file ---
+    log_path = os.path.join(log_dir, "output.log")
+    sys.stdout = open(log_path, "w")
+    sys.stderr = sys.stdout
+    print(f"[Logging] Redirecting output to {log_path}")
+    
     with open(f"{log_dir}/cfgs.pkl", "wb") as f:
         pickle.dump([env_cfg, obs_cfg, reward_cfg, command_cfg, train_cfg], f)
 
@@ -355,6 +363,10 @@ def main():
         cumulative_iter += iters_stage
 
     print(f"=== Trained model saved at {log_dir}/model_final.pt ===")
+
+    # --- Auto-compress output log after training ---
+    os.system(f"gzip {os.path.join(log_dir, 'output.log')}")
+    print(f"[Logging] Compressed output.log → output.log.gz")
 
 if __name__ == "__main__":
     main()

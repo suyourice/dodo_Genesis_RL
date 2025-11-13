@@ -27,7 +27,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dodobot_v3/meshes/body_link.STL" />
+          filename="package://dodobot_v3/meshes/body_link.STL" />   <!-- use relative path if needed -->
       </geometry>
       <material
         name="">
@@ -71,7 +71,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dodobot_v3/meshes/right_link_1.STL" />
+          filename="package://dodobot_v3/meshes/right_link_1.STL" />    <!-- use relative path if needed -->
       </geometry>
       <material
         name="">
@@ -146,7 +146,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dodobot_v3/meshes/right_link_2.STL" />
+          filename="package://dodobot_v3/meshes/right_link_2.STL" />    <!-- use relative path if needed -->
       </geometry>
       <material
         name="">
@@ -221,7 +221,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dodobot_v3/meshes/right_link_3.STL" />
+          filename="package://dodobot_v3/meshes/right_link_3.STL" />    <!-- use relative path if needed -->
       </geometry>
       <material
         name="">
@@ -296,7 +296,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dodobot_v3/meshes/right_link_4.STL" />
+          filename="package://dodobot_v3/meshes/right_link_4.STL" />    <!-- use relative path if needed -->
       </geometry>
       <material
         name="">
@@ -370,7 +370,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dodobot_v3/meshes/left_link_1.STL" />
+          filename="package://dodobot_v3/meshes/left_link_1.STL" />    <!-- use relative path if needed -->
       </geometry>
       <material
         name="">
@@ -445,7 +445,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dodobot_v3/meshes/left_link_2.STL" />
+          filename="package://dodobot_v3/meshes/left_link_2.STL" />    <!-- use relative path if needed -->
       </geometry>
       <material
         name="">
@@ -520,7 +520,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dodobot_v3/meshes/left_link_3.STL" />
+          filename="package://dodobot_v3/meshes/left_link_3.STL" />    <!-- use relative path if needed -->
       </geometry>
       <material
         name="">
@@ -595,7 +595,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dodobot_v3/meshes/left_link_4.STL" />
+          filename="package://dodobot_v3/meshes/left_link_4.STL" />    <!-- use relative path if needed -->
       </geometry>
       <material
         name="">

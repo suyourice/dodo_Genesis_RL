@@ -1,0 +1,28 @@
+wandb/
+logs/
+
+# IDEs & Editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+
+# Python build artefacts
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.egg-info/
+
+# Systemfiles
+.DS_Store
+Thumbs.db
+
+# Local configs
+.venv
+.env
+*.local
+*Zone.Identifier
